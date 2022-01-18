@@ -1,0 +1,25 @@
+version: "3.5"
+services:
+  redis:
+    container_name: redis
+    image: redis:6.0.10
+    restart: always
+    network_mode: host
+    command: redis-server --appendonly yes
+    volumes:
+      - /data/redis:/data
+    ports:
+      - 6379:6379
+
+  devcontainer:
+    container_name: devcontainer
+    image: ccr.ccs.tencentyun.com/ifooth/devcontainer:v1
+    restart: always
+    network_mode: host
+    environment:
+      TZ: Asia/Shanghai
+    volumes:
+      - /data/devcontainer/data:/data
+      - /data/devcontainer/root:/root
+      - ./dev-init.sh:/usr/local/bin/dev-init.sh
+      - /var/run/docker.sock:/var/run/docker.sock
