@@ -5,7 +5,7 @@ set -ex
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping
 apt-get install -y vim dnsutils direnv tmux
-apt-get install -y nodejs bison golang
+apt-get install -y nodejs bison golang redis-tools mariadb-client
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
