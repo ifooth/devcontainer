@@ -3,6 +3,8 @@ full stack for remote deveoper
 
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
 
+Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containers) image
+
 ## Shell
 - [zsh](https://www.zsh.org/)
 - [ohmyzsh](https://github.com/ohmyzsh/ohmyzsh)
