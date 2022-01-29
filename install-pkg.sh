@@ -13,7 +13,7 @@ apt-get install -y nodejs bison golang
 apt-get install -y autojump fzf
 
 # component client
-apt-get install -y redis-tools mariadb-client
+apt-get install -y redis-tools mariadb-client etcd-client
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
@@ -30,11 +30,6 @@ cd /tmp
 wget -q https://github.com/prometheus/promu/releases/download/v0.13.0/promu-0.13.0.linux-amd64.tar.gz
 tar -xf promu-0.13.0.linux-amd64.tar.gz
 mv promu-0.13.0.linux-amd64/promu /usr/local/bin/promu
-
-# Install etcd
-wget -q https://github.com/etcd-io/etcd/releases/download/v3.5.1/etcd-v3.5.1-linux-amd64.tar.gz
-tar -xf etcd-v3.5.1-linux-amd64.tar.gz
-mv etcd-v3.5.1-linux-amd64/etcd* /usr/local/bin
 
 # Install adb
 wget -q https://dl.google.com/android/repository/platform-tools_r31.0.3-linux.zip
