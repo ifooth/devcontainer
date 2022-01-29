@@ -4,7 +4,7 @@ set -ex
 # Install pkgs
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils
-apt-get install -y vim direnv tmux
+apt-get install -y vim direnv tmux openssh-server
 
 # system language
 apt-get install -y nodejs bison golang
