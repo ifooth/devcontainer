@@ -1,9 +1,17 @@
+export PATH=/data/bin:/root/.pyenv/bin:/root/.pyenv/shims:$PATH
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#696969"
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=256
+
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 # gvm
 [[ -s "/root/.gvm/scripts/gvm" ]] && source "/root/.gvm/scripts/gvm"
+gvm use go1.17.6
+
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
