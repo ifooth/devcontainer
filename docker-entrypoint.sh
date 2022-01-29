@@ -5,6 +5,8 @@ mkdir -p /data/logs
 # start sshd
 mkdir -p /run/sshd
 echo "Port 36022" >> /etc/ssh/sshd_config
+# Fix: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
+touch /var/log/lastlog
 
 if [ ! -d "/root/.pyenv" ];then
     echo "no root data, extract root.tar.gz"
