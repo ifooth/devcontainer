@@ -36,7 +36,8 @@ mv promu-0.13.0.linux-amd64/promu /usr/local/bin/promu
 # Install adb
 wget -q https://dl.google.com/android/repository/platform-tools_r31.0.3-linux.zip
 unzip platform-tools_r31.0.3-linux.zip
-mv platform-tools /usr/local/platform-tools
+mv platform-tools /usr/local/android-platform-tools
+ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
 
 # Clean up
 apt-get -y autoremove
