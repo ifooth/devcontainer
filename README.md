@@ -1,5 +1,5 @@
 # DevContainer
-full stack for remote deveoper
+Full stack remote development environment
 
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
 
