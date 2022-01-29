@@ -15,7 +15,7 @@ apt-get install -y redis-tools mariadb-client etcd-client
 # zsh utils 命令行终端
 apt-get install -y autojump fzf
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-sed -i "s/plugins=(git)/plugins=(git autojump fzf zsh-autosuggestions)/g" ~/.zshrc
+sed -i "s/plugins=(git)/plugins=(git autojump fzf zsh-autosuggestions) \n HISTFILE=~/.local/share/zsh/zsh_history/g" ~/.zshrc
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
