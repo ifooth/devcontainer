@@ -4,7 +4,8 @@ mkdir -p /data/logs
 
 # start sshd
 mkdir -p /run/sshd
-echo "Port 36022" >> /etc/ssh/sshd_config
+SSHD_PORT=${SSHD_PORT:-36022}
+echo "Port $SSHD_PORT" >> /etc/ssh/sshd_config
 # Fix: lastlog_openseek: Couldn't stat /var/log/lastlog: No such file or directory
 touch /var/log/lastlog
 
