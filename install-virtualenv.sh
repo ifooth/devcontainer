@@ -47,4 +47,4 @@ mkdir -p /root/.ssh
 touch /root/.ssh/config
 
 # 打包整个root, 减少大小和复用
-# cd / && tar -zcf root.tar.gz root && rm -rf root
+cd / && tar -zcf root.tar.gz root && rm -rf root
