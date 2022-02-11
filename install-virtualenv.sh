@@ -13,13 +13,13 @@ go get github.com/fatih/gomodifytags@latest
 go get github.com/josharian/impl@latest
 go get github.com/haya14busa/goplay/cmd/goplay@latest
 go get github.com/go-delve/delve/cmd/dlv@latest
-GOBIN=/tmp/ go get github.com/go-delve/delve/cmd/dlv@2f13672765fe && mv /tmp/dlv /root/go/bin/dlv-dap
+GOBIN=/tmp/ go get github.com/go-delve/delve/cmd/dlv@2f13672765fe && mv /tmp/dlv /opt/go/bin/dlv-dap
 go get honnef.co/go/tools/cmd/staticcheck@latest
 go get golang.org/x/tools/gopls@latest
 
 # gvm
 export GVM_ROOT=/opt/gvm
-curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /usr/local/bin/gvm-installer
+curl -fsSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /usr/local/bin/gvm-installer
 chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
 source "/opt/gvm/scripts/gvm"
 gvm install go1.15.15 -B
@@ -43,14 +43,10 @@ echo 'export GVM_ROOT=/opt/gvm' >> /root/.bashrc
 echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc
 echo 'exec zsh' >> /root/.bashrc
 
-# 解决 docker 内 zsh 不能自动补全问题
-echo 'autoload -Uz compinit' >> /root/.zshrc
-echo 'compinit' >> /root/.zshrc
-echo 'source ~/.zsh_profile' >> /root/.zshrc
-
 # ssh fabric
 mkdir -p /root/.ssh
 touch /root/.ssh/config
 
 # 打包整个root, 减少大小和复用
+cd /root && rm -rf .oh-my-zsh .wget-hsts .cache .zshrc.pre-oh-my-zsh && ls -la /root
 cd / && tar -zcf root.tar.gz root && rm -rf root

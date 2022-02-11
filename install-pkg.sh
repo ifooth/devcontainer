@@ -14,8 +14,9 @@ apt-get install -y redis-tools mariadb-client etcd-client
 
 # zsh utils 命令行终端
 apt-get install -y autojump fzf
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-# sed -i "s/plugins=(git)/plugins=(git autojump fzf zsh-autosuggestions)\nHISTFILE=~/.local/share/zsh/zsh_history/g" ~/.zshrc
+curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /usr/local/bin/zsh-install.sh && chmod a+x /usr/local/bin/zsh-install.sh
+export ZSH="/opt/oh-my-zsh" && export CHSH=no && zsh-install.sh
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH}/custom/plugins/zsh-autosuggestions
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
@@ -43,5 +44,4 @@ ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
 apt-get -y autoremove
 apt-get -y clean
 rm -rf /var/lib/apt/lists/*
-rm -rf /var/log/*
 rm -rf /tmp/*
