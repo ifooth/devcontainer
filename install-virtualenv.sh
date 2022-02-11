@@ -49,4 +49,4 @@ touch /root/.ssh/config
 
 # 打包整个root, 减少大小和复用
 cd /root && rm -rf .oh-my-zsh .wget-hsts .python_history .cache .zshrc.pre-oh-my-zsh && ls -la /root
-cd / && tar -zcf root.tar.gz root && rm -rf root
+cd / && tar -zcf root.tar.gz root
