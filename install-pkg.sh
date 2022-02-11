@@ -44,4 +44,3 @@ ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
 apt-get -y autoremove
 apt-get -y clean
 rm -rf /var/lib/apt/lists/*
-rm -rf /tmp/*
