@@ -12,6 +12,7 @@ Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containe
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder
 - [autojump](https://github.com/wting/autojump) - A cd command that learns - easily navigate directories from the command line
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [direnv](https://github.com/direnv/direnv) - unclutter your .profile, set env by dir automate
 
 
 ## Vim

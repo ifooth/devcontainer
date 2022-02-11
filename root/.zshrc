@@ -105,11 +105,12 @@ compinit
 
 export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH
 
+# zsh plugins
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#696969"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=256
 
-# ssh fabric
+# ssh
 if [ ! -d "${HOME}/.ssh" ];then
     mkdir -p ${HOME}/.ssh
     touch ${HOME}/.ssh/config
@@ -143,6 +144,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # direnv
+setopt PROMPT_SUBST
 show_virtual_env() {
     if [ -n "$VIRTUAL_ENV" ]; then
         env_name="($(basename $VIRTUAL_ENV))"
@@ -151,11 +153,10 @@ show_virtual_env() {
         fi
     fi
 }
-
-eval "$(direnv hook zsh)"
-
 if [[ $PS1 != *"show_virtual_env"* ]];then
     PS1='$(show_virtual_env)'$PS1
 fi
+
+eval "$(direnv hook zsh)"
 
 [[ -s "${HOME}/.zsh_profile" ]] && source "${HOME}/.zsh_profile"
