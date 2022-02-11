@@ -43,4 +43,5 @@ mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 - [gvm](https://github.com/moovweb/gvm)
 
 ## Utils
+- [cloc](https://github.com/AlDanial/cloc)
 - [android adb](https://developer.android.com/studio/releases/platform-tools)
