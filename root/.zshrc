@@ -124,6 +124,9 @@ export GVM_ROOT=/opt/gvm
 if [ ! -d "${HOME}/.gvm" ];then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
+fi
+
+if [ ! -L ${GVM_ROOT}/pkgsets ] || [ ! -e ${GVM_ROOT}/pkgsets ];then
     rm -rf ${GVM_ROOT}/pkgsets
     ln -sf ${HOME}/.gvm/pkgsets ${GVM_ROOT}
 fi
