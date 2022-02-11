@@ -81,7 +81,7 @@ error log:
 zsh: bad math expression: operand expected at `*100000 + ...'
 ```
 
-solution: enable useLocalServer and use git's ssh command
+solution: enable useLocalServer
 ```json
 {
     "remote.SSH.useLocalServer": true
