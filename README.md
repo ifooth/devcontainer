@@ -45,3 +45,21 @@ mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 ## Utils
 - [cloc](https://github.com/AlDanial/cloc)
 - [android adb](https://developer.android.com/studio/releases/platform-tools)
+
+
+## Tips and Tricks
+
+### windows remote ssh cann't connection with zsh
+
+error log:
+```bash
+zsh: bad math expression: operand expected at `*100000 + ...'
+```
+
+solution: enable useLocalServer and use git's ssh command
+```json
+{
+    "remote.SSH.useLocalServer": true,
+    "remote.SSH.path": "D:\\Program Files\\Git\\usr\\bin\\ssh.exe",
+}
+```
