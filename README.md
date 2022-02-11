@@ -47,6 +47,19 @@ mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 - [android adb](https://developer.android.com/studio/releases/platform-tools)
 
 
+## Settings
+vscode remote ssh settings
+
+~/.vscode-server/data/Machine/settings.json
+
+```json
+{
+    "go.goroot": "/opt/gvm/gos/go1.17.6",
+    "python.linting.flake8Path": "/usr/local/bin/flake8",
+    "python.formatting.blackPath": "/usr/local/bin/black"
+}
+```
+
 ## Tips and Tricks
 
 ### windows remote ssh cann't connection with zsh
