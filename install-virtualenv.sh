@@ -44,10 +44,6 @@ echo 'export GVM_ROOT=/opt/gvm' >> /root/.bashrc
 echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc
 echo 'exec zsh' >> /root/.bashrc
 
-# ssh fabric
-mkdir -p /root/.ssh
-touch /root/.ssh/config
-
 # 打包整个root, 减少大小和复用
 rm -rf /tmp/*
 cd /root && rm -rf .oh-my-zsh .wget-hsts .python_history .cache .zshrc.pre-oh-my-zsh && ls -la /root

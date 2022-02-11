@@ -109,17 +109,23 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#696969"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=256
 
+# ssh fabric
+if [ ! -d "${HOME}/.ssh" ];then
+    mkdir -p ${HOME}/.ssh
+    touch ${HOME}/.ssh/config
+fi
+
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 # gvm
 export GVM_ROOT=/opt/gvm
-if [ ! -d "/root/.gvm" ];then
-    mkdir -p /root/.gvm
-    tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C /root/.gvm
+if [ ! -d "${HOME}/.gvm" ];then
+    mkdir -p ${HOME}/.gvm
+    tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
     rm -rf ${GVM_ROOT}/pkgsets
-    ln -sf /root/.gvm/pkgsets ${GVM_ROOT}
+    ln -sf ${HOME}/.gvm/pkgsets ${GVM_ROOT}
 fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
@@ -149,4 +155,4 @@ if [[ $PS1 != *"show_virtual_env"* ]];then
     PS1='$(show_virtual_env)'$PS1
 fi
 
-[[ -s "/root/.zsh_profile" ]] && source "/root/.zsh_profile"
+[[ -s "${HOME}/.zsh_profile" ]] && source "${HOME}/.zsh_profile"
