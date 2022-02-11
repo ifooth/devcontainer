@@ -8,7 +8,7 @@ Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containe
 ## Shell
 - [zsh](https://www.zsh.org/)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
-- [git](https://github.com/git/git)
+- [git](http://git-scm.com/) - A distributed version control system
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder
 - [autojump](https://github.com/wting/autojump) - A cd command that learns - easily navigate directories from the command line
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
