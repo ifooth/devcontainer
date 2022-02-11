@@ -142,4 +142,4 @@ if [[ $PS1 != *"show_virtual_env"* ]];then
     PS1='$(show_virtual_env)'$PS1
 fi
 
-source ~/.zsh_profile
+[[ -s "/root/.zsh_profile" ]] && source "/root/.zsh_profile"
