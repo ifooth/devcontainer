@@ -144,7 +144,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # direnv
-setopt PROMPT_SUBST
 show_virtual_env() {
     if [ -n "$VIRTUAL_ENV" ]; then
         env_name="($(basename $VIRTUAL_ENV))"

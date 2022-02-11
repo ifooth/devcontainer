@@ -67,7 +67,8 @@ vscode remote ssh settings
     "python.sortImports.path": "/usr/local/bin/isort",
     "python.sortImports.args": [
         "--line-length=119"
-    ]
+    ],
+    "python.terminal.activateEnvironment": false
 }
 ```
 
