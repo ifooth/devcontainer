@@ -24,6 +24,7 @@ chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
 source "/opt/gvm/scripts/gvm"
 gvm install go1.15.15 -B
 gvm install go1.17.6 -B
+cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
 # python 环境
 pip install virtualenvwrapper supervisor flake8 black isort

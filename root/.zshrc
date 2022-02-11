@@ -115,6 +115,13 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # gvm
 export GVM_ROOT=/opt/gvm
+if [ ! -d "/root/.gvm" ];then
+    mkdir -p /root/.gvm
+    tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C /root/.gvm
+    rm -rf ${GVM_ROOT}/pkgsets
+    ln -sf /root/.gvm/pkgsets ${GVM_ROOT}
+fi
+
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
 gvm use go1.17.6
 
