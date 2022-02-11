@@ -31,8 +31,12 @@ Plugin
 
 usage
 ```shell
+# switch python version
 pyenv versions
-export PYENV_VERSION=2.7.18
+export PYENV_VERSION=3.10.1
+
+# use virtualenv
+mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 ```
 
 ## Golang
