@@ -56,7 +56,17 @@ vscode remote ssh settings
 {
     "go.goroot": "/opt/gvm/gos/go1.17.6",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
-    "python.formatting.blackPath": "/usr/local/bin/black"
+    "python.linting.flake8Args": [
+        "--max-line-length=119"
+    ],
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.formatting.blackArgs": [
+        "--line-length=119"
+    ],
+    "python.sortImports.path": "/usr/local/bin/isort",
+    "python.sortImports.args": [
+        "--line-length=119"
+    ]
 }
 ```
 

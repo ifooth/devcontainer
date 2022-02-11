@@ -1,0 +1,4 @@
+{
+    "remote.SSH.useLocalServer": true,
+    "remote.SSH.path": "D:\\Program Files\\Git\\usr\\bin\\ssh.exe"
+}
