@@ -83,7 +83,8 @@ zsh: bad math expression: operand expected at `*100000 + ...'
 solution: enable useLocalServer and use git's ssh command
 ```json
 {
-    "remote.SSH.useLocalServer": true,
-    "remote.SSH.path": "D:\\Program Files\\Git\\usr\\bin\\ssh.exe",
+    "remote.SSH.useLocalServer": true
 }
 ```
+
+maybe have [non-Windows SSH installed](https://github.com/microsoft/vscode-remote-release/issues/2525) issue, just ignore
