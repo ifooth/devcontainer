@@ -4,11 +4,11 @@ WORKDIR /root
 
 COPY install-*.sh /usr/local/bin/
 
-# 安装依赖包
-RUN /usr/local/bin/install-pkg.sh
-
 # 配置文件
 COPY root/* /root/
+
+# 安装依赖包
+RUN /usr/local/bin/install-pkg.sh
 
 # 安装开发环境
 RUN /usr/local/bin/install-virtualenv.sh && \
