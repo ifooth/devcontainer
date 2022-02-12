@@ -8,6 +8,19 @@ SSHD_PORT=${SSHD_PORT:-36022}
 SSHD_PORT_LINE=$(awk '/Port/{ print NR; exit }' /etc/ssh/sshd_config)
 sed -i "${SSHD_PORT_LINE}c Port ${SSHD_PORT}" /etc/ssh/sshd_config
 
+# keep ssh host
+SSHD_CONF_DIR="${HOME}/.sshd"
+if [ ! -d "$SSHD_CONF_DIR" ];then
+    echo "reset ssh host key"
+    rm -rf /etc/ssh/ssh_host_*
+    dpkg-reconfigure openssh-server
+    mkdir -p $SSHD_CONF_DIR
+    cp -rf /etc/ssh/ssh_host_* $SSHD_CONF_DIR
+else
+    echo "copy ssh host key"
+    cp -rf $SSHD_CONF_DIR/* /etc/ssh/
+fi
+
 # set vscode settings
 mkdir -p ~/.vscode-server/data/Machine
 cp -rf /etc/vscode-settings/remote-ssh.json ~/.vscode-server/data/Machine/settings.json

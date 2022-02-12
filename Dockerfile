@@ -20,6 +20,4 @@ ADD ./supervisord.conf /etc/supervisord.conf
 # 代码/数据目录
 VOLUME [ "/data" ]
 
-WORKDIR /data/repos
-
 CMD ["docker-entrypoint.sh"]
