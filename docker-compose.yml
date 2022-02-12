@@ -13,7 +13,7 @@ services:
 
   devcontainer:
     container_name: devcontainer
-    image: ccr.ccs.tencentyun.com/ifooth/devcontainer:v1
+    image: ghcr.io/ifooth/devcontainer:latest
     restart: always
     network_mode: host
     environment:

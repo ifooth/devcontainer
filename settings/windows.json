@@ -3,6 +3,9 @@
     "remote.extensionKind": {
         "alefragnani.project-manager": [
             "workspace"
+        ],
+        "ms-azuretools.vscode-docker": [
+            "workspace"
         ]
     }
 }
