@@ -23,6 +23,23 @@ git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
 cd /opt/vim/bundle
 grep Plugin /root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
+# vscode golang tools
+export GO111MODULE=on
+export GOPATH=/opt/go
+go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
+go get github.com/ramya-rao-a/go-outline@latest
+go get github.com/cweill/gotests/gotests@latest
+go get github.com/fatih/gomodifytags@latest
+go get github.com/josharian/impl@latest
+go get github.com/haya14busa/goplay/cmd/goplay@latest
+go get github.com/go-delve/delve/cmd/dlv@latest
+GOBIN=/tmp/ go get github.com/go-delve/delve/cmd/dlv@2f13672765fe && mv /tmp/dlv /opt/go/bin/dlv-dap
+go get honnef.co/go/tools/cmd/staticcheck@latest
+go get golang.org/x/tools/gopls@latest
+
+# vscode python tools
+pip install virtualenvwrapper supervisor flake8 black isort
+
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
