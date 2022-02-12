@@ -20,8 +20,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH}/custom/plugins
 
 # Vim
 git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
-VIM_PLUGINS=`grep Plugin .vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'`
-cd /opt/vim/bundle && echo $VIM_PLUGINS|xargs -L1 git clone
+cd /opt/vim/bundle
+grep Plugin /root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
