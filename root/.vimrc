@@ -24,16 +24,9 @@ set autoread
 set background=dark
 set t_Co=256
 
-"colorscheme solarized
-
 set laststatus=2
-"hi vertsplit ctermfg=fg ctermbg=bg
 vnoremap <leader>y "+y
 
-"hi! link SignColumn   LineNr
-"hi! link ShowMarksHLl DiffAdd
-"hi! link ShowMarksHLu DiffChange
-"hi SignColumn ctermfg=fg ctermbg=bg
 nnoremap <leader>sv :source $MYVIMRC<CR>
 
 set history=2000
