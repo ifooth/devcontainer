@@ -12,5 +12,10 @@
     "python.sortImports.args": [
         "--line-length=119"
     ],
-    "python.terminal.activateEnvironment": false
+    "python.terminal.activateEnvironment": false,
+    "projectManager.groupList": true,
+    "projectManager.git.maxDepthRecursion": 4,
+    "projectManager.git.baseFolders": [
+        "/data/repos"
+    ]
 }
