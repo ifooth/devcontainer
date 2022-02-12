@@ -38,6 +38,12 @@ pyenv install 2.7.18
 pyenv install 3.6.15
 pyenv install 3.10.1
 
+# Vim
+git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
+VIM_PLUGINS=`grep Plugin .vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'`
+cd /opt/vim/bundle
+echo $VIM_PLUGINS|xargs -L1 git clone
+
 # 添加环境变量
 echo 'export PYENV_ROOT=/opt/pyenv' >> /root/.bashrc
 echo 'export GVM_ROOT=/opt/gvm' >> /root/.bashrc
