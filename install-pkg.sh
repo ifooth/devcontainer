@@ -35,13 +35,15 @@ chmod +x /usr/local/bin/docker-compose
 
 # Install promu
 cd /tmp
-wget -q https://github.com/prometheus/promu/releases/download/v0.13.0/promu-0.13.0.linux-amd64.tar.gz
-tar -xf promu-0.13.0.linux-amd64.tar.gz
-mv promu-0.13.0.linux-amd64/promu /usr/local/bin/promu
+PROMU_VERSION=0.13.0
+wget -q https://github.com/prometheus/promu/releases/download/v${PROMU_VERSION}/promu-${PROMU_VERSION}.linux-amd64.tar.gz
+tar -xf promu-${PROMU_VERSION}.linux-amd64.tar.gz
+mv promu-${PROMU_VERSION}.linux-amd64/promu /usr/local/bin/promu
 
 # Install adb
-wget -q https://dl.google.com/android/repository/platform-tools_r31.0.3-linux.zip
-unzip platform-tools_r31.0.3-linux.zip
+ADB_TOOLS_VERSION=r31.0.3
+wget -q https://dl.google.com/android/repository/platform-tools_${ADB_TOOLS_VERSION}-linux.zip
+unzip platform-tools_${ADB_TOOLS_VERSION}-linux.zip
 mv platform-tools /usr/local/android-platform-tools
 ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
 
