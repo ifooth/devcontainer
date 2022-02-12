@@ -36,6 +36,8 @@ go get github.com/go-delve/delve/cmd/dlv@latest
 GOBIN=/tmp/ go get github.com/go-delve/delve/cmd/dlv@2f13672765fe && mv /tmp/dlv /opt/go/bin/dlv-dap
 go get honnef.co/go/tools/cmd/staticcheck@latest
 go get golang.org/x/tools/gopls@latest
+# clean cache
+rm -rf /opt/go/pkg
 
 # vscode python tools
 pip install virtualenvwrapper supervisor flake8 black isort
