@@ -52,7 +52,7 @@ mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 install-extension
 
 ```bash
-code --install-extension ms-python.python golang.go ms-azuretools.vscode-docker TabNine.tabnine-vscode
+code --install-extension ms-python.python ms-python.vscode-pylance golang.go ms-azuretools.vscode-docker TabNine.tabnine-vscode
 ```
 
 vscode remote ssh settings
