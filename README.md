@@ -17,15 +17,14 @@ Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containe
 
 ## Vim
 Plugin
-- https://github.com/scrooloose/nerdtree.git
-- https://github.com/kien/ctrlp.vim.git
-- https://github.com/easymotion/vim-easymotion.git
-- https://github.com/rking/ag.vim.git
-
-- https://github.com/vim-airline/vim-airline
-- https://github.com/vim-airline/vim-airline-themes
-- https://github.com/altercation/vim-colors-solarized.git
-- https://github.com/scrooloose/nerdcommenter
+- [nerdtree](https://github.com/scrooloose/nerdtree.git)
+- [ctrlp.vim](https://github.com/kien/ctrlp.vim.git)
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion.git)
+- [ag.vim](https://github.com/rking/ag.vim.git)
+- [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- [vim-colors-solarized.git](https://github.com/altercation/vim-colors-solarized.git)
+- [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
 ## Python
 - [pyenv](https://github.com/pyenv/pyenv)
