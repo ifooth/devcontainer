@@ -2,6 +2,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/python:3.10
 
 WORKDIR /root
 
+# 配置文件, 代码/数据目录
+VOLUME [ "/root", "/data" ]
+
 COPY install-*.sh /usr/local/bin/
 
 # 配置文件
@@ -18,8 +21,5 @@ RUN /usr/local/bin/install-virtualenv.sh && \
 ADD ./settings /etc/vscode-settings
 ADD ./docker-entrypoint.sh /usr/local/bin/
 ADD ./supervisord.conf /etc/supervisord.conf
-
-# 代码/数据目录
-VOLUME [ "/data" ]
 
 CMD ["docker-entrypoint.sh"]
