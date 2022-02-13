@@ -1,7 +1,11 @@
 " Plugin config
 "
-set rtp+=/opt/vim/bundle/Vundle.vim
-call vundle#begin('/opt/vim/bundle')
+if empty($VIM_ROOT)
+    let $VIM_ROOT = "$HOME/.vim"
+endif
+
+set rtp+=$VIM_ROOT/bundle/Vundle.vim
+call vundle#begin("$VIM_ROOT/bundle")
 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -27,7 +31,7 @@ Plugin 'https://github.com/scrooloose/nerdcommenter'
 call vundle#end()
 
 " Set colorscheme by env
-if $VSCODE_GIT_IPC_HANDLE != ""
+if !empty($VSCODE_GIT_IPC_HANDLE)
     " VSCODE Terminal
     colorscheme monokai
 elseif $SHELL_OS == "LC_DARWIN"

@@ -119,6 +119,9 @@ if [ ! -d "${HOME}/.ssh" ];then
     touch ${HOME}/.ssh/config
 fi
 
+# vim
+export VIM_ROOT=/opt/vim
+
 # gvm
 export GVM_ROOT=/opt/gvm
 if [ ! -d "${HOME}/.gvm" ];then
