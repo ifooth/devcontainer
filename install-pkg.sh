@@ -1,7 +1,6 @@
 #!/bin/bash
 set -ex
 
-sleep 1000
 # Install pkgs
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils
