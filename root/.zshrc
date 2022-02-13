@@ -119,10 +119,6 @@ if [ ! -d "${HOME}/.ssh" ];then
     touch ${HOME}/.ssh/config
 fi
 
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
-
 # gvm
 export GVM_ROOT=/opt/gvm
 if [ ! -d "${HOME}/.gvm" ];then
@@ -137,7 +133,6 @@ fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
 gvm use go1.17.6
-
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
@@ -157,6 +152,10 @@ if command -v pyenv 1>/dev/null 2>&1; then
     pyenv virtualenvwrapper
 fi
 export PYENV_VERSION=3.10.1
+
+# virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 
 # direnv
 show_virtual_env() {
