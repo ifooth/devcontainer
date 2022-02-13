@@ -29,6 +29,7 @@ echo 'exec zsh' >> /root/.bashrc
 
 # 打包整个root
 rm -rf /tmp/*
+
 rsync -avz /opt/root/ /root
 cd /root && rm -rf .oh-my-zsh .wget-hsts .python_history .cache .zshrc.pre-oh-my-zsh && ls -la /root
 cd / && tar -zcf root.tar.gz root

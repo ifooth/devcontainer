@@ -14,8 +14,7 @@ COPY root /opt/root
 RUN /usr/local/bin/install-pkg.sh
 
 # 安装开发环境
-RUN /usr/local/bin/install-virtualenv.sh && \
-    mkdir -p /data/repos /data/bin /data/logs
+RUN /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
 ADD ./settings /etc/vscode-settings
