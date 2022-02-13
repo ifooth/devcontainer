@@ -1,6 +1,7 @@
 #!/bin/bash
 set -ex
 
+sleep 1000
 # Install pkgs
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils
@@ -21,7 +22,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH}/custom/plugins
 # Vim
 git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
 cd /opt/vim/bundle
-grep Plugin /root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
+grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # vscode golang tools
 export GO111MODULE=on

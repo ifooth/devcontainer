@@ -26,7 +26,8 @@ echo 'export GVM_ROOT=/opt/gvm' >> /root/.bashrc
 echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc
 echo 'exec zsh' >> /root/.bashrc
 
-# 打包整个root, 减少大小和复用
+# 打包整个root
 rm -rf /tmp/*
+rsync -avz /opt/root/ /root
 cd /root && rm -rf .oh-my-zsh .wget-hsts .python_history .cache .zshrc.pre-oh-my-zsh && ls -la /root
 cd / && tar -zcf root.tar.gz root

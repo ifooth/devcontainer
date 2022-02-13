@@ -8,7 +8,7 @@ VOLUME [ "/root", "/data" ]
 COPY install-*.sh /usr/local/bin/
 
 # 配置文件
-COPY root/* /root/
+COPY root /opt/root
 
 # 安装依赖包
 RUN /usr/local/bin/install-pkg.sh
