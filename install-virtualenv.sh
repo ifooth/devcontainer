@@ -22,7 +22,7 @@ pyenv install 3.10.1
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10.1/lib/python3.10/site-packages
 
 # 添加环境变量
-echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:$PATH' >> /root/.bashrc
+echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc
 echo 'exec zsh' >> /root/.bashrc
 
 # Clean up & Package root dir
