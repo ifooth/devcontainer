@@ -19,13 +19,20 @@ Plugin 'https://github.com/rking/ag.vim.git'
 Plugin 'https://github.com/vim-airline/vim-airline'
 Plugin 'https://github.com/vim-airline/vim-airline-themes'
 Plugin 'https://github.com/altercation/vim-colors-solarized.git'
+Plugin 'https://github.com/sickill/vim-monokai'
 Plugin 'https://github.com/scrooloose/nerdcommenter'
 "Plugin 'https://github.com/bronson/vim-trailing-whitespace.git'
 
 call vundle#end()
 
-" 只有 mac 才设置背景
-if $SHELL_OS == "LC_DARWIN"
+if $VSCODE_GIT_IPC_HANDLE != ""
+    " VSCODE Terminal
+    set background=dark
+    colorscheme monokai
+    hi vertsplit ctermfg=fg ctermbg=bg
+    hi SignColumn ctermfg=fg ctermbg=bg
+elseif $SHELL_OS == "LC_DARWIN"
+    " Mac Iterm Terminal
     set background=dark
     colorscheme solarized
     hi vertsplit ctermfg=fg ctermbg=bg
