@@ -25,6 +25,7 @@ Plugin 'https://github.com/scrooloose/nerdcommenter'
 
 call vundle#end()
 
+" Set colorscheme by env
 if $VSCODE_GIT_IPC_HANDLE != ""
     " VSCODE Terminal
     set background=dark
