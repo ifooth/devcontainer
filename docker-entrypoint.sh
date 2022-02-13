@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir -p /data/repos /data/bin /data/logs
+mkdir -p /data/repos /data/logs
 
 # start sshd
 mkdir -p /run/sshd

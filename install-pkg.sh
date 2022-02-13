@@ -71,7 +71,7 @@ mv platform-tools /usr/local/android-platform-tools
 ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
 
 # Clean up
-mkdir -p /data/repos /data/bin /data/logs
+mkdir -p /data/repos /data/logs
 
 apt-get -y autoremove
 apt-get -y clean
