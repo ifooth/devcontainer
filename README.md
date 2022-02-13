@@ -50,8 +50,21 @@ mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
 ## Settings
 install-extension
 
-```bash
-code --install-extension ms-python.python ms-python.vscode-pylance golang.go ms-azuretools.vscode-docker TabNine.tabnine-vscode alefragnani.project-manager
+```json
+{
+    "remote.extensionKind": {
+        "alefragnani.project-manager": [
+            "workspace"
+        ]
+    },
+    "remote.SSH.defaultExtensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "golang.go",
+        "TabNine.tabnine-vscode",
+        "alefragnani.project-manager"
+    ]
+}
 ```
 
 vscode remote ssh settings
@@ -89,12 +102,7 @@ zsh: bad math expression: operand expected at `*100000 + ...'
 solution: enable useLocalServer
 ```json
 {
-    "remote.SSH.useLocalServer": true,
-    "remote.extensionKind": {
-        "alefragnani.project-manager": [
-            "workspace"
-        ]
-    }
+    "remote.SSH.useLocalServer": true
 }
 ```
 

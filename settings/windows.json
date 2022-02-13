@@ -3,9 +3,13 @@
     "remote.extensionKind": {
         "alefragnani.project-manager": [
             "workspace"
-        ],
-        "ms-azuretools.vscode-docker": [
-            "workspace"
         ]
-    }
+    },
+    "remote.SSH.defaultExtensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "golang.go",
+        "TabNine.tabnine-vscode",
+        "alefragnani.project-manager"
+    ]
 }
