@@ -4,13 +4,17 @@ set -ex
 # Install pkgs
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils
-apt-get install -y vim direnv tmux openssh-server cloc
+apt-get install -y vim direnv tmux cloc
 
 # system language
 apt-get install -y nodejs bison golang
 
-# component client
+# client utils
 apt-get install -y redis-tools mariadb-client etcd-client
+
+# sshd
+apt-get install -y openssh-server
+echo "AcceptEnv SHELL_OS LC_*" > /etc/ssh/sshd_config.d/devcontainer.conf
 
 # zsh utils 命令行终端
 apt-get install -y autojump fzf
