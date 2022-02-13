@@ -19,6 +19,7 @@ export PATH=/data/bin:${PYENV_ROOT}/bin:${PYENV_ROOT}/shims:$PATH
 pyenv install 2.7.18
 pyenv install 3.6.15
 pyenv install 3.10.1
+cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10.1/lib/python3.10/site-packages
 
 # 添加环境变量
 echo 'export PYENV_ROOT=/opt/pyenv' >> /root/.bashrc

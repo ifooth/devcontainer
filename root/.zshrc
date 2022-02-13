@@ -141,10 +141,22 @@ gvm use go1.17.6
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
+export PYENV_PKG=versions/3.10.1/lib/python3.10/site-packages
+if [ ! -d "${HOME}/.pyenv/${PYENV_PKG}" ];then
+    mkdir -p ${HOME}/.pyenv
+    tar -xvf ${PYENV_ROOT}/versions.tar.gz -C ${HOME}/.pyenv
+fi
+
+if [ ! -L ${PYENV_ROOT}/${PYENV_PKG} ] || [ ! -e ${PYENV_ROOT}/${PYENV_PKG} ];then
+    rm -rf ${PYENV_ROOT}/${PYENV_PKG}
+    ln -sf ${HOME}/.pyenv/${PYENV_PKG} ${PYENV_ROOT}/${PYENV_PKG}
+fi
+
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
     pyenv virtualenvwrapper
 fi
+export PYENV_VERSION=3.10.1
 
 # direnv
 show_virtual_env() {
