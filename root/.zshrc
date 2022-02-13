@@ -103,6 +103,9 @@ source $ZSH/oh-my-zsh.sh
 autoload -Uz compinit
 compinit
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH
 
 # zsh plugins

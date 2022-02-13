@@ -7,6 +7,7 @@ mkdir -p /run/sshd
 SSHD_PORT=${SSHD_PORT:-36022}
 SSHD_PORT_LINE=$(awk '/Port/{ print NR; exit }' /etc/ssh/sshd_config)
 sed -i "${SSHD_PORT_LINE}c Port ${SSHD_PORT}" /etc/ssh/sshd_config
+sed -i "114c AcceptEnv SHELL_OS LC_*" /etc/ssh/sshd_config
 
 # keep ssh host
 SSHD_CONF_DIR="${HOME}/.sshd"

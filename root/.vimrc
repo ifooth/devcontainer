@@ -21,7 +21,6 @@ filetype plugin on
 filetype plugin indent on
 set autoread
 
-set background=dark
 set t_Co=256
 
 set laststatus=2

@@ -24,13 +24,17 @@ Plugin 'https://github.com/scrooloose/nerdcommenter'
 
 call vundle#end()
 
-colorscheme solarized
-hi vertsplit ctermfg=fg ctermbg=bg
+" 只有 mac 才设置背景
+if $SHELL_OS == "LC_DARWIN"
+    set background=dark
+    colorscheme solarized
+    hi vertsplit ctermfg=fg ctermbg=bg
+    hi SignColumn ctermfg=fg ctermbg=bg
+endif
 
 "hi! link SignColumn   LineNr
 "hi! link ShowMarksHLl DiffAdd
 "hi! link ShowMarksHLu DiffChange
-hi SignColumn ctermfg=fg ctermbg=bg
 
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "let g:ycm_add_preview_to_completeopt = 1
