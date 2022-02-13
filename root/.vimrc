@@ -42,6 +42,9 @@ silent! so .vimlocal
 inoremap kj <Esc>
 "set lines=45 columns=150
 
+"hi! link SignColumn   LineNr
+"hi! link ShowMarksHLl DiffAdd
+"hi! link ShowMarksHLu DiffChange
 
 set hlsearch
 " 打开增量搜索模式,随着键入即时搜索
