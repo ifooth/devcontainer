@@ -4,8 +4,7 @@ mkdir -p /data/repos /data/bin /data/logs
 # start sshd
 mkdir -p /run/sshd
 SSHD_PORT=${SSHD_PORT:-36022}
-SSHD_PORT_LINE=$(awk '/Port/{ print NR; exit }' /etc/ssh/sshd_config)
-sed -i "${SSHD_PORT_LINE}c Port ${SSHD_PORT}" /etc/ssh/sshd_config
+echo "Port $SSHD_PORT" > /etc/ssh/sshd_config.d/port.conf
 
 # keep ssh host
 SSHD_CONF_DIR="${HOME}/.sshd"
