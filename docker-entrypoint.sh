@@ -21,7 +21,7 @@ fi
 
 # set vscode settings
 mkdir -p ~/.vscode-server/data/Machine
-cp -rf /etc/vscode-settings/remote-ssh.json ~/.vscode-server/data/Machine/settings.json
+cp -rf /opt/vscode/settings/remote-ssh.json ~/.vscode-server/data/Machine/settings.json
 
 # 覆盖固定配置文件 .zshrc .bashrc .profile
 echo "set root profile"

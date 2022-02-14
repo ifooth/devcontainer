@@ -17,7 +17,7 @@ RUN /usr/local/bin/install-pkg.sh
 RUN /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
-ADD ./settings /etc/vscode-settings
+ADD ./settings /opt/vscode/settings
 ADD ./docker-entrypoint.sh /usr/local/bin/
 ADD ./supervisord.conf /etc/supervisord.conf
 
