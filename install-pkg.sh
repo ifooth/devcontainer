@@ -43,7 +43,7 @@ go get golang.org/x/tools/gopls@latest
 rm -rf /opt/go/pkg
 
 # vscode python tools & utils
-pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb
+pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
