@@ -42,8 +42,8 @@ go get golang.org/x/tools/gopls@latest
 # clean cache
 rm -rf /opt/go/pkg
 
-# vscode python tools
-pip install virtualenvwrapper supervisor flake8 black isort
+# vscode python tools & utils
+pip install virtualenvwrapper supervisor flake8 black isort s3cmd
 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
@@ -61,6 +61,15 @@ PROMU_VERSION=0.13.0
 wget -q https://github.com/prometheus/promu/releases/download/v${PROMU_VERSION}/promu-${PROMU_VERSION}.linux-amd64.tar.gz
 tar -xf promu-${PROMU_VERSION}.linux-amd64.tar.gz
 mv promu-${PROMU_VERSION}.linux-amd64/promu /usr/local/bin/promu
+
+RESTIC_VERSION=0.12.1
+wget -q https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_amd64.bz2
+bunzip2 restic_${RESTIC_VERSION}_linux_amd64.bz2
+chmod a+x restic_${RESTIC_VERSION}_linux_amd64 && mv restic_${RESTIC_VERSION}_linux_amd64 /usr/local/bin/restic
+
+RCLONE_VERSION=v1.57.0
+wget -q https://github.com/rclone/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.deb
+dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 
 # Install adb
 ADB_TOOLS_VERSION=r31.0.3
