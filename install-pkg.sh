@@ -37,7 +37,6 @@ go get github.com/fatih/gomodifytags@latest
 go get github.com/josharian/impl@latest
 go get github.com/haya14busa/goplay/cmd/goplay@latest
 go get github.com/go-delve/delve/cmd/dlv@latest
-GOBIN=/tmp/ go get github.com/go-delve/delve/cmd/dlv@2f13672765fe && mv /tmp/dlv /opt/go/bin/dlv-dap
 go get honnef.co/go/tools/cmd/staticcheck@latest
 go get golang.org/x/tools/gopls@latest
 # clean cache

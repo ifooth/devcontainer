@@ -1,5 +1,8 @@
 {
     "go.goroot": "/opt/gvm/gos/go1.17.6",
+    "go.toolsEnvVars": {
+        "GOBIN": "/opt/go/bin"
+    },
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=119"
