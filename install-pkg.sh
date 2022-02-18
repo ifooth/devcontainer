@@ -45,6 +45,9 @@ rm -rf /opt/go/pkg
 # vscode python tools & utils
 pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython
 
+# RUN echo "dash dash/sh boolean false" | debconf-set-selections
+# RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
+
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
