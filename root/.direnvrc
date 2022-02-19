@@ -22,3 +22,10 @@ layout_poetry() {
   export POETRY_ACTIVE=1
   PATH_add "$VENV"
 }
+
+# gvm envrc
+layout_gvm() {
+  export GVM_ROOT=/opt/gvm
+  source "${GVM_ROOT}/scripts/gvm"
+  gvm use "$@"
+}
