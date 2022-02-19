@@ -1,5 +1,5 @@
 #!/usr/bin/zsh
-source ~/.zshrc
+source /opt/root/.zshrc
 
 mkdir -p /data/repos /data/logs
 
