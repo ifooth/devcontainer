@@ -37,10 +37,29 @@ export PYENV_VERSION=3.10.1
 
 # use virtualenv
 mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
+workon cmdb
+```
+
+.envrc
+```bash
+layout virtualenvwrapper hello-world
+unset PS1
 ```
 
 ## Golang
 - [gvm](https://github.com/moovweb/gvm)
+
+usage
+```shell
+# switch golang version
+gvm list
+gvm use go1.17.6
+```
+
+.envrc
+```bash
+layout gvm go1.17.6
+```
 
 ## Utils
 - [cloc](https://github.com/AlDanial/cloc)
