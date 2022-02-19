@@ -1,6 +1,8 @@
 #!/bin/bash
 mkdir -p /data/repos /data/logs
 
+source /opt/bash-commons/bootstrap.sh
+
 # start sshd
 mkdir -p /run/sshd
 SSHD_PORT=${SSHD_PORT:-36022}
