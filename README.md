@@ -93,6 +93,7 @@ vscode remote ssh settings
 ```json
 {
     "go.goroot": "/opt/gvm/gos/go1.17.6",
+    "go.gopath": "/opt/gvm/pkgsets/go1.17.6/global",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=119"
@@ -116,6 +117,7 @@ golang private mod settings
 ```json
 {
     "go.goroot": "/opt/gvm/gos/go1.15.15",
+    "go.gopath": "/opt/gvm/pkgsets/go1.15.15/global",
     "go.toolsEnvVars": {
         "GOPROXY": "https://athens-proxy.townsy.io,direct",
         "GOPRIVATE": "",
