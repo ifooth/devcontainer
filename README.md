@@ -90,6 +90,27 @@ vscode remote ssh settings
 }
 ```
 
+golang private mod settings
+
+./vscode/settings.json
+
+```json
+{
+    "go.goroot": "/opt/gvm/gos/go1.15.15",
+    "go.toolsEnvVars": {
+        "GOPROXY": "https://athens-proxy.townsy.io,direct",
+        "GOPRIVATE": "",
+        "GONOSUMDB": "townsy.private-github.com"
+    },
+    "terminal.integrated.env.linux": {
+        "GOPROXY": "https://athens-proxy.townsy.io,direct",
+        "GOPRIVATE": "",
+        "GONOSUMDB": "townsy.private-github.com"
+    }
+}
+```
+
+
 ## Tips and Tricks
 
 ### windows remote ssh cann't connection with zsh
