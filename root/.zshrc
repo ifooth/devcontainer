@@ -135,7 +135,7 @@ if [ ! -L ${GVM_ROOT}/pkgsets ] || [ ! -e ${GVM_ROOT}/pkgsets ];then
 fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
-gvm use go1.17.6
+gvm use go1.17.6 > /dev/null 2>&1
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
