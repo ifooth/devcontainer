@@ -1,7 +1,7 @@
-#!/bin/bash
-mkdir -p /data/repos /data/logs
+#!/usr/bin/zsh
+source ~/.zshrc
 
-source /opt/bash-commons/bootstrap.sh
+mkdir -p /data/repos /data/logs
 
 # start sshd
 mkdir -p /run/sshd
