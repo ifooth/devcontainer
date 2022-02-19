@@ -92,7 +92,7 @@ vscode remote ssh settings
 
 golang private mod settings
 
-./vscode/settings.json
+.vscode/settings.json
 
 ```json
 {
