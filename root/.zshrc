@@ -175,4 +175,10 @@ fi
 
 eval "$(direnv hook zsh)"
 
+# Alias
+alias echo_path="tr ':' '\n' <<< $PATH"
+
 [[ -s "${HOME}/.zsh_profile" ]] && source "${HOME}/.zsh_profile"
+
+# Remove duplicate $PATH entries
+export PATH=$(zsh -fc 'typeset -U path; echo $PATH')
