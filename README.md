@@ -2,6 +2,7 @@
 Full stack remote development environment
 
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg?maxAge=604800)](https://hub.docker.com/r/ifooth/devcontainer/)
 
 Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containers) image
 
