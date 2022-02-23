@@ -7,7 +7,7 @@ curl -fsSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-i
 chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
 source "/opt/gvm/scripts/gvm"
 # change go version if upgrade
-export GO1_15=go1.5.15
+export GO1_15=go1.15.15
 export GO1_17=go1.17.7
 
 gvm install $GO1_15 -B -n=go1.15
