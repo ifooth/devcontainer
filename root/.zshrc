@@ -135,9 +135,10 @@ export VIM_ROOT=/opt/vim
 
 # gvm
 export GVM_ROOT=/opt/gvm
-export GO_VERSION=go1.17.7
 # change go version if upgrade
-if not_valid_link "${HOME}/.gvm/pkgsets/${GO_VERSION}" || not_valid_link "${HOME}/.gvm/pkgsets/go1.15.15";then
+export GO1_15=go1.5.15
+export GO1_17=go1.17.7
+if not_valid_link "${HOME}/.gvm/pkgsets/${GO1_15}" || not_valid_link "${HOME}/.gvm/pkgsets/${GO1_17}";then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
@@ -148,7 +149,7 @@ if not_valid_link "${GVM_ROOT}/pkgsets";then
 fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
-gvm use ${GO_VERSION} > /dev/null 2>&1
+gvm use ${GO1_17} > /dev/null 2>&1
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv

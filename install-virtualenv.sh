@@ -6,17 +6,25 @@ export GVM_ROOT=/opt/gvm
 curl -fsSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /usr/local/bin/gvm-installer
 chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
 source "/opt/gvm/scripts/gvm"
-gvm install go1.15.15 -B
-gvm install go1.17.7 -B
+# change go version if upgrade
+export GO1_15=go1.5.15
+export GO1_17=go1.17.7
+
+gvm install $GO1_15 -B
+gvm install $GO1_17 -B
 
 # 软链大版本 方便升级
 cd /opt/gvm/gos
-ln -sf go1.15.15 go1.15
-ln -sf go1.17.7 go1.17
+ln -sf $GO1_15 go1.15
+ln -sf $GO1_17 go1.17
+
+cd /opt/gvm/environments
+ln -sf $GO1_15 go1.15
+ln -sf $GO1_17 go1.17
 
 cd /opt/gvm/pkgsets
-mv go1.15.15 go1.15 && ln -sf go1.15 go1.15.15
-mv go1.17.7 go1.17 && ln -sf go1.17 go1.17.7
+mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
+mv $GO1_17 go1.17 && ln -sf go1.17 $GO1_17
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
@@ -26,15 +34,19 @@ git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT}
 git clone https://github.com/pyenv/pyenv-virtualenv.git ${PYENV_ROOT}/plugins/pyenv-virtualenv
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
 export PATH=${PYENV_ROOT}/bin:$PATH
-pyenv install 2.7.18
-pyenv install 3.6.15
-pyenv install 3.10.2
+export PY2_7=2.7.18
+export PY3_6=3.6.15
+export PY3_10=3.10.2
+
+pyenv install $PY2_7
+pyenv install $PY3_6
+pyenv install $PY3_10
 
 # 软链 大版本 方便升级
 cd /opt/pyenv/versions
-ln -sf 2.7.18 2.7
-ln -sf 3.6.15 3.6
-ln -sf 3.10.2 3.10
+ln -sf $PY2_7 2.7
+ln -sf $PY3_6 3.6
+ln -sf $PY3_10 3.10
 
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
 
