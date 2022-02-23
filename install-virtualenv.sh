@@ -10,21 +10,8 @@ source "/opt/gvm/scripts/gvm"
 export GO1_15=go1.5.15
 export GO1_17=go1.17.7
 
-gvm install $GO1_15 -B
-gvm install $GO1_17 -B
-
-# 软链大版本 方便升级
-cd /opt/gvm/gos
-ln -sf $GO1_15 go1.15
-ln -sf $GO1_17 go1.17
-
-cd /opt/gvm/environments
-ln -sf $GO1_15 go1.15
-ln -sf $GO1_17 go1.17
-
-cd /opt/gvm/pkgsets
-mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
-mv $GO1_17 go1.17 && ln -sf go1.17 $GO1_17
+gvm install $GO1_15 -B -n=go1.15
+gvm install $GO1_17 -B -n=go1.17
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
