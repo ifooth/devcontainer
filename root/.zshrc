@@ -100,6 +100,17 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# 是否有效的软链接
+function not_valid_link() {
+    if [[ -L "$1" && -e "$1" ]];then
+        # 1 = false
+        return 1
+    else
+        # 0 = true
+        return 0
+    fi
+}
+
 autoload -Uz compinit
 compinit
 
@@ -124,19 +135,20 @@ export VIM_ROOT=/opt/vim
 
 # gvm
 export GVM_ROOT=/opt/gvm
-export GVM_PKG=pkgsets/go1.17
-if [ ! -d "${HOME}/.gvm/${GVM_PKG}" ];then
+export GO_VERSION=go1.17.7
+# change go version if upgrade
+if not_valid_link "${HOME}/.gvm/pkgsets/${GO_VERSION}" || not_valid_link "${HOME}/.gvm/pkgsets/go1.15.15";then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
 
-if [ ! -L ${GVM_ROOT}/pkgsets ] || [ ! -e ${GVM_ROOT}/pkgsets ];then
+if not_valid_link "${GVM_ROOT}/pkgsets";then
     rm -rf ${GVM_ROOT}/pkgsets
     ln -sf ${HOME}/.gvm/pkgsets ${GVM_ROOT}
 fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
-gvm use go1.17.7 > /dev/null 2>&1
+gvm use ${GO_VERSION} > /dev/null 2>&1
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
@@ -146,7 +158,7 @@ if [ ! -d "${HOME}/.pyenv/${PYENV_PKG}" ];then
     tar -xvf ${PYENV_ROOT}/versions.tar.gz -C ${HOME}/.pyenv
 fi
 
-if [ ! -L ${PYENV_ROOT}/${PYENV_PKG} ] || [ ! -e ${PYENV_ROOT}/${PYENV_PKG} ];then
+if not_valid_link ${PYENV_ROOT}/${PYENV_PKG};then
     rm -rf ${PYENV_ROOT}/${PYENV_PKG}
     ln -sf ${HOME}/.pyenv/${PYENV_PKG} ${PYENV_ROOT}/${PYENV_PKG}
 fi
