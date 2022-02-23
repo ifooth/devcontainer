@@ -136,7 +136,7 @@ if [ ! -L ${GVM_ROOT}/pkgsets ] || [ ! -e ${GVM_ROOT}/pkgsets ];then
 fi
 
 [[ -s "/opt/gvm/scripts/gvm" ]] && source "/opt/gvm/scripts/gvm"
-gvm use go1.17.6 > /dev/null 2>&1
+gvm use go1.17.7 > /dev/null 2>&1
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
@@ -155,7 +155,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
     pyenv virtualenvwrapper
 fi
-export PYENV_VERSION=3.10.1
+export PYENV_VERSION=3.10.2
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
