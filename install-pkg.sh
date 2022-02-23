@@ -43,7 +43,7 @@ go get golang.org/x/tools/gopls@latest
 rm -rf /opt/go/pkg
 
 # vscode python tools & utils
-pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython
+pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
 
 # RUN echo "dash dash/sh boolean false" | debconf-set-selections
 # RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash

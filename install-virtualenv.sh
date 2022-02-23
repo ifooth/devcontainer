@@ -7,7 +7,13 @@ curl -fsSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-i
 chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
 source "/opt/gvm/scripts/gvm"
 gvm install go1.15.15 -B
-gvm install go1.17.6 -B
+gvm install go1.17.7 -B
+
+# 软链大版本 方便升级
+cd /opt/gvm/pkgsets
+mv go1.15.15 go1.15 && ln -sf go1.15 go1.15.15
+mv go1.17.7 go1.17 && ln -sf go1.17 go1.17.7
+
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
 # pyenv python 多版本环境
@@ -18,8 +24,15 @@ git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plu
 export PATH=${PYENV_ROOT}/bin:$PATH
 pyenv install 2.7.18
 pyenv install 3.6.15
-pyenv install 3.10.1
-cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10.1/lib/python3.10/site-packages
+pyenv install 3.10.2
+
+# 软链 大版本 方便升级
+cd /opt/pyenv/versions
+ln -sf 3.10.2 3.10
+ln -sf 3.6.15 3.6
+ln -sf 2.7.18 2.7
+
+cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
 
 # 添加环境变量
 echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc

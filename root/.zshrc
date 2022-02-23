@@ -124,7 +124,8 @@ export VIM_ROOT=/opt/vim
 
 # gvm
 export GVM_ROOT=/opt/gvm
-if [ ! -d "${HOME}/.gvm" ];then
+export GVM_PKG=pkgsets/go1.17
+if [ ! -d "${HOME}/.gvm/{GVM_PKG}" ];then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
@@ -139,7 +140,7 @@ gvm use go1.17.6 > /dev/null 2>&1
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
-export PYENV_PKG=versions/3.10.1/lib/python3.10/site-packages
+export PYENV_PKG=versions/3.10/lib/python3.10/site-packages
 if [ ! -d "${HOME}/.pyenv/${PYENV_PKG}" ];then
     mkdir -p ${HOME}/.pyenv
     tar -xvf ${PYENV_ROOT}/versions.tar.gz -C ${HOME}/.pyenv
