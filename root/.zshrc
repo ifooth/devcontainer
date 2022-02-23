@@ -125,7 +125,7 @@ export VIM_ROOT=/opt/vim
 # gvm
 export GVM_ROOT=/opt/gvm
 export GVM_PKG=pkgsets/go1.17
-if [ ! -d "${HOME}/.gvm/{GVM_PKG}" ];then
+if [ ! -d "${HOME}/.gvm/${GVM_PKG}" ];then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
