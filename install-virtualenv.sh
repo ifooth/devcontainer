@@ -10,8 +10,8 @@ source "/opt/gvm/scripts/gvm"
 export GO1_15=go1.15.15
 export GO1_17=go1.17.7
 
-gvm install $GO1_15 -B -n=go1.15
-gvm install $GO1_17 -B -n=go1.17
+gvm install $GO1_15 -B -n=$GO1_15 -n=go1.15
+gvm install $GO1_17 -B -n=$GO1_17 -n=go1.17
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 

@@ -135,7 +135,10 @@ export VIM_ROOT=/opt/vim
 
 # gvm
 export GVM_ROOT=/opt/gvm
-if [ -d "${HOME}/.gvm/pkgsets/go1.15" ] || [ -d "${HOME}/.gvm/pkgsets/go1.17" ];then
+# change go version if upgrade
+export GO1_15=go1.15.15
+export GO1_17=go1.17.7
+if [ -d "${HOME}/.gvm/pkgsets/${GO1_15}" ] || [ -d "${HOME}/.gvm/pkgsets/${GO1_17}" ];then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
