@@ -34,11 +34,11 @@ usage
 ```shell
 # switch python version
 pyenv versions
-export PYENV_VERSION=3.10.1
+export PYENV_VERSION=3.10.2
 
-# use virtualenv
-mkvirtualenv -p /opt/pyenv/versions/3.10.1/bin/python hello-world
-workon cmdb
+# use virtualenv, use the linked major version
+mkvirtualenv -p /opt/pyenv/versions/3.10/bin/python hello-world
+workon hello-world
 ```
 
 .envrc
@@ -54,12 +54,12 @@ usage
 ```shell
 # switch golang version
 gvm list
-gvm use go1.17.6
+gvm use go1.17.7
 ```
 
 .envrc
 ```bash
-layout gvm go1.17.6
+layout gvm go1.17.7
 ```
 
 ## Utils

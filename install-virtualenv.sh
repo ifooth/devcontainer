@@ -10,6 +10,10 @@ gvm install go1.15.15 -B
 gvm install go1.17.7 -B
 
 # 软链大版本 方便升级
+cd /opt/gvm/gos
+ln -sf go1.17.7 go1.17
+ln -sf go1.15.15 go1.15
+
 cd /opt/gvm/pkgsets
 mv go1.15.15 go1.15 && ln -sf go1.15 go1.15.15
 mv go1.17.7 go1.17 && ln -sf go1.17 go1.17.7
