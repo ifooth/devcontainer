@@ -34,6 +34,7 @@ git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT}
 git clone https://github.com/pyenv/pyenv-virtualenv.git ${PYENV_ROOT}/plugins/pyenv-virtualenv
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
 export PATH=${PYENV_ROOT}/bin:$PATH
+# change python version if upgrade
 export PY2_7=2.7.18
 export PY3_6=3.6.15
 export PY3_10=3.10.2
@@ -42,7 +43,7 @@ pyenv install $PY2_7
 pyenv install $PY3_6
 pyenv install $PY3_10
 
-# 软链 大版本 方便升级
+# 软链大版本 方便升级
 cd /opt/pyenv/versions
 ln -sf $PY2_7 2.7
 ln -sf $PY3_6 3.6
