@@ -11,8 +11,8 @@ gvm install go1.17.7 -B
 
 # 软链大版本 方便升级
 cd /opt/gvm/gos
-ln -sf go1.17.7 go1.17
 ln -sf go1.15.15 go1.15
+ln -sf go1.17.7 go1.17
 
 cd /opt/gvm/pkgsets
 mv go1.15.15 go1.15 && ln -sf go1.15 go1.15.15
@@ -32,9 +32,9 @@ pyenv install 3.10.2
 
 # 软链 大版本 方便升级
 cd /opt/pyenv/versions
-ln -sf 3.10.2 3.10
-ln -sf 3.6.15 3.6
 ln -sf 2.7.18 2.7
+ln -sf 3.6.15 3.6
+ln -sf 3.10.2 3.10
 
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
 
