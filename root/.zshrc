@@ -187,6 +187,10 @@ if [[ $PS1 != *"show_virtual_env"* ]];then
     PS1='$(show_virtual_env)'$PS1
 fi
 
+# 添加显示 hostname
+PS1=$'\e[0;32m%m \e[0m'$PS1
+# PS1="$fg[yellow]%m $PS1"
+
 eval "$(direnv hook zsh)"
 
 # Alias
