@@ -56,6 +56,7 @@ echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >
 echo 'exec zsh' >> /root/.bashrc
 
 # Clean up & Package root dir
+rm -rf /opt/gvm/archive/*.tar.gz
 rm -rf /tmp/*
 
 rsync -avz /opt/root/ /root
