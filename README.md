@@ -2,7 +2,7 @@
 Full stack remote development environment
 
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
-[![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg?maxAge=604800)](https://hub.docker.com/r/ifooth/devcontainer/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg)](https://hub.docker.com/r/ifooth/devcontainer/)
 
 Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containers) image
 
@@ -14,7 +14,6 @@ Base on [vscode-dev-containers](https://github.com/microsoft/vscode-dev-containe
 - [autojump](https://github.com/wting/autojump) - A cd command that learns - easily navigate directories from the command line
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [direnv](https://github.com/direnv/direnv) - unclutter your .profile, set env by dir automate
-
 
 ## Vim
 Plugin
