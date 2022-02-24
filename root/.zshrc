@@ -168,7 +168,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
     pyenv virtualenvwrapper
 fi
-export PYENV_VERSION=3.10.2
+export PYENV_VERSION=3.10
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
