@@ -78,8 +78,8 @@ dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 ADB_TOOLS_VERSION=r31.0.3
 wget -q https://dl.google.com/android/repository/platform-tools_${ADB_TOOLS_VERSION}-linux.zip
 unzip platform-tools_${ADB_TOOLS_VERSION}-linux.zip
-mv platform-tools /usr/local/android-platform-tools
-ln -sf /usr/local/android-platform-tools/adb /usr/local/bin
+mv platform-tools /opt/android-platform-tools
+ln -sf /opt/android-platform-tools/adb /usr/local/bin
 
 # Clean up
 mkdir -p /data/repos /data/logs

@@ -62,8 +62,10 @@ layout gvm go1.17
 ```
 
 ## Utils
-- [cloc](https://github.com/AlDanial/cloc)
-- [android adb](https://developer.android.com/studio/releases/platform-tools)
+- [cloc](https://github.com/AlDanial/cloc) - cloc counts blank lines, comment lines, and physical lines of source code in many programming languages.
+- [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
+- [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
+- [android platform tools](https://developer.android.com/studio/releases/platform-tools) - such as adb, fastboot, and systrace tools
 
 
 ## Settings
