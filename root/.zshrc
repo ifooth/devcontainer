@@ -188,7 +188,7 @@ show_virtual_env() {
     fi
 }
 if [[ $PS1 != *"show_virtual_env"* ]];then
-    PS1='$(show_virtual_env)'$PS1
+    PS1='$(show_virtual_env) '$PS1
 fi
 
 eval "$(direnv hook zsh)"
