@@ -183,12 +183,12 @@ show_virtual_env() {
     if [ -n "$VIRTUAL_ENV" ]; then
         env_name="($(basename $VIRTUAL_ENV))"
         if [[ $PS1 != *$env_name* ]];then
-            echo $env_name
+            echo "$env_name "
         fi
     fi
 }
 if [[ $PS1 != *"show_virtual_env"* ]];then
-    PS1='$(show_virtual_env) '$PS1
+    PS1='$(show_virtual_env)'$PS1
 fi
 
 eval "$(direnv hook zsh)"
