@@ -174,6 +174,10 @@ export PYENV_VERSION=3.10
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
+# 添加显示 hostname
+PS1=$'\e[0;32m%m \e[0m'$PS1
+# PS1="$fg[yellow]%m $PS1"
+
 # direnv
 show_virtual_env() {
     if [ -n "$VIRTUAL_ENV" ]; then
@@ -186,10 +190,6 @@ show_virtual_env() {
 if [[ $PS1 != *"show_virtual_env"* ]];then
     PS1='$(show_virtual_env)'$PS1
 fi
-
-# 添加显示 hostname
-PS1=$'\e[0;32m%m \e[0m'$PS1
-# PS1="$fg[yellow]%m $PS1"
 
 eval "$(direnv hook zsh)"
 
