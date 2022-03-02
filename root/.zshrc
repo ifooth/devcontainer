@@ -175,8 +175,8 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
 source /usr/local/bin/virtualenvwrapper.sh
 
 # 添加显示 hostname
-PS1=$'\e[0;32m%m \e[0m'$PS1
-# PS1="$fg[yellow]%m $PS1"
+PS1=$'%{\e[0;32m%}%m%{\e[0m%}'$PS1
+# PS1="%F{green}%m%f"$PS1
 
 # direnv
 show_virtual_env() {
