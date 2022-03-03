@@ -52,8 +52,15 @@ ln -sf $PY3_10 3.10
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
 
 # 添加环境变量
-echo 'export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH' >> /root/.bashrc
-echo 'exec zsh' >> /root/.bashrc
+cat <<\EOT >> /root/.bashrc
+# add go and python path
+export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH
+
+# ssh and vscode terminal use zsh
+if [[ -n "${SSH_TTY}" ]] || [[ -n "${VSCODE_GIT_IPC_HANDLE}" ]];then
+    exec zsh
+fi
+EOT
 
 # Clean up & Package root dir
 rm -rf /opt/gvm/archive/*.tar.gz
