@@ -50,6 +50,9 @@ ln -sf $PY3_6 3.6
 ln -sf $PY3_10 3.10
 
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
+# remove .git for disable version control
+git --no-pager log -n3
+rm -rf .git
 
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
