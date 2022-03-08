@@ -11,15 +11,56 @@ services:
     ports:
       - 6379:6379
 
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.4.19
+    restart: always
+    volumes:
+      - /data/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+      - WATCHTOWER_CLEANUP=true
+      - TZ=Asia/Shanghai
+    command:
+      - devcontainer-nightly
+      - devcontainer
+
   devcontainer:
     container_name: devcontainer
-    image: ghcr.io/ifooth/devcontainer:latest
+    image: ghcr.io/ifooth/devcontainer:main
     restart: always
     network_mode: host
+    hostname: devcontainer
     environment:
       TZ: Asia/Shanghai
     volumes:
       - /data/devcontainer/data:/data
       - /data/devcontainer/root:/root
-      - ./dev-init.sh:/usr/local/bin/dev-init.sh
+      # - ./dev-init.sh:/usr/local/bin/dev-init.sh your custom init script
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  devcontainer-nightly:
+    container_name: devcontainer-nightly
+    image: ghcr.io/ifooth/devcontainer:latest
+    restart: always
+    network_mode: host
+    hostname: devcontainer-nightly
+    environment:
+      TZ: Asia/Shanghai
+      SSHD_PORT: 36023 # custom sshd port
+    volumes:
+      - /data/devcontainer-nightly/data:/data
+      - /data/devcontainer-nightly/root:/root
+      # - ./dev-init.sh:/usr/local/bin/dev-init.sh your custom init script
       - /var/run/docker.sock:/var/run/docker.sock
