@@ -30,8 +30,7 @@ cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
 # pyenv python 多版本环境
 export PYENV_ROOT=/opt/pyenv
-git clone https://github.com/pyenv/pyenv.git ${PYENV_ROOT}
-git clone https://github.com/pyenv/pyenv-virtualenv.git ${PYENV_ROOT}/plugins/pyenv-virtualenv
+curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
 export PATH=${PYENV_ROOT}/bin:$PATH
 # change python version if upgrade
@@ -50,9 +49,6 @@ ln -sf $PY3_6 3.6
 ln -sf $PY3_10 3.10
 
 cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
-# remove .git for disable version control
-git --no-pager log -n3
-rm -rf .git
 
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc

@@ -17,6 +17,9 @@
         "--line-length=119"
     ],
     "python.terminal.activateEnvironment": false,
+    "git.ignoredRepositories": [
+        "/opt/pyenv"
+    ],
     "projectManager.groupList": true,
     "projectManager.git.maxDepthRecursion": 4,
     "projectManager.git.baseFolders": [
