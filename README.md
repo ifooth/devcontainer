@@ -46,6 +46,13 @@ layout virtualenvwrapper hello-world
 unset PS1
 ```
 
+.vscode/settings.json
+```json
+{
+    "python.defaultInterpreterPath": "/root/.virtualenvs/hello-world/bin/python"
+}
+```
+
 ## Golang
 - [gvm](https://github.com/moovweb/gvm)
 
@@ -59,6 +66,35 @@ gvm use go1.17
 .envrc
 ```bash
 layout gvm go1.17
+```
+
+.vscode/settings.json
+```json
+{
+    "go.goroot": "/opt/gvm/gos/go1.17",
+    "go.gopath": "/opt/gvm/pkgsets/go1.17/global"
+}
+```
+
+golang private mod settings
+
+.vscode/settings.json
+
+```json
+{
+    "go.goroot": "/opt/gvm/gos/go1.15",
+    "go.gopath": "/opt/gvm/pkgsets/go1.15/global",
+    "go.toolsEnvVars": {
+        "GOPROXY": "https://athens-proxy.townsy.io,direct",
+        "GOPRIVATE": "",
+        "GONOSUMDB": "townsy.private-github.com"
+    },
+    "terminal.integrated.env.linux": {
+        "GOPROXY": "https://athens-proxy.townsy.io,direct",
+        "GOPRIVATE": "",
+        "GONOSUMDB": "townsy.private-github.com"
+    }
+}
 ```
 
 ## Utils
@@ -98,6 +134,9 @@ use the linked major version
 {
     "go.goroot": "/opt/gvm/gos/go1.17",
     "go.gopath": "/opt/gvm/pkgsets/go1.17/global",
+    "go.toolsEnvVars": {
+        "GOBIN": "/opt/go/bin"
+    },
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=119"
@@ -110,28 +149,15 @@ use the linked major version
     "python.sortImports.args": [
         "--line-length=119"
     ],
-    "python.terminal.activateEnvironment": false
-}
-```
-
-golang private mod settings
-
-.vscode/settings.json
-
-```json
-{
-    "go.goroot": "/opt/gvm/gos/go1.15",
-    "go.gopath": "/opt/gvm/pkgsets/go1.15/global",
-    "go.toolsEnvVars": {
-        "GOPROXY": "https://athens-proxy.townsy.io,direct",
-        "GOPRIVATE": "",
-        "GONOSUMDB": "townsy.private-github.com"
-    },
-    "terminal.integrated.env.linux": {
-        "GOPROXY": "https://athens-proxy.townsy.io,direct",
-        "GOPRIVATE": "",
-        "GONOSUMDB": "townsy.private-github.com"
-    }
+    "python.terminal.activateEnvironment": false,
+    "git.ignoredRepositories": [
+        "/opt/pyenv"
+    ],
+    "projectManager.groupList": true,
+    "projectManager.git.maxDepthRecursion": 4,
+    "projectManager.git.baseFolders": [
+        "/data/repos"
+    ]
 }
 ```
 
