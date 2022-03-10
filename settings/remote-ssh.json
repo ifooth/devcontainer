@@ -22,6 +22,10 @@
     ],
     "projectManager.groupList": true,
     "projectManager.git.maxDepthRecursion": 4,
+    "projectManager.git.ignoredFolders": [
+        "code-review",
+        "github"
+    ],
     "projectManager.git.baseFolders": [
         "/data/repos"
     ]
