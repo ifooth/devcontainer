@@ -49,7 +49,7 @@ unset PS1
 .vscode/settings.json
 ```json
 {
-    "python.defaultInterpreterPath": "/root/.virtualenvs/hello-world/bin/python"
+    "python.defaultInterpreterPath": "~/.virtualenvs/hello-world/bin/python"
 }
 ```
 
