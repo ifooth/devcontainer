@@ -28,6 +28,21 @@ mv $GO1_17 go1.17 && ln -sf go1.17 $GO1_17
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
+# vscode golang tools, build with latest golang
+gvm use $GO1_17
+export GOPATH=/opt/go
+go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
+go install github.com/ramya-rao-a/go-outline@latest
+go install github.com/cweill/gotests/gotests@latest
+go install github.com/fatih/gomodifytags@latest
+go install github.com/josharian/impl@latest
+go install github.com/haya14busa/goplay/cmd/goplay@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install honnef.co/go/tools/cmd/staticcheck@latest
+go install golang.org/x/tools/gopls@latest
+# clean cache
+rm -rf /opt/go/pkg
+
 # pyenv python 多版本环境
 export PYENV_ROOT=/opt/pyenv
 curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash

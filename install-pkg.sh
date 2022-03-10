@@ -27,21 +27,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
 cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
-# vscode golang tools
-export GO111MODULE=on
-export GOPATH=/opt/go
-go get github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
-go get github.com/ramya-rao-a/go-outline@latest
-go get github.com/cweill/gotests/gotests@latest
-go get github.com/fatih/gomodifytags@latest
-go get github.com/josharian/impl@latest
-go get github.com/haya14busa/goplay/cmd/goplay@latest
-go get github.com/go-delve/delve/cmd/dlv@latest
-go get honnef.co/go/tools/cmd/staticcheck@latest
-go get golang.org/x/tools/gopls@latest
-# clean cache
-rm -rf /opt/go/pkg
-
 # vscode python tools & utils
 pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
 
