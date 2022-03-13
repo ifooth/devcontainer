@@ -41,7 +41,7 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install golang.org/x/tools/gopls@latest
 # golang小工具
-go get -d github.com/ungerik/pkgreflect
+go install github.com/ungerik/pkgreflect@latest
 # clean cache
 rm -rf /opt/go/pkg
 
