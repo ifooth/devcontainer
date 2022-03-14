@@ -70,7 +70,7 @@ cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-pack
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
 # add go and python path
-export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:$PATH
+export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
 
 # ssh and vscode terminal use zsh
 if [[ -n "${SSH_TTY}" ]] || [[ -n "${VSCODE_GIT_IPC_HANDLE}" ]];then

@@ -51,6 +51,8 @@ tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
 mv node-${NODEJS_VERSION}-linux-x64 /opt/node
 ln -sf /opt/node/bin/node /usr/local/bin/
 ln -sf /opt/node/bin/npm /usr/local/bin/
+# 全局配置
+echo "prefix=/root/.node-packages" > /opt/node/lib/node_modules/npm/npmrc
 
 # Install promu
 cd /tmp
