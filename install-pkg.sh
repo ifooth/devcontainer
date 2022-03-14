@@ -7,7 +7,7 @@ apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release i
 apt-get install -y vim direnv tmux cloc
 
 # system language
-apt-get install -y nodejs bison golang
+apt-get install -y bison golang
 
 # client utils
 apt-get install -y redis-tools mariadb-client etcd-client
@@ -42,6 +42,15 @@ apt-get update && apt-get install -y docker-ce-cli
 export LATEST_COMPOSE_VERSION=$(curl -sSL "https://api.github.com/repos/docker/compose/releases/latest" | grep -o -P '(?<="tag_name": ").+(?=")')
 curl -sSL "https://github.com/docker/compose/releases/download/${LATEST_COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
+
+# Install NodeJS
+cd /tmp
+NODEJS_VERSION=v16.14.0
+wget -q https://nodejs.org/dist/{NODEJS_VERSION}/node-{NODEJS_VERSION}-linux-x64.tar.xz
+tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
+mv node-${NODEJS_VERSION}-linux-x64 /opt/node
+ln -sf /opt/node/bin/node /usr/local/bin/
+ln -sf /opt/node/bin/npm /usr/local/bin/
 
 # Install promu
 cd /tmp
