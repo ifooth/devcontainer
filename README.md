@@ -60,19 +60,19 @@ usage
 ```shell
 # switch golang version
 gvm list
-gvm use go1.17
+gvm use go1.18
 ```
 
 .envrc
 ```bash
-layout gvm go1.17
+layout gvm go1.18
 ```
 
 .vscode/settings.json
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.17",
-    "go.gopath": "/opt/gvm/pkgsets/go1.17/global"
+    "go.goroot": "/opt/gvm/gos/go1.18",
+    "go.gopath": "/opt/gvm/pkgsets/go1.18/global"
 }
 ```
 
@@ -132,8 +132,8 @@ use the linked major version
 
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.17",
-    "go.gopath": "/opt/gvm/pkgsets/go1.17/global",
+    "go.goroot": "/opt/gvm/gos/go1.18",
+    "go.gopath": "/opt/gvm/pkgsets/go1.18/global",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
