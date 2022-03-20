@@ -13,7 +13,7 @@ export GO1_18=go1.18.0
 
 gvm install $GO1_15 -B
 gvm install $GO1_17 -B
-gvm install go1.18 -B -n $GO1_18
+gvm install go1.18 -B -n=$GO1_18
 
 # 软链大版本 方便升级
 cd /opt/gvm/gos
