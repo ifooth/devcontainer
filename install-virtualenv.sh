@@ -9,27 +9,32 @@ source "/opt/gvm/scripts/gvm"
 # change go version if upgrade
 export GO1_15=go1.15.15
 export GO1_17=go1.17.8
+export GO1_18=go1.18.0
 
 gvm install $GO1_15 -B
 gvm install $GO1_17 -B
+gvm install go1.18 -B -n $GO1_18
 
 # 软链大版本 方便升级
 cd /opt/gvm/gos
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_17 go1.17
+ln -sf $GO1_18 go1.18
 
 cd /opt/gvm/environments
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_17 go1.17
+ln -sf $GO1_18 go1.17
 
 cd /opt/gvm/pkgsets
 mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
 mv $GO1_17 go1.17 && ln -sf go1.17 $GO1_17
+mv $GO1_18 go1.18 && ln -sf go1.18 $GO1_18
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
 # vscode golang tools, build with latest golang
-gvm use $GO1_17
+gvm use $GO1_18
 export GOPATH=/opt/go
 go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
 go install github.com/ramya-rao-a/go-outline@latest
