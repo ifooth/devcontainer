@@ -24,7 +24,7 @@ ln -sf $GO1_18 go1.18
 cd /opt/gvm/environments
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_17 go1.17
-ln -sf $GO1_18 go1.17
+ln -sf $GO1_18 go1.18
 
 cd /opt/gvm/pkgsets
 mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
