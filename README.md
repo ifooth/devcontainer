@@ -97,6 +97,20 @@ golang private mod settings
 }
 ```
 
+## Build linux kernel
+
+build the linux kernel in the devcontainer, all tools has been installed
+
+```bash
+mkdir /data/kernel && cd /data/kernel
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.16.17.tar.xz # change version as you need
+tar -xf linux-5.16.17.tar.xz
+cd linux-5.16.17
+make menuconfig # change config
+make -j 10
+```
+
+
 ## Utils
 - [cloc](https://github.com/AlDanial/cloc) - counts blank lines, comment lines, and physical lines of source code in many programming languages
 - [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program

@@ -6,6 +6,9 @@ apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils
 apt-get install -y vim direnv tmux cloc
 
+# Install kernel build tools
+apt-get install flex bc libelf-dev libssl-dev
+
 # system language
 apt-get install -y bison golang
 
