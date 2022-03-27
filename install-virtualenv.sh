@@ -34,6 +34,7 @@ mv $GO1_18 go1.18 && ln -sf go1.18 $GO1_18
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
 # vscode golang tools, build with latest golang
+# https://github.com/golang/vscode-go/blob/master/docs/tools.md
 gvm use $GO1_18
 export GOPATH=/opt/go
 go install github.com/uudashr/gopkgs/v2/cmd/gopkgs@latest
@@ -45,6 +46,7 @@ go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install honnef.co/go/tools/cmd/staticcheck@latest
 go install golang.org/x/tools/gopls@latest
+
 # golang小工具
 go install github.com/ungerik/pkgreflect@latest
 # clean cache
