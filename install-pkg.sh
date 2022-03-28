@@ -80,6 +80,17 @@ unzip platform-tools_${ADB_TOOLS_VERSION}-linux.zip
 mv platform-tools /opt/android-platform-tools
 ln -sf /opt/android-platform-tools/adb /usr/local/bin
 
+# Install Helm
+HELM_VERSION=v3.8.1
+wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
+tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
+mv linux-amd64/helm /usr/local/bin/
+
+# Install Kubectl
+KUBECTL_VERSION=/v1.23.0
+wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
+chmod a+x kubectl && mv kubectl /usr/local/bin/
+
 # Clean up
 mkdir -p /data/repos /data/logs
 
