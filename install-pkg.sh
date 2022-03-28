@@ -87,7 +87,7 @@ tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/
 
 # Install Kubectl
-KUBECTL_VERSION=/v1.23.0
+KUBECTL_VERSION=v1.20.15
 wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
 
