@@ -9,11 +9,11 @@ source "/opt/gvm/scripts/gvm"
 # change go version if upgrade
 export GO1_15=go1.15.15
 export GO1_17=go1.17.8
-export GO1_18=go1.18.0
+export GO1_18=go1.18.1
 
 gvm install $GO1_15 -B
 gvm install $GO1_17 -B
-gvm install go1.18 -B -n=$GO1_18
+gvm install $GO1_18 -B
 
 # 软链大版本 方便升级
 cd /opt/gvm/gos
@@ -60,7 +60,7 @@ export PATH=${PYENV_ROOT}/bin:$PATH
 # change python version if upgrade
 export PY2_7=2.7.18
 export PY3_6=3.6.15
-export PY3_10=3.10.2
+export PY3_10=3.10.4
 
 pyenv install $PY2_7
 pyenv install $PY3_6
