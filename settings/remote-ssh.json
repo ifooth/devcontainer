@@ -28,5 +28,6 @@
     ],
     "projectManager.git.baseFolders": [
         "/data/repos"
-    ]
+    ],
+    "editor.bracketPairColorization.enabled": false
 }
