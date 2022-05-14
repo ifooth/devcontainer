@@ -91,7 +91,7 @@ jobs:
       - name: nightly-build
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-        if: ${{ github.event_name = 'schedule' }}
+        if: ${{ github.event_name == 'schedule' }}
         with:
           images: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
