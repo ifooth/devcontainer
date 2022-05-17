@@ -92,7 +92,7 @@ wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
 
 # Clean up
-mkdir -p /data/repos /data/logs
+mkdir -p /data/repos /data/logs /data/etc/supervisord
 
 apt-get -y autoremove
 apt-get -y clean
