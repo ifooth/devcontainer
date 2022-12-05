@@ -48,7 +48,7 @@ chmod +x /usr/local/bin/docker-compose
 
 # Install NodeJS
 cd /tmp
-NODEJS_VERSION=v16.14.0
+NODEJS_VERSION=v14.21.1
 wget -q https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}-linux-x64.tar.xz
 tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
 mv node-${NODEJS_VERSION}-linux-x64 /opt/node
