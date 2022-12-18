@@ -4,7 +4,7 @@ set -ex
 # Install pkgs
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
-apt-get install -y vim direnv tmux cloc
+apt-get install -y vim direnv tmux cloc clang-format apache2-utils
 
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev
