@@ -9,6 +9,9 @@ apt-get install -y vim direnv tmux cloc clang-format apache2-utils
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev
 
+# Install android tools adb
+apt-get install -y adb
+
 # system language
 apt-get install -y bison golang
 
@@ -57,37 +60,27 @@ ln -sf /opt/node/bin/npm /usr/local/bin/
 # 全局配置
 echo "prefix=/root/.npm-packages" > /opt/node/lib/node_modules/npm/npmrc
 
-# Install promu
-cd /tmp
-PROMU_VERSION=0.13.0
-wget -q https://github.com/prometheus/promu/releases/download/v${PROMU_VERSION}/promu-${PROMU_VERSION}.linux-amd64.tar.gz
-tar -xf promu-${PROMU_VERSION}.linux-amd64.tar.gz
-mv promu-${PROMU_VERSION}.linux-amd64/promu /usr/local/bin/promu
-
-RESTIC_VERSION=0.12.1
+# https://github.com/restic/restic
+RESTIC_VERSION=0.14.0
 wget -q https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_amd64.bz2
 bunzip2 restic_${RESTIC_VERSION}_linux_amd64.bz2
 chmod a+x restic_${RESTIC_VERSION}_linux_amd64 && mv restic_${RESTIC_VERSION}_linux_amd64 /usr/local/bin/restic
 
-RCLONE_VERSION=v1.57.0
+# https://github.com/rclone/rclone
+RCLONE_VERSION=v1.61.1
 wget -q https://github.com/rclone/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.deb
 dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 
-# Install adb
-ADB_TOOLS_VERSION=r31.0.3
-wget -q https://dl.google.com/android/repository/platform-tools_${ADB_TOOLS_VERSION}-linux.zip
-unzip platform-tools_${ADB_TOOLS_VERSION}-linux.zip
-mv platform-tools /opt/android-platform-tools
-ln -sf /opt/android-platform-tools/adb /usr/local/bin
-
 # Install Helm
-HELM_VERSION=v3.8.1
+# https://github.com/helm/helm
+HELM_VERSION=v3.10.3
 wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
 tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/
 
 # Install Kubectl
-KUBECTL_VERSION=v1.20.15
+# https://github.com/kubernetes/kubernetes
+KUBECTL_VERSION=v1.22.17
 wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
 
