@@ -1,6 +1,7 @@
 {
     "go.goroot": "/opt/gvm/gos/go1.17",
     "go.gopath": "/opt/gvm/pkgsets/go1.17/global",
+    "go.lintTool": "golangci-lint",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
