@@ -1,10 +1,14 @@
 {
     "go.goroot": "/opt/gvm/gos/go1.17",
     "go.gopath": "/opt/gvm/pkgsets/go1.17/global",
-    "go.lintTool": "golangci-lint",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "-c",
+        "/etc/.golangci.yml"
+    ],
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=119"
@@ -13,8 +17,10 @@
     "python.formatting.blackArgs": [
         "--line-length=119"
     ],
-    "python.sortImports.path": "/usr/local/bin/isort",
-    "python.sortImports.args": [
+    "isort.path": [
+        "/usr/local/bin/isort"
+    ],
+    "isort.args": [
         "--line-length=119"
     ],
     "python.terminal.activateEnvironment": false,
