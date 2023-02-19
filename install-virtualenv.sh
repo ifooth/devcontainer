@@ -9,7 +9,7 @@ source "/opt/gvm/scripts/gvm"
 # change go version if upgrade
 export GO1_15=go1.15.15
 export GO1_17=go1.17.13 # 当前版本
-export GO1_20=go1.20
+export GO1_20=go1.20.1
 
 gvm install $GO1_15 -B
 gvm install $GO1_17 -B
@@ -19,17 +19,17 @@ gvm install $GO1_20 -B
 cd /opt/gvm/gos
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_17 go1.17
-# ln -sf $GO1_20 go1.20
+ln -sf $GO1_20 go1.20
 
 cd /opt/gvm/environments
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_17 go1.17
-# ln -sf $GO1_20 go1.20
+ln -sf $GO1_20 go1.20
 
 cd /opt/gvm/pkgsets
 mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
 mv $GO1_17 go1.17 && ln -sf go1.17 $GO1_17
-# mv $GO1_20 go1.20 && ln -sf go1.20 $GO1_20
+mv $GO1_20 go1.20 && ln -sf go1.20 $GO1_20
 
 cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
 
