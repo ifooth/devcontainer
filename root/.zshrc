@@ -141,7 +141,7 @@ GO1_17=go1.17.13
 GO1_20=go1.20.2
 if not_valid_link "${HOME}/.gvm/pkgsets/${GO1_15}" || \
     not_valid_link "${HOME}/.gvm/pkgsets/${GO1_17}" || \
-    not_valid_link "${HOME}/.gvm/pkgsets/${GO1_18}" || ;then
+    not_valid_link "${HOME}/.gvm/pkgsets/${GO1_20}" || ;then
     mkdir -p ${HOME}/.gvm
     tar -xvf ${GVM_ROOT}/pkgsets.tar.gz -C ${HOME}/.gvm
 fi
