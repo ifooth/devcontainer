@@ -60,19 +60,19 @@ usage
 ```shell
 # switch golang version
 gvm list
-gvm use go1.18
+gvm use go1.20
 ```
 
 .envrc
 ```bash
-layout gvm go1.18
+layout gvm go1.20
 ```
 
 .vscode/settings.json
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.18",
-    "go.gopath": "/opt/gvm/pkgsets/go1.18/global"
+    "go.goroot": "/opt/gvm/gos/go1.20",
+    "go.gopath": "/opt/gvm/pkgsets/go1.20/global"
 }
 ```
 
@@ -82,8 +82,8 @@ golang private mod settings
 
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.15",
-    "go.gopath": "/opt/gvm/pkgsets/go1.15/global",
+    "go.goroot": "/opt/gvm/gos/go1.20",
+    "go.gopath": "/opt/gvm/pkgsets/go1.20/global",
     "go.toolsEnvVars": {
         "GOPROXY": "https://athens-proxy.townsy.io,direct",
         "GOPRIVATE": "",
@@ -146,8 +146,8 @@ use the linked major version
 
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.18",
-    "go.gopath": "/opt/gvm/pkgsets/go1.18/global",
+    "go.goroot": "/opt/gvm/gos/go1.20",
+    "go.gopath": "/opt/gvm/pkgsets/go1.20/global",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
