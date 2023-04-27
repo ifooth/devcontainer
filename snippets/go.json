@@ -1,0 +1,12 @@
+{
+    "import github.com/stretchr/testify/assert": {
+        "prefix": "iassert",
+        "body": "\"github.com/stretchr/testify/assert\"",
+        "description": "Code snippet for import testify assert"
+    },
+    "import github.com/pkg/errors": {
+        "prefix": "ipkgerr",
+        "body": "\"github.com/pkg/errors\"",
+        "description": "Code snippet for import pkg errors"
+    }
+}

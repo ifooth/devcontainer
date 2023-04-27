@@ -139,8 +139,30 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
         "ms-python.python",
         "ms-python.vscode-pylance",
         "golang.go",
+        "geddski.macros",
         "alefragnani.project-manager"
     ]
+}
+```
+
+snippets
+
+open the user settings editor from the Command Palette (Ctrl+Shift+P) with Snippets: Open User Snippets.
+
+copy snippet to config, example `go.json`
+
+```json
+{
+    "import github.com/stretchr/testify/assert": {
+        "prefix": "iassert",
+        "body": "\"github.com/stretchr/testify/assert\"",
+        "description": "Code snippet for import testify assert"
+    },
+    "import github.com/pkg/errors": {
+        "prefix": "ipkgerr",
+        "body": "\"github.com/pkg/errors\"",
+        "description": "Code snippet for import pkg errors"
+    }
 }
 ```
 

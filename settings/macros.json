@@ -1,0 +1,58 @@
+{
+    "macros": {
+        "i18n": [
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "${_(u\""
+                }
+            },
+            "cursorWordEndRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": "\")}"
+                }
+            }
+        ],
+        "i18n_js": [
+            "cursorWordStartLeft",
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "gettext("
+                }
+            },
+            "cursorWordEndRight",
+            "cursorWordEndRight",
+            "cursorRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": ")"
+                }
+            }
+        ],
+        "i18n_py": [
+            "cursorWordStartLeft",
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "_("
+                }
+            },
+            "cursorWordEndRight",
+            "cursorWordEndRight",
+            "cursorRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": ")"
+                }
+            }
+        ]
+    }
+}

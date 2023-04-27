@@ -13,6 +13,8 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "golang.go",
-        "alefragnani.project-manager"
+        "geddski.macros",
+        "alefragnani.project-manager",
+        "github.copilot"
     ]
 }
