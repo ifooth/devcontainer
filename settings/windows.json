@@ -1,5 +1,9 @@
 {
     "remote.SSH.useLocalServer": true,
+    "remote.SSH.suppressWindowsSshWarning": true,
+    "remote.SSH.remotePlatform": {
+        "devcontainer": "linux"
+    },
     "remote.extensionKind": {
         "alefragnani.project-manager": [
             "workspace"
@@ -9,7 +13,6 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "golang.go",
-        "TabNine.tabnine-vscode",
         "alefragnani.project-manager"
     ]
 }

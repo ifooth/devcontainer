@@ -119,10 +119,17 @@ make -j 10
 
 
 ## Settings
-install-extension
+auto install-extension
+
+open the user settings editor from the Command Palette (Ctrl+Shift+P) with Preferences: Open User Settings(JSON).
 
 ```json
 {
+    "remote.SSH.useLocalServer": true,
+    "remote.SSH.suppressWindowsSshWarning": true,
+    "remote.SSH.remotePlatform": {
+        "devcontainer": "linux"
+    },
     "remote.extensionKind": {
         "alefragnani.project-manager": [
             "workspace"
@@ -132,7 +139,6 @@ install-extension
         "ms-python.python",
         "ms-python.vscode-pylance",
         "golang.go",
-        "TabNine.tabnine-vscode",
         "alefragnani.project-manager"
     ]
 }
