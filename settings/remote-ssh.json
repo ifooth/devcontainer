@@ -1,6 +1,6 @@
 {
-    "go.goroot": "/opt/gvm/gos/go1.17",
-    "go.gopath": "/opt/gvm/pkgsets/go1.17/global",
+    "go.goroot": "/opt/gvm/gos/go1.20",
+    "go.gopath": "/opt/gvm/pkgsets/go1.20/global",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
