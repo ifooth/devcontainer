@@ -14,16 +14,6 @@
         "body": "# -*- coding: utf-8 -*-",
         "description": "coding"
     },
-    "auth_ifo": {
-        "prefix": "auth_ifo",
-        "body": "# -*- coding: utf-8 -*-\n# Copyright 2018 IFOOTH\n# Author: Joe Lei <thezero12@hotmail.com>",
-        "description": "IFOOTH coding"
-    },
-    "auth_ten": {
-        "prefix": "auth_ten",
-        "body": "# -*- coding: utf-8 -*-\n# Copyright 2018 Tencent\n# Author: Joe Lei <joelei@tencent.com>",
-        "description": "Tencent coding"
-    },
     "logger": {
         "prefix": "logger",
         "body": "import logging\nlogger = logging.getLogger(__name__)",
