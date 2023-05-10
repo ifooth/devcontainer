@@ -138,7 +138,7 @@ export GVM_ROOT=/opt/gvm
 # change go version if upgrade
 GO1_15=go1.15.15
 GO1_17=go1.17.13
-GO1_20=go1.20.3
+GO1_20=go1.20.4
 if not_valid_link "${HOME}/.gvm/pkgsets/${GO1_15}" || \
     not_valid_link "${HOME}/.gvm/pkgsets/${GO1_17}" || \
     not_valid_link "${HOME}/.gvm/pkgsets/${GO1_20}" || ;then
