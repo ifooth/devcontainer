@@ -85,6 +85,12 @@ KUBECTL_VERSION=v1.22.17
 wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
 
+# Install grpcurl
+GPRCCURL_VERSION=1.8.7
+wget -q https://github.com/fullstorydev/grpcurl/releases/download/v${GPRCCURL_VERSION}/grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
+tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
+mv grpcurl /usr/local/bin/
+
 # Clean up
 mkdir -p /data/repos /data/logs /data/etc/supervisord
 

@@ -26,6 +26,13 @@ Plugin
 - [vim-colors-solarized.git](https://github.com/altercation/vim-colors-solarized.git)
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
+## tools
+- [cloc](https://github.com/AlDanial/cloc) - counts blank lines, comment lines, and physical lines of source code in many programming languages
+- [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
+- [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
+- [android-platform-tools](https://developer.android.com/studio/releases/platform-tools) - such as adb, fastboot, and systrace tools
+- [grpcurl](https://github.com/fullstorydev/grpcurl) - AboutLike cURL, but for gRPC: Command-line tool for interacting with gRPC servers
+
 ## Python
 - [pyenv](https://github.com/pyenv/pyenv)
 
@@ -109,13 +116,6 @@ cd linux-5.16.17
 make menuconfig # change config
 make -j 10
 ```
-
-
-## Utils
-- [cloc](https://github.com/AlDanial/cloc) - counts blank lines, comment lines, and physical lines of source code in many programming languages
-- [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
-- [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
-- [android-platform-tools](https://developer.android.com/studio/releases/platform-tools) - such as adb, fastboot, and systrace tools
 
 
 ## Settings
