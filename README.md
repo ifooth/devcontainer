@@ -61,25 +61,28 @@ unset PS1
 ```
 
 ## Golang
-- [gvm](https://github.com/moovweb/gvm)
+- [office manage-install](https://go.dev/doc/manage-install)
 
 usage
 ```shell
-# switch golang version
-gvm list
-gvm use go1.20
+# install golang version
+# version list in https://github.com/golang/dl
+export HOME=/opt/go
+go install golang.org/dl/go1.21.0@latest
+go1.21.0 download
 ```
 
 .envrc
 ```bash
-layout gvm go1.20
+# switch golang version
+export PATH=/opt/go/sdk/go1.21/bin:$PATH
 ```
 
 .vscode/settings.json
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.20",
-    "go.gopath": "/opt/gvm/pkgsets/go1.20/global"
+    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.gopath": "/root/.go"
 }
 ```
 

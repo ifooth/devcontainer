@@ -117,7 +117,7 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH=/data/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
 
 # zsh plugins
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
