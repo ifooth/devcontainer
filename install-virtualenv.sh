@@ -23,10 +23,14 @@ ln -sf /opt/go/sdk/$GO1_20/bin/go $GO1_20
 ln -sf /opt/go/sdk/$GO1_21/bin/go $GO1_21
 
 # 软链大版本 方便升级
-ln -sf /opt/go/bin/$GO1_15 go1.15
-ln -sf /opt/go/bin/$GO1_20 go1.20
-ln -sf /opt/go/bin/$GO1_21 go1.20
-ln -sf /opt/go/bin/$GO1_21 go
+ln -sf /opt/go/sdk/$GO1_15 go1.15
+ln -sf /opt/go/sdk/$GO1_20 go1.20
+ln -sf /opt/go/sdk/$GO1_21 go1.21
+
+ln -sf /opt/go/sdk/$GO1_15/bin/go go1.15
+ln -sf /opt/go/sdk/$GO1_20/bin/go go1.20
+ln -sf /opt/go/sdk/$GO1_21/bin/go go1.21
+ln -sf /opt/go/sdk/$GO1_21/bin/go go
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
