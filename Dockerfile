@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/python:3.11
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 WORKDIR /root
 
 # 配置文件, 代码/数据目录
