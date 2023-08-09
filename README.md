@@ -64,13 +64,15 @@ unset PS1
 - [office manage-install](https://go.dev/doc/manage-install)
 
 usage
+
 ```shell
 # install golang version
-# version list in https://github.com/golang/dl
 export HOME=/opt/go
 go install golang.org/dl/go1.21.0@latest
 go1.21.0 download
 ```
+
+version list in [golang/dl](https://github.com/golang/dl)
 
 .envrc
 ```bash
