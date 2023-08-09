@@ -1,42 +1,36 @@
 #!/bin/bash
 set -ex
 
-# gvm golang 多版本环境
-export GVM_ROOT=/opt/gvm
-curl -fsSL https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer -o /usr/local/bin/gvm-installer
-chmod a+x /usr/local/bin/gvm-installer && gvm-installer master /opt
-source "/opt/gvm/scripts/gvm"
+# golang 多版本环境
+export GOPATH=/opt/go
 # change go version if upgrade
 export GO1_15=go1.15.15
 export GO1_20=go1.20.7 # 当前版本
 export GO1_21=go1.21.0
 
-gvm install $GO1_15 -B
-gvm install $GO1_20 -B
-gvm install $GO1_21 -B
+go install golang.org/dl/$GO1_15@latest
+go install golang.org/dl/$GO1_20@latest
+go install golang.org/dl/$GO1_21@latest
+
+export HOME=/opt/go
+$GOPATH/bin/$GO1_15 download && rm -rf $GOPATH/sdk/$GO1_15/$GO1_15.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_20 download && rm -rf $GOPATH/sdk/$GO1_20/$GO1_20.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_21 download && rm -rf $GOPATH/sdk/$GO1_21/$GO1_21.linux-amd64.tar.gz
+
+cd /opt/go/bin
+ln -sf /opt/go/sdk/$GO1_15/bin/go $GO1_15
+ln -sf /opt/go/sdk/$GO1_20/bin/go $GO1_20
+ln -sf /opt/go/sdk/$GO1_21/bin/go $GO1_21
 
 # 软链大版本 方便升级
-cd /opt/gvm/gos
-ln -sf $GO1_15 go1.15
-ln -sf $GO1_20 go1.20
-ln -sf $GO1_21 go1.21
-
-cd /opt/gvm/environments
-ln -sf $GO1_15 go1.15
-ln -sf $GO1_20 go1.20
-ln -sf $GO1_21 go1.21
-
-cd /opt/gvm/pkgsets
-mv $GO1_15 go1.15 && ln -sf go1.15 $GO1_15
-mv $GO1_20 go1.20 && ln -sf go1.20 $GO1_20
-mv $GO1_21 go1.21 && ln -sf go1.21 $GO1_21
-
-cd /opt/gvm && tar -zcf pkgsets.tar.gz pkgsets
+ln -sf /opt/go/bin/$GO1_15 go1.15
+ln -sf /opt/go/bin/$GO1_20 go1.20
+ln -sf /opt/go/bin/$GO1_21 go1.20
+ln -sf /opt/go/bin/$GO1_21 go
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
-gvm use $GO1_20
-export GOPATH=/opt/go
+export PATH=$GOPATH/bin:$PATH
 go install github.com/ramya-rao-a/go-outline@latest
 go install github.com/cweill/gotests/gotests@latest
 go install github.com/fatih/gomodifytags@latest
