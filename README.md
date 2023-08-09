@@ -92,8 +92,8 @@ golang private mod settings
 
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.20",
-    "go.gopath": "/opt/gvm/pkgsets/go1.20/global",
+    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOPROXY": "https://athens-proxy.townsy.io,direct",
         "GOPRIVATE": "",
@@ -177,8 +177,8 @@ use the linked major version
 
 ```json
 {
-    "go.goroot": "/opt/gvm/gos/go1.20",
-    "go.gopath": "/opt/gvm/pkgsets/go1.20/global",
+    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
