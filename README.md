@@ -143,9 +143,14 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
     "remote.SSH.defaultExtensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.black-formatter",
         "golang.go",
         "geddski.macros",
-        "alefragnani.project-manager"
+        "alefragnani.project-manager",
+        "zxh404.vscode-proto3",
+        "xaver.clang-format"
     ]
 }
 ```

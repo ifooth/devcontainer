@@ -17,6 +17,8 @@
         "ms-python.black-formatter",
         "golang.go",
         "geddski.macros",
-        "alefragnani.project-manager"
+        "alefragnani.project-manager",
+        "zxh404.vscode-proto3",
+        "xaver.clang-format"
     ]
 }
