@@ -13,12 +13,21 @@
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.flake8",
-        "ms-python.isort",
         "ms-python.black-formatter",
+        "ms-python.isort",
         "golang.go",
         "geddski.macros",
         "alefragnani.project-manager",
+        "redhat.vscode-yaml",
+        "xaver.clang-format",
         "zxh404.vscode-proto3",
-        "xaver.clang-format"
+        "ms-vscode.makefile-tools",
+        "tamasfe.even-better-toml",
+        "idleberg.applescript",
+        "ms-kubernetes-tools.vscode-kubernetes-tools",
+        "ms-azuretools.vscode-docker",
+        "donjayamanne.githistory",
+        "mhutchie.git-graph",
+        "waderyan.gitblame"
     ]
 }
