@@ -155,6 +155,11 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
 }
 ```
 
+list-extensions
+```bash
+code --list-extensions --show-version
+```
+
 snippets
 
 open the user settings editor from the Command Palette (Ctrl+Shift+P) with Snippets: Open User Snippets.
@@ -189,6 +194,12 @@ use the linked major version
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
+    "go.lintTool": "golangci-lint",
+    "go.lintFlags": [
+        "-c",
+        "/etc/.golangci.yml"
+    ],
+    "clang-format.style": "{IndentWidth: 4, BasedOnStyle: google, AlignConsecutiveAssignments: true, ColumnLimit: 0}",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
         "--max-line-length=119"
@@ -197,8 +208,10 @@ use the linked major version
     "python.formatting.blackArgs": [
         "--line-length=119"
     ],
-    "python.sortImports.path": "/usr/local/bin/isort",
-    "python.sortImports.args": [
+    "isort.path": [
+        "/usr/local/bin/isort"
+    ],
+    "isort.args": [
         "--line-length=119"
     ],
     "python.terminal.activateEnvironment": false,
@@ -207,9 +220,14 @@ use the linked major version
     ],
     "projectManager.groupList": true,
     "projectManager.git.maxDepthRecursion": 4,
+    "projectManager.git.ignoredFolders": [
+        "code-review",
+        "github"
+    ],
     "projectManager.git.baseFolders": [
         "/data/repos"
-    ]
+    ],
+    "editor.bracketPairColorization.enabled": false
 }
 ```
 
