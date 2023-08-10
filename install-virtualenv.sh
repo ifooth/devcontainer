@@ -84,7 +84,6 @@ fi
 EOT
 
 # Clean up & Package root dir
-rm -rf /opt/gvm/archive/*.tar.gz
 rm -rf /tmp/*
 
 rsync -avz /opt/root/ /root
