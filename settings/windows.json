@@ -12,9 +12,11 @@
     "remote.SSH.defaultExtensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.black-formatter",
         "golang.go",
         "geddski.macros",
-        "alefragnani.project-manager",
-        "github.copilot"
+        "alefragnani.project-manager"
     ]
 }

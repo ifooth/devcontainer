@@ -1,0 +1,165 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/node_modules": true,
+        "**/*.swp": true,
+        "**/*.pyc": true,
+        "**/*.scpt": true,
+        "**/vendor": false,
+        "**/celerybeat-schedule": true,
+        "**/.envrc": true,
+        "**/.vimlocal": true,
+        "**/.flake8": true,
+        "**/.pytest_cache": true,
+        "**/*.retry": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.formatOnSave": true,
+    "projectManager.groupList": true,
+    "docker.showExplorer": false,
+    "projectManager.git.baseFolders": [],
+    "projectManager.git.maxDepthRecursion": 4,
+    "projectManager.git.ignoredFolders": [],
+    "projectManager.svn.baseFolders": [],
+    "macros": {
+        "i18n": [
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "${_(u\""
+                }
+            },
+            "cursorWordEndRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": "\")}"
+                }
+            }
+        ],
+        "i18n_bak": [
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "${_(u'"
+                }
+            },
+            "cursorWordEndRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": "')}"
+                }
+            }
+        ],
+        "i18n_js": [
+            "cursorWordStartLeft",
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "gettext("
+                }
+            },
+            "cursorWordEndRight",
+            "cursorWordEndRight",
+            "cursorRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": ")"
+                }
+            }
+        ],
+        "i18n_py": [
+            "cursorWordStartLeft",
+            "cursorWordStartLeft",
+            {
+                "command": "type",
+                "args": {
+                    "text": "_("
+                }
+            },
+            "cursorWordEndRight",
+            "cursorWordEndRight",
+            "cursorRight",
+            {
+                "command": "type",
+                "args": {
+                    "text": ")"
+                }
+            }
+        ]
+    },
+    "files.associations": {
+        "*.g": "lark",
+        ".plist": "xml",
+        ".vimrc*": "viml"
+    },
+    "leetcode.defaultLanguage": "golang",
+    "cSpell.userWords": [
+        "paas"
+    ],
+    "editor.fontSize": 13,
+    "workbench.iconTheme": "Monokai Classic Icons",
+    "html.format.wrapLineLength": 240,
+    "editor.autoClosingBrackets": "always",
+    "vetur.format.options.tabSize": 4,
+    "update.mode": "default",
+    "explorer.confirmDelete": false,
+    "python.languageServer": "Pylance",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "redhat.telemetry.enabled": false,
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "python.formatting.blackPath": "~/.pyenv/versions/3.10.1/bin/black",
+    "python.sortImports.path": "~/.pyenv/versions/3.10.1/bin/isort",
+    "remote.SSH.useLocalServer": true,
+    "remote.extensionKind": {
+        "alefragnani.project-manager": [
+            "workspace"
+        ]
+    },
+    "remote.SSH.defaultExtensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.flake8",
+        "ms-python.isort",
+        "ms-python.black-formatter",
+        "golang.go",
+        "geddski.macros",
+        "alefragnani.project-manager"
+    ],
+    "vsicons.dontShowNewVersionMessage": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "settingsSync.ignoredExtensions": [
+        "tabnine.tabnine-vscode"
+    ],
+    "editor.rulers": [],
+    "editor.inlineSuggest.enabled": true
+}
