@@ -109,6 +109,39 @@ golang private mod settings
 }
 ```
 
+## Develop golang
+
+You can refer to the official guidelines https://go.dev/doc/contribute
+
+here is use vscode learn golang src
+
+```bash
+# clone go repo
+git clone https://github.com/golang/go
+cd go
+
+# checkout the version you are interested in
+git checkout release-branch.go1.21
+
+# build go bin & pkg tools
+cd src && ./make.bash && cd ..
+```
+
+suppose your go path is in /data/repos/golang/go
+```bash
+# modify according to the following configuration
+mkdir .vscode/settings.json
+```
+
+add custom `go.goroot` settings
+```json
+{
+    "go.goroot": "/data/repos/golang/go"
+}
+```
+all Go language server work perfect
+
+
 ## Build linux kernel
 
 build the linux kernel in the devcontainer, all tools has been installed
