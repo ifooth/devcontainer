@@ -130,7 +130,7 @@ cd src && ./make.bash && cd ..
 suppose your go path is in /data/repos/golang/go
 ```bash
 # modify according to the following configuration
-mkdir .vscode/settings.json
+mkdir .vscode && vim .vscode/settings.json
 ```
 
 add custom `go.goroot` settings
@@ -138,6 +138,15 @@ add custom `go.goroot` settings
 {
     "go.goroot": "/data/repos/golang/go"
 }
+```
+
+add `go.work` for src workspace
+```
+go 1.21
+
+use (
+	./src
+)
 ```
 all Go language server work perfect
 
