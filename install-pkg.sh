@@ -45,8 +45,13 @@ curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' 
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
 apt-get update && apt-get install -y docker-ce-cli
 
-# Install NodeJS
 cd /tmp
+# Install skopeo
+SKOPEO_VERSION="v1.13.2"
+wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSION}/skopeo-linux-amd64
+mv skopeo-linux-amd64 /usr/local/skopeo && chmod a+x /usr/local/skopeo && skopeo --version
+
+# Install NodeJS
 NODEJS_VERSION=v14.21.3
 wget -q https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}-linux-x64.tar.xz
 tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
