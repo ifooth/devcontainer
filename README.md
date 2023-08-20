@@ -141,7 +141,7 @@ add custom `go.goroot` settings
 ```
 
 add `go.work` for src workspace
-```
+```bash
 go 1.21
 
 use (
