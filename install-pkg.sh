@@ -49,7 +49,7 @@ cd /tmp
 # Install skopeo
 SKOPEO_VERSION="v1.13.2"
 wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSION}/skopeo-linux-amd64
-mv skopeo-linux-amd64 /usr/local/skopeo && chmod a+x /usr/local/skopeo && skopeo --version
+mv skopeo-linux-amd64 /usr/local/bin/skopeo && chmod a+x /usr/local/bin/skopeo && skopeo --version
 
 # Install NodeJS
 NODEJS_VERSION=v14.21.3
