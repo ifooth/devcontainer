@@ -91,6 +91,13 @@ wget -q https://github.com/fullstorydev/grpcurl/releases/download/v${GPRCCURL_VE
 tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
 mv grpcurl /usr/local/bin/
 
+# Install protoc
+export PROTOC_VERSION=24.1
+wget -q https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
+unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip
+mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
+mv include /opt/go/
+
 # Clean up
 mkdir -p /data/repos /data/logs /data/etc/supervisord
 

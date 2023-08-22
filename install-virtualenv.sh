@@ -36,6 +36,7 @@ ln -sf /opt/go/sdk/$GO1_21 go1.21
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
 export PATH=$GOPATH/bin:$PATH
+# vscode dev
 go install github.com/ramya-rao-a/go-outline@latest
 go install github.com/cweill/gotests/gotests@latest
 go install github.com/fatih/gomodifytags@latest
@@ -45,8 +46,15 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 go install golang.org/x/tools/gopls@latest
 
+# protobuf
+go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
+
 # golang小工具
 go install github.com/ungerik/pkgreflect@latest
+
 # clean cache
 rm -rf /opt/go/pkg
 
