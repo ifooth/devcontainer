@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 source /opt/root/.zshrc
 
-if [ -n $PRE_SCRIPT_FILE ]
+if [ -n $PRE_SCRIPT_FILE ];then
     echo "run pre_script $PRE_SCRIPT_FILE"
     bash $PRE_SCRIPT_FILE
 fi
@@ -37,7 +37,7 @@ tar -xvf /root.tar.gz -C /
 echo "run dev init"
 /usr/local/bin/dev-init.sh
 
-if [ -n $POST_SCRIPT_FILE ]
+if [ -n $POST_SCRIPT_FILE ];then
     echo "run pre_script $POST_SCRIPT_FILE"
     bash $POST_SCRIPT_FILE
 fi
