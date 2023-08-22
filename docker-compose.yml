@@ -1,5 +1,51 @@
 version: "3.5"
 services:
+  devcontainer:
+    container_name: devcontainer
+    image: ghcr.io/ifooth/devcontainer:main
+    restart: always
+    network_mode: host
+    hostname: devcontainer
+    env_file:
+      - dev.env
+    volumes:
+      - /data/devcontainer/data:/data
+      - /data/devcontainer/root:/root
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  devcontainer-nightly:
+    container_name: devcontainer-nightly
+    image: ghcr.io/ifooth/devcontainer:latest
+    restart: always
+    network_mode: host
+    hostname: devcontainer-nightly
+    env_file:
+      - dev.env
+    environment:
+      SSHD_PORT: 36023 # custom sshd port
+      PRE_SCRIPT_FILE: /usr/local/bin/pre-script.sh
+      POST_SCRIPT_FILE: /usr/local/bin/post-script.sh
+    volumes:
+      - /data/devcontainer-nightly/data:/data
+      - /data/devcontainer-nightly/root:/root
+      # - ./pre-script.sh:/usr/local/bin/pre-script.sh your custom pre script
+      # - ./post-script.sh:/usr/local/bin/post-script.sh your custom post script
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  watchtower:
+    container_name: watchtower
+    image: containrrr/watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_POLL_INTERVAL=60
+      - WATCHTOWER_CLEANUP=true
+      - TZ=Asia/Shanghai
+    command:
+      - devcontainer-nightly
+      - devcontainer
+
   redis:
     container_name: redis
     image: redis:6.0.10
@@ -21,47 +67,3 @@ services:
       - 3306:3306
     environment:
       - MYSQL_ROOT_PASSWORD=
-
-  watchtower:
-    container_name: watchtower
-    image: containrrr/watchtower
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    environment:
-      - WATCHTOWER_POLL_INTERVAL=60
-      - WATCHTOWER_CLEANUP=true
-      - TZ=Asia/Shanghai
-    command:
-      - devcontainer-nightly
-      - devcontainer
-
-  devcontainer:
-    container_name: devcontainer
-    image: ghcr.io/ifooth/devcontainer:main
-    restart: always
-    network_mode: host
-    hostname: devcontainer
-    env_file:
-      - dev.env
-    volumes:
-      - /data/devcontainer/data:/data
-      - /data/devcontainer/root:/root
-      # - ./dev-init.sh:/usr/local/bin/dev-init.sh your custom init script
-      - /var/run/docker.sock:/var/run/docker.sock
-
-  devcontainer-nightly:
-    container_name: devcontainer-nightly
-    image: ghcr.io/ifooth/devcontainer:latest
-    restart: always
-    network_mode: host
-    hostname: devcontainer-nightly
-    env_file:
-      - dev.env
-    environment:
-      SSHD_PORT: 36023 # custom sshd port
-    volumes:
-      - /data/devcontainer-nightly/data:/data
-      - /data/devcontainer-nightly/root:/root
-      # - ./dev-init.sh:/usr/local/bin/dev-init.sh your custom init script
-      - /var/run/docker.sock:/var/run/docker.sock
