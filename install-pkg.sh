@@ -95,6 +95,7 @@ mv grpcurl /usr/local/bin/
 export PROTOC_VERSION=24.1
 wget -q https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
 unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip
+mkdir -p /opt/go/bin
 mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
