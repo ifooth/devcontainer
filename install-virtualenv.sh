@@ -53,6 +53,7 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
 
 # golang小工具
+go install golang.org/x/tools/cmd/stringer@latest
 go install github.com/ungerik/pkgreflect@latest
 
 # clean cache
