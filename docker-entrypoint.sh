@@ -1,6 +1,11 @@
 #!/usr/bin/zsh
 source /opt/root/.zshrc
 
+if [ -n $PRE_SCRIPT_FILE ]
+    echo "run pre_script $PRE_SCRIPT_FILE"
+    bash $PRE_SCRIPT_FILE
+fi
+
 mkdir -p /data/repos /data/logs
 
 # start sshd
@@ -29,9 +34,12 @@ cp -rf /opt/vscode/settings/remote-ssh.json ~/.vscode-server/data/Machine/settin
 echo "set root profile"
 tar -xvf /root.tar.gz -C /
 
-if [ -f "/usr/local/bin/dev-init.sh" ];then
-    echo "dev init"
-    /usr/local/bin/dev-init.sh
+echo "run dev init"
+/usr/local/bin/dev-init.sh
+
+if [ -n $POST_SCRIPT_FILE ]
+    echo "run pre_script $POST_SCRIPT_FILE"
+    bash $POST_SCRIPT_FILE
 fi
 
 /usr/local/bin/supervisord -c /etc/supervisord.conf -n
