@@ -33,6 +33,25 @@ Plugin
 - [android-platform-tools](https://developer.android.com/studio/releases/platform-tools) - such as adb, fastboot, and systrace tools
 - [grpcurl](https://github.com/fullstorydev/grpcurl) - AboutLike cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
+## Dev.env
+- set pre / post script
+- set git config
+- set tz and so on
+
+```bash
+# 前后置脚本
+PRE_SCRIPT_FILE=""
+POST_SCRIPT_FILE=""
+
+# git 配置
+GIT_USER_NAME=""
+GIT_USER_EMAIL=""
+GIT_USER_SIGNINGKEY=""
+
+# 时区配置
+TZ=Asia/Shanghai
+```
+
 ## Python
 - [pyenv](https://github.com/pyenv/pyenv)
 
