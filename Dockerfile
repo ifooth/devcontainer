@@ -20,6 +20,7 @@ RUN /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
 ADD ./settings /opt/vscode/settings
+ADD ./dev-init.sh /usr/local/bin/
 ADD ./docker-entrypoint.sh /usr/local/bin/
 ADD ./supervisord.conf /etc/supervisord.conf
 ADD ./.golangci.yml /etc/.golangci.yml
