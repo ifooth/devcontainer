@@ -38,7 +38,7 @@ echo "run dev init"
 /usr/local/bin/dev-init.sh
 
 if [ -n "$POST_SCRIPT_FILE" ];then
-    echo "run pre_script $POST_SCRIPT_FILE"
+    echo "run post_script $POST_SCRIPT_FILE"
     bash $POST_SCRIPT_FILE
 fi
 
