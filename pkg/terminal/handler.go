@@ -1,5 +1,7 @@
 package terminal
 
+//go:generate go run ./gen/main.go
+
 import (
 	"bytes"
 	"log/slog"
@@ -8,6 +10,8 @@ import (
 	"strings"
 
 	terminal "github.com/buildkite/terminal-to-html/v3"
+
+	"github.com/ifooth/devcontainer/pkg/terminal/assets"
 )
 
 var previewTemplate = `
@@ -26,7 +30,7 @@ var previewTemplate = `
 
 func wrapPreview(s []byte) ([]byte, error) {
 	s = bytes.Replace([]byte(previewTemplate), []byte("CONTENT"), s, 1)
-	styleSheet, err := terminal.TerminalCSS()
+	styleSheet, err := assets.TerminalCSS()
 	if err != nil {
 		return nil, err
 	}
