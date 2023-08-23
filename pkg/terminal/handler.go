@@ -2,7 +2,7 @@ package terminal
 
 import (
 	"bytes"
-	"log"
+	"log/slog"
 	"net/http"
 	"os"
 	"strings"
@@ -18,8 +18,8 @@ var previewTemplate = `
 			<title>terminal-to-html Preview</title>
 			<style>STYLESHEET</style>
 		</head>
-		<body>
-			<div class="term-container">CONTENT</div>
+		<body style="padding: 0px; margin: 0px;">
+			<div class="term-container" style="border-radius: 0px;">CONTENT</div>
 		</body>
 	</html>
 `
@@ -37,7 +37,7 @@ func wrapPreview(s []byte) ([]byte, error) {
 // PerviewHandler ..
 func PerviewHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
-	log.Printf("perview file %s", name)
+	slog.Info("perview file", slog.String("name", name))
 
 	if !strings.HasSuffix(name, ".diff") {
 		http.NotFound(w, r)
@@ -57,6 +57,6 @@ func PerviewHandler(w http.ResponseWriter, r *http.Request) {
 
 	_, err = w.Write(respBody)
 	if err != nil {
-		log.Printf("error writing response: %v", err)
+		slog.Error("writing response error", slog.String("err", err.Error()))
 	}
 }
