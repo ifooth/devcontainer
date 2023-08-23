@@ -30,7 +30,11 @@ tidy:
 
 .PHONY: test
 test:
-	@echo ">> test not support"
+	@go test ./...
+
+.PHONY: lint
+lint:
+	@golangci-lint run ./...
 
 .PHONY: benchmark
 benchmark:

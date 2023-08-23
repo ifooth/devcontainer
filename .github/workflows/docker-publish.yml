@@ -57,8 +57,6 @@ jobs:
 
       - name: Lint
         uses: golangci/golangci-lint-action@v3
-        with:
-          version: v1.54.0
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer

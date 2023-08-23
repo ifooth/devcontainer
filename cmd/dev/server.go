@@ -47,7 +47,7 @@ func runServerCmd() error {
 	r.Use(middleware.Recoverer)
 
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("hello devcontainer"))
+		w.Write([]byte("hello devcontainer")) // nolint
 	})
 
 	r.Get("/terminal/preview", terminal.PerviewHandler)

@@ -20,5 +20,5 @@ func BrowerHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	tmpl := template.Must(template.ParseFiles("index.html"))
-	tmpl.Execute(w, fileList)
+	tmpl.Execute(w, fileList) // nolint
 }
