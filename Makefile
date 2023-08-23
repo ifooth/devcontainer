@@ -36,6 +36,9 @@ test:
 benchmark:
 	@echo ">> benchmark not support"
 
+.PHONY: generate
+generate:
+	@go generate ./...
 
 .PHONY: build
 build:
