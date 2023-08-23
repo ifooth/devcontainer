@@ -14,15 +14,13 @@ linters:
   disable-all: true
   enable:
     # enable by default
-    - deadcode
+    - unused
     # - errcheck err返回检测, 太多不需要检测的, 忽略
     - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - structcheck
     - typecheck
-    - unused
     # custom
     - revive
 
