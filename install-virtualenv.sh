@@ -60,7 +60,7 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.
 go install golang.org/x/tools/cmd/stringer@latest
 go install github.com/ungerik/pkgreflect@latest
 
-# dev server
+# my dev
 go install github.com/ifooth/devcontainer/cmd/dev@latest
 
 # clean cache
