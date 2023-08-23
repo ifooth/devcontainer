@@ -38,7 +38,7 @@ func fetchFile() error {
 		}
 		name = strings.TrimSpace(name)
 
-		_, err = script.Get(f).WriteFile(path.Join("./assets/", name))
+		_, err = script.Get(f).Replace("func TerminalCSS", "// TerminalCSS ..\nfunc TerminalCSS").WriteFile(path.Join("./assets/", name))
 		if err != nil {
 			return err
 		}

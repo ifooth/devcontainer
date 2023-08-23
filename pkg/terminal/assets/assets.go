@@ -10,6 +10,7 @@ import (
 //go:embed terminal.css
 var fs embed.FS
 
+// TerminalCSS ..
 func TerminalCSS() ([]byte, error) {
 	f, err := fs.Open("terminal.css")
 	if err != nil {
