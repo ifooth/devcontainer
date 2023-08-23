@@ -45,10 +45,13 @@ go install github.com/josharian/impl@latest
 go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+# https://github.com/golang/tools
 go install golang.org/x/tools/gopls@latest
 
 # protobuf
+# https://github.com/protocolbuffers/protobuf-go
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+# https://github.com/grpc/grpc-go
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
