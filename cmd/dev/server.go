@@ -38,6 +38,15 @@ func serverCmd() *cobra.Command {
 	return cmd
 }
 
+func getPort() string {
+	p := os.Getenv("DEV_SERVER_PORT")
+	if p != "" {
+		return p
+	}
+
+	return strconv.Itoa(port)
+}
+
 func runServerCmd() error {
 	r := chi.NewRouter()
 
@@ -52,7 +61,7 @@ func runServerCmd() error {
 
 	r.Get("/terminal/preview", terminal.PerviewHandler)
 
-	addr := net.JoinHostPort(bindAddr, strconv.Itoa(port))
+	addr := net.JoinHostPort(bindAddr, getPort())
 	slog.Info("listening for requests and metrics", "addr", addr)
 
 	return http.ListenAndServe(addr, r)
