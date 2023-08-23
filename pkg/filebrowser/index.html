@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{.}}</title>
+</head>
+
+<body>
+    <h1>{{.}}</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Mode</th>
+                <th>Modified</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .}}
+            <tr>
+                <td><a href="{{if .IsDir}}/{{end}}{{.Name}}">{{.Name}}</a></td>
+                <td>{{if .IsDir}}-{{else}}{{.Size}}{{end}}</td>
+                <td>{{.Mode}}</td>
+                <td>{{.ModTime}}</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+</body>
+
+</html>

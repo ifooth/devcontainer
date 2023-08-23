@@ -17,6 +17,7 @@ import (
 var (
 	bindAddr string
 	port     int
+	pubDir   string
 )
 
 func serverCmd() *cobra.Command {
@@ -33,6 +34,7 @@ func serverCmd() *cobra.Command {
 
 	cmd.Flags().StringVar(&bindAddr, "bind-addr", "0.0.0.0", "the IP address on which to listen")
 	cmd.Flags().IntVar(&port, "port", 8022, "listen http/metrics port")
+	cmd.Flags().StringVar(&pubDir, "pub-dir", "/data/pub", "the public content dir")
 	return cmd
 }
 
