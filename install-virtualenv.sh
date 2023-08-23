@@ -59,6 +59,7 @@ go install github.com/ungerik/pkgreflect@latest
 
 # clean cache
 rm -rf /opt/go/pkg
+rm -rf /opt/go/.cache
 
 # pyenv python 多版本环境
 export PYENV_ROOT=/opt/pyenv
