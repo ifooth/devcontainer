@@ -144,10 +144,13 @@ git checkout release-branch.go1.21
 
 # build go bin & pkg tools
 cd src && ./make.bash && cd ..
-```
 
-suppose your go path is in /data/repos/golang/go
-```bash
+# add `go.work` for src workspace
+go work init
+# change if you need
+# go work edit -go=1.21
+go work use src
+
 # modify according to the following configuration
 mkdir .vscode && vim .vscode/settings.json
 ```
@@ -157,15 +160,6 @@ add custom `go.goroot` settings
 {
     "go.goroot": "/data/repos/golang/go"
 }
-```
-
-add `go.work` for src workspace
-```bash
-go 1.21
-
-use (
-	./src
-)
 ```
 all Go language server work perfect
 
