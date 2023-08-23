@@ -6,7 +6,7 @@ if [ -n "$PRE_SCRIPT_FILE" ];then
     bash $PRE_SCRIPT_FILE
 fi
 
-mkdir -p /data/repos /data/logs
+mkdir -p /data/repos /data/pub /data/logs
 
 # start sshd
 mkdir -p /run/sshd
