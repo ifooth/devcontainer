@@ -30,7 +30,7 @@ Plugin
 - [cloc](https://github.com/AlDanial/cloc) - counts blank lines, comment lines, and physical lines of source code in many programming languages
 - [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
 - [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
-- [android-platform-tools](https://developer.android.com/studio/releases/platform-tools) - such as adb, fastboot, and systrace tools
+- [protoc](https://github.com/protocolbuffers/protobuf) - Protocol Buffers - Google's data interchange format
 - [grpcurl](https://github.com/fullstorydev/grpcurl) - AboutLike cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
 ## Dev.env
