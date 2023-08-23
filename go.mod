@@ -1,9 +1,12 @@
-module github.ccom/ifooth/devcontainer
+module github.com/ifooth/devcontainer
 
 go 1.21.0
 
+replace github.com/buildkite/terminal-to-html/v3 => github.com/ifooth/terminal-to-html/v3 v3.0.0-20230823122920-cb0b6a974ad8
+
 require (
 	github.com/bitfield/script v0.22.0
+	github.com/buildkite/terminal-to-html/v3 v3.9.1
 	github.com/go-chi/chi/v5 v5.0.10
 )
 
