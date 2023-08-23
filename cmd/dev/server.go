@@ -1,4 +1,3 @@
-// APICmd 展示版本号
 package main
 
 import (
@@ -10,8 +9,9 @@ import (
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
-	"github.com/ifooth/devcontainer/pkg/terminal"
 	"github.com/spf13/cobra"
+
+	"github.com/ifooth/devcontainer/pkg/terminal"
 )
 
 var (
@@ -23,17 +23,16 @@ func serverCmd() *cobra.Command {
 	cmd := &cobra.Command{
 		Use:   "server",
 		Short: "devcontainer server",
+		Run: func(cmd *cobra.Command, args []string) {
+			if err := runServerCmd(); err != nil {
+				slog.Error("run server failed", "err", err)
+				os.Exit(1)
+			}
+		},
 	}
-	cmd.Run = func(cmd *cobra.Command, args []string) {
-		if err := runServerCmd(); err != nil {
-			slog.Error("run server failed", "err", err)
-			os.Exit(1)
-		}
 
-	}
-
-	cmd.Flags().StringVar(&bindAddr, "bind-address", "0.0.0.0", "The IP address on which to listen")
-	cmd.Flags().IntVar(&port, "port", 8022, "Listen http/metrics port")
+	cmd.Flags().StringVar(&bindAddr, "bind-addr", "0.0.0.0", "the IP address on which to listen")
+	cmd.Flags().IntVar(&port, "port", 8022, "listen http/metrics port")
 	return cmd
 }
 
