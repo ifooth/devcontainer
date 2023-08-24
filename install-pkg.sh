@@ -78,6 +78,8 @@ HELM_VERSION=v3.12.2
 wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
 tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/
+mkdir -p ${ZSH}/custom/plugins/helm-autocomplete
+helm completion zsh > ${ZSH}/custom/plugins/helm-autocomplete/helm-autocomplete.plugin.zsh
 
 # Install Kubectl
 # https://github.com/kubernetes/kubernetes
@@ -102,7 +104,7 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Clean up
-mkdir -p /data/repos /data/logs /data/etc/supervisord
+mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord
 
 apt-get -y autoremove
 apt-get -y clean
