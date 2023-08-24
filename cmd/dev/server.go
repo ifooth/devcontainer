@@ -11,6 +11,7 @@ import (
 	"github.com/go-chi/chi/v5/middleware"
 	"github.com/spf13/cobra"
 
+	"github.com/ifooth/devcontainer/pkg/filebrowser"
 	"github.com/ifooth/devcontainer/pkg/terminal"
 )
 
@@ -60,6 +61,7 @@ func runServerCmd() error {
 	})
 
 	r.Get("/terminal/preview", terminal.PerviewHandler)
+	r.Mount("/file/browser", http.StripPrefix("/file/browser", filebrowser.FileHandler(pubDir)))
 
 	addr := net.JoinHostPort(bindAddr, getPort())
 	slog.Info("listening for requests and metrics", "addr", addr)

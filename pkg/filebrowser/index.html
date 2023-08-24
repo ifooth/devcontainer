@@ -3,31 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{.}}</title>
+    <title>Dev File Browser</title>
 </head>
 
 <body>
-    <h1>{{.}}</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Size</th>
-                <th>Mode</th>
-                <th>Modified</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{range .}}
-            <tr>
-                <td><a href="{{if .IsDir}}/{{end}}{{.Name}}">{{.Name}}</a></td>
-                <td>{{if .IsDir}}-{{else}}{{.Size}}{{end}}</td>
-                <td>{{.Mode}}</td>
-                <td>{{.ModTime}}</td>
-            </tr>
-            {{end}}
-        </tbody>
-    </table>
+    <h1>Index of /</h1>
+    <hr>
+    <pre><a href="../">../</a>
+{{- range .fileList }}
+<a href="/file/browser/{{ .Name }}">{{ .Name }}</a> {{ .Info.Size }}  {{ .Info.Mode }} {{ .Info.ModTime }}
+{{- end -}}
+    </pre>
+    <hr>
 </body>
 
 </html>
