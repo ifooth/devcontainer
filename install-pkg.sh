@@ -84,6 +84,8 @@ mv linux-amd64/helm /usr/local/bin/
 KUBECTL_VERSION=v1.22.17
 wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
+mkdir -p ${ZSH}/custom/plugins/kubectl-autocomplete
+kubectl completion zsh > ${ZSH}/custom/plugins/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 
 # Install grpcurl
 GPRCCURL_VERSION=1.8.7

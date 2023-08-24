@@ -70,7 +70,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump fzf zsh-autosuggestions fabric extract)
+plugins=(git autojump fzf extract zsh-autosuggestions kubectl-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -177,6 +177,7 @@ eval "$(direnv hook zsh)"
 
 # Alias
 alias echo_path='tr ":" "\n" <<< "$PATH"'
+alias k="kubectl"
 
 [[ -s "${HOME}/.zsh_profile" ]] && source "${HOME}/.zsh_profile"
 
