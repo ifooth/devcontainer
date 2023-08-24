@@ -27,7 +27,8 @@ echo "AcceptEnv SHELL_OS LC_*" > /etc/ssh/sshd_config.d/devcontainer.conf
 apt-get install -y autojump fzf
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /usr/local/bin/zsh-install.sh && chmod a+x /usr/local/bin/zsh-install.sh
 export ZSH="/opt/oh-my-zsh" && export CHSH=no && zsh-install.sh
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH}/custom/plugins/zsh-autosuggestions
+export ZSH_CUSTOM=${ZSH}/custom/plugins
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/zsh-autosuggestions
 
 # Vim
 git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
@@ -78,16 +79,16 @@ HELM_VERSION=v3.12.2
 wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
 tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
 mv linux-amd64/helm /usr/local/bin/
-mkdir -p ${ZSH}/custom/plugins/helm-autocomplete
-helm completion zsh > ${ZSH}/custom/plugins/helm-autocomplete/helm-autocomplete.plugin.zsh
+mkdir -p ${ZSH_CUSTOM}/helm-autocomplete
+helm completion zsh > ${ZSH_CUSTOM}/helm-autocomplete/helm-autocomplete.plugin.zsh
 
 # Install Kubectl
 # https://github.com/kubernetes/kubernetes
 KUBECTL_VERSION=v1.22.17
 wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 chmod a+x kubectl && mv kubectl /usr/local/bin/
-mkdir -p ${ZSH}/custom/plugins/kubectl-autocomplete
-kubectl completion zsh > ${ZSH}/custom/plugins/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
+mkdir -p ${ZSH_CUSTOM}/kubectl-autocomplete
+kubectl completion zsh > ${ZSH_CUSTOM}/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 
 # Install grpcurl
 GPRCCURL_VERSION=1.8.7
