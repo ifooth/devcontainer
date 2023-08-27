@@ -10,6 +10,7 @@ import (
 	"strings"
 
 	terminal "github.com/buildkite/terminal-to-html/v3"
+	"github.com/go-chi/chi/v5/middleware"
 
 	"github.com/ifooth/devcontainer/pkg/terminal/assets"
 	"github.com/ifooth/devcontainer/pkg/web"
@@ -75,11 +76,20 @@ func PreviewMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
-		slog.Info("perview file", slog.String("path", r.URL.Path))
-		ww := web.NewResponseBufferWriter(w)
+		bufWriter := web.NewResponseBufferWriter(w)
+		ww := middleware.NewWrapResponseWriter(bufWriter, r.ProtoMajor)
 		next.ServeHTTP(ww, r)
 
-		respBody, err := wrapPreview(terminal.Render(ww.Buff()))
+		buf := bufWriter.Buff()
+
+		// 非200，文件未找到等, 直接返回
+		if ww.Status() != 200 {
+			w.Write(buf)
+			return
+		}
+
+		slog.Info("perview file", slog.String("path", r.URL.Path))
+		respBody, err := wrapPreview(terminal.Render(buf))
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadGateway)
 			return

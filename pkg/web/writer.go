@@ -6,14 +6,20 @@ import (
 )
 
 // ResponseBufferWriter 自定义Write
-type ResponseBufferWriter struct {
+type ResponseBufferWriter interface {
+	http.ResponseWriter
+	Buff() []byte
+}
+
+// bufferWriter ..
+type bufferWriter struct {
 	http.ResponseWriter
 	buf *bytes.Buffer
 }
 
 // NewResponseBufferWriter ..
-func NewResponseBufferWriter(w http.ResponseWriter) *ResponseBufferWriter {
-	ww := &ResponseBufferWriter{
+func NewResponseBufferWriter(w http.ResponseWriter) ResponseBufferWriter {
+	ww := &bufferWriter{
 		ResponseWriter: w,
 		buf:            bytes.NewBuffer(nil),
 	}
@@ -21,11 +27,11 @@ func NewResponseBufferWriter(w http.ResponseWriter) *ResponseBufferWriter {
 }
 
 // Write http write 接口实现
-func (w *ResponseBufferWriter) Write(data []byte) (int, error) {
+func (w *bufferWriter) Write(data []byte) (int, error) {
 	return w.buf.Write(data)
 }
 
 // Buff ..
-func (w *ResponseBufferWriter) Buff() []byte {
+func (w *bufferWriter) Buff() []byte {
 	return w.buf.Bytes()
 }
