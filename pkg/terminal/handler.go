@@ -75,6 +75,7 @@ func PerviewMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
+		slog.Info("perview file", slog.String("path", r.URL.Path))
 		ww := web.NewResponseBufferWriter(w)
 		next.ServeHTTP(ww, r)
 
