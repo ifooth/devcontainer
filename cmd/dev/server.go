@@ -70,9 +70,9 @@ func runServerCmd() error {
 		w.Write([]byte("hello devcontainer")) // nolint
 	})
 
-	r.Get("/terminal/preview", terminal.PerviewHandler)
+	r.Get("/terminal/preview", terminal.PreviewHandler)
 	r.Route("/file/browser", func(r chi.Router) {
-		r.Use(terminal.PerviewMiddleware)
+		r.Use(terminal.PreviewMiddleware)
 		r.Mount("/", http.StripPrefix("/file/browser", filebrowser.FileHandler(pubDir)))
 	})
 

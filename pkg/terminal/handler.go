@@ -39,8 +39,8 @@ func wrapPreview(s []byte) ([]byte, error) {
 	return s, nil
 }
 
-// PerviewHandler ..
-func PerviewHandler(w http.ResponseWriter, r *http.Request) {
+// PreviewHandler ..
+func PreviewHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
 	slog.Info("perview file", slog.String("name", name))
 
@@ -66,8 +66,8 @@ func PerviewHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-// PerviewMiddleware ..
-func PerviewMiddleware(next http.Handler) http.Handler {
+// PreviewMiddleware ..
+func PreviewMiddleware(next http.Handler) http.Handler {
 	fn := func(w http.ResponseWriter, r *http.Request) {
 		// 只处理 diff 后缀文件类型
 		if !strings.HasSuffix(r.URL.Path, ".diff") {
