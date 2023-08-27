@@ -71,7 +71,10 @@ func runServerCmd() error {
 	})
 
 	r.Get("/terminal/preview", terminal.PerviewHandler)
-	r.Mount("/file/browser", http.StripPrefix("/file/browser", filebrowser.FileHandler(pubDir)))
+	r.Route("/file/browser", func(r chi.Router) {
+		r.Use(terminal.PerviewMiddleware)
+		r.Mount("/", http.StripPrefix("/file/browser", filebrowser.FileHandler(pubDir)))
+	})
 
 	addr := net.JoinHostPort(bindAddr, getPort())
 	slog.Info("listening for requests and metrics", "addr", addr)

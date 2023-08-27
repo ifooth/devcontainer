@@ -12,6 +12,7 @@ import (
 	terminal "github.com/buildkite/terminal-to-html/v3"
 
 	"github.com/ifooth/devcontainer/pkg/terminal/assets"
+	"github.com/ifooth/devcontainer/pkg/web"
 )
 
 var previewTemplate = `
@@ -63,4 +64,31 @@ func PerviewHandler(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		slog.Error("writing response error", slog.String("err", err.Error()))
 	}
+}
+
+// PerviewMiddleware ..
+func PerviewMiddleware(next http.Handler) http.Handler {
+	fn := func(w http.ResponseWriter, r *http.Request) {
+		// 只处理 diff 后缀文件类型
+		if !strings.HasSuffix(r.URL.Path, ".diff") {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		ww := web.NewResponseBufferWriter(w)
+		next.ServeHTTP(ww, r)
+
+		respBody, err := wrapPreview(terminal.Render(ww.Buff()))
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusBadGateway)
+			return
+		}
+
+		_, err = w.Write(respBody)
+		if err != nil {
+			slog.Error("writing response error", slog.String("err", err.Error()))
+		}
+	}
+
+	return http.HandlerFunc(fn)
 }
