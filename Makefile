@@ -44,6 +44,11 @@ benchmark:
 generate:
 	@go generate ./...
 
+.PHONY: docs
+docs:
+	@swag init --outputTypes go,json -g ./cmd/dev/server.go --exclude ./
+	@swag fmt -g ./cmd/dev/server.go --exclude ./
+
 .PHONY: build
 build:
 	@echo ">> rebuilding binaries"

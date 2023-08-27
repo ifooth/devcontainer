@@ -1,0 +1,24 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/healthz": {
+            "get": {
+                "tags": [
+                    "Healthz"
+                ],
+                "summary": "Healthz 接口",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
