@@ -38,7 +38,7 @@ lint:
 
 .PHONY: benchmark
 benchmark:
-	@echo ">> benchmark not support"
+	@go test -benchmem -bench=. ./...
 
 .PHONY: generate
 generate:
