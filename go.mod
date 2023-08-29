@@ -5,6 +5,7 @@ go 1.21
 require (
 	github.com/bitfield/script v0.22.0
 	github.com/buildkite/terminal-to-html/v3 v3.9.1
+	github.com/dustin/go-humanize v1.0.1
 	github.com/go-chi/chi/v5 v5.0.10
 	github.com/spf13/cobra v1.7.0
 	github.com/swaggo/http-swagger/v2 v2.0.1

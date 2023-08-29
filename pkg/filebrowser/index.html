@@ -6,7 +6,7 @@
     <title>Dev File Browser</title>
 </head>
 
-<body>
+<body id="uploader">
     <h1>Index of /</h1>
     <hr>
     <pre><a href="../">../</a>
@@ -15,6 +15,46 @@
 {{- end -}}
     </pre>
     <hr>
+    <script type="text/javascript">
+        window.onload = function () {
+            var uuz = document.getElementById('uploader');
+
+            uuz.ondragenter = function (e) {
+                e.preventDefault();
+            }
+
+            uuz.ondragover = function (e) {
+                e.preventDefault();
+            }
+
+            uuz.ondragleave = function (e) {
+                e.preventDefault();
+            }
+
+            uuz.ondrop = function (e) {
+                e.preventDefault();
+
+                var upfile = e.dataTransfer.files[0]; //获取要上传的文件对象(可以上传多个)
+                var formdata = new FormData();
+                var xhr = new XMLHttpRequest();
+                formdata.append('upfile', upfile); //设置服务器端接收的name为upfile
+                xhr.open("post", window.location.pathname);
+                xhr.onreadystatechange = function () {
+                    if (this.readyState == 4) {
+                        var resultText = this.responseText;
+                        console.log("status:", this.status, "resultText:", resultText)
+                        if (this.status == 200) { //上传成功
+                            location.reload()
+                        } else {
+                            alert("upload failed, reason: " + resultText);
+                        }
+                    }
+                }
+
+                xhr.send(formdata);
+            }
+        }
+    </script>
 </body>
 
 </html>

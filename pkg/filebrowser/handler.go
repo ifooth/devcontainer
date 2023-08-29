@@ -4,10 +4,13 @@ import (
 	"embed"
 	"errors"
 	"io"
+	"log/slog"
 	"net/http"
 	"os"
 	"path"
 	"text/template"
+
+	"github.com/dustin/go-humanize"
 )
 
 //go:embed index.html
@@ -17,40 +20,85 @@ func webTemplate() *template.Template {
 	return template.Must(template.New("").ParseFS(fs, "*.html"))
 }
 
-// FileHandler ..
-func FileHandler(root string) http.Handler {
-	tmpl := webTemplate()
-	fn := func(w http.ResponseWriter, r *http.Request) {
-		p := path.Join(root, r.URL.Path)
-		info, err := os.Stat(p)
-		if err != nil && errors.Is(err, os.ErrNotExist) {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
-			return
-		}
+type file struct {
+	root string
+	tmpl *template.Template
+}
 
-		if info.IsDir() {
-			fileList, err := os.ReadDir(path.Join(root, r.URL.Path))
-			if err != nil {
-				http.Error(w, err.Error(), http.StatusInternalServerError)
-				return
-			}
-			data := map[string]any{
-				"fileList": fileList,
-			}
-			tmpl.ExecuteTemplate(w, "index.html", data) // nolintr
-			return
-		}
+// NewFileHandler ..
+func NewFileHandler(root string) http.Handler {
+	f := &file{
+		root: root,
+		tmpl: webTemplate(),
+	}
+	return f
+}
 
-		reader, err := os.Open(p)
+func (f *file) getFileHandler(w http.ResponseWriter, r *http.Request) {
+	p := path.Join(f.root, r.URL.Path)
+	info, err := os.Stat(p)
+	if err != nil && errors.Is(err, os.ErrNotExist) {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	if info.IsDir() {
+		fileList, err := os.ReadDir(path.Join(f.root, r.URL.Path))
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		w.WriteHeader(http.StatusOK)
-		w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
-		io.Copy(w, reader)
-
+		data := map[string]any{
+			"fileList": fileList,
+		}
+		f.tmpl.ExecuteTemplate(w, "index.html", data) // nolintr
+		return
 	}
 
-	return http.HandlerFunc(fn)
+	reader, err := os.Open(p)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "text/plain; charset=UTF-8")
+	io.Copy(w, reader)
+}
+
+func (f *file) uploadFileHandler(w http.ResponseWriter, r *http.Request) {
+	// 获取文件内容 要这样获取
+	file, head, err := r.FormFile("upfile")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer file.Close()
+
+	name := path.Join(f.root, path.Dir(r.URL.Path), head.Filename)
+	fW, err := os.Create(name)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	defer fW.Close()
+
+	size, err := io.Copy(fW, file)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+
+	slog.Info("upload file success", "name", name, "size", humanize.Bytes(uint64(size)))
+	w.Write([]byte("success"))
+}
+
+// ServeHTTP ..
+func (f *file) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+	if r.Method == http.MethodPost {
+		f.uploadFileHandler(w, r)
+		return
+	}
+
+	f.getFileHandler(w, r)
+
 }

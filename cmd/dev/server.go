@@ -73,7 +73,7 @@ func runServerCmd() error {
 	r.Get("/terminal/preview", terminal.PreviewHandler)
 	r.Route("/file/browser", func(r chi.Router) {
 		r.Use(terminal.PreviewMiddleware)
-		r.Mount("/", http.StripPrefix("/file/browser", filebrowser.FileHandler(pubDir)))
+		r.Mount("/", http.StripPrefix("/file/browser", filebrowser.NewFileHandler(pubDir)))
 	})
 
 	addr := net.JoinHostPort(bindAddr, getPort())
