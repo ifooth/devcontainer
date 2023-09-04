@@ -8,7 +8,7 @@ apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release i
 apt-get install -y vim direnv tmux git-lfs cloc clang-format apache2-utils graphviz
 
 # Install kernel build tools
-apt-get install -y flex bc libelf-dev libssl-dev
+apt-get install -y flex bc libelf-dev libssl-dev bison
 
 # Install android tools adb
 apt-get install -y adb
