@@ -10,6 +10,9 @@ apt-get install -y vim direnv tmux git-lfs cloc clang-format apache2-utils graph
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev bison
 
+# Install build
+apt-get install -y ccache distcc
+
 # Install android tools adb
 apt-get install -y adb
 
@@ -18,6 +21,7 @@ apt-get install -y golang
 
 # client utils
 apt-get install -y redis-tools mariadb-client etcd-client
+
 
 # sshd
 apt-get install -y openssh-server
