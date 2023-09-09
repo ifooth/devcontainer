@@ -5,8 +5,8 @@ set -ex
 export GOPATH=/opt/go
 # change go version if upgrade
 export GO1_15=go1.15.15
-export GO1_20=go1.20.7 # 当前版本
-export GO1_21=go1.21.0
+export GO1_20=go1.20.8 # 当前版本
+export GO1_21=go1.21.1
 
 go install golang.org/dl/$GO1_15@latest
 go install golang.org/dl/$GO1_20@latest
