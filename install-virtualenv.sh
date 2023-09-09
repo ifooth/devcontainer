@@ -3,6 +3,7 @@ set -ex
 
 # golang 多版本环境
 export GOPATH=/opt/go
+export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_15=go1.15.15
 export GO1_20=go1.20.8 # 当前版本

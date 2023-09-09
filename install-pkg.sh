@@ -5,6 +5,7 @@ set -ex
 # graphviz use for golang pprof
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
+apt-get install -y ascii xxd
 apt-get install -y vim direnv tmux git-lfs cloc clang-format apache2-utils graphviz
 
 # Install kernel build tools
