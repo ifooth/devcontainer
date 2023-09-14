@@ -11,7 +11,7 @@ COPY install-*.sh /usr/local/bin/
 
 # 配置文件
 COPY root /opt/root
-COPY ./.golangci.yml /opt/root/.golangci.yml
+COPY .golangci.yml /opt/root/.golangci.yml
 
 # 安装依赖包
 RUN /usr/local/bin/install-pkg.sh
