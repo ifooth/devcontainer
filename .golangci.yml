@@ -35,11 +35,11 @@ linters-settings:
   # 只开启特定的规则
   errcheck:
     exclude-functions:
-      - os.RemoveAll
-      - io.Copy
       - (*os.File).Close
       - (io.Closer).Close
       - (net/http.ResponseWriter).Write
+      - io.Copy
+      - os.RemoveAll
   govet:
     check-shadowing: true
   gocyclo:
