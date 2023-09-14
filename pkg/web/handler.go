@@ -17,12 +17,12 @@ func ProfilerHandler() http.Handler {
 	return mux
 }
 
-// HealthyHandler Healthz 接口
+// HealthzHandler Healthz 接口
 //
-//  @Summary  Healthz 接口
-//  @Tags     Healthz
-//  @Success  200  {string}  string
-//  @Router   /healthz [get]
+//	@Summary  Healthz 接口
+//	@Tags     Healthz
+//	@Success  200  {string}  string
+//	@Router   /healthz [get]
 func HealthzHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("OK"))
 }

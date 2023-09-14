@@ -43,15 +43,15 @@ func (f *file) getFileHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	if info.IsDir() {
-		fileList, err := os.ReadDir(path.Join(f.root, r.URL.Path))
+		fileList, rErr := os.ReadDir(path.Join(f.root, r.URL.Path))
 		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+			http.Error(w, rErr.Error(), http.StatusInternalServerError)
 			return
 		}
 		data := map[string]any{
 			"fileList": fileList,
 		}
-		f.tmpl.ExecuteTemplate(w, "index.html", data) // nolintr
+		f.tmpl.ExecuteTemplate(w, "index.html", data) // nolint
 		return
 	}
 

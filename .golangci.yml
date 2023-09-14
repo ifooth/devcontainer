@@ -1,30 +1,61 @@
 run:
-  timeout: 1m
+  timeout: 5m
 
 issues:
+  # 显示所有 issue
+  max-issues-per-linter: 0
+  max-same-issues: 0
   exclude-use-default: false
-  # Excluding configuration per-path, per-linter, per-text and per-source
-  exclude-rules:
-    # 仅保留 should have comment or be unexported
-    - linters:
-        - revive
-      text: "should be of the form|consider calling this"
 
 linters:
   disable-all: true
   enable:
     # enable by default
-    - unused
-    # - errcheck err返回检测, 太多不需要检测的, 忽略
+    - errcheck
     - gosimple
     - govet
     - ineffassign
     - staticcheck
-    - typecheck
+    - unused
+
     # custom
+    - goconst
+    - gocyclo
+    - gofmt
+    # - goheader
+    - goimports
+    - gosec
+    - misspell
+    - nakedret
     - revive
+    - unconvert
+    - unparam
 
 linters-settings:
+  # 只开启特定的规则
+  errcheck:
+    exclude-functions:
+      - os.RemoveAll
+      - io.Copy
+      - (*os.File).Close
+      - (io.Closer).Close
+      - (net/http.ResponseWriter).Write
+  govet:
+    check-shadowing: true
+  gocyclo:
+    min-complexity: 30
+  gosec:
+    includes:
+      - G201 # SQL query construction using format string
+      - G202 # SQL query construction using string concatenation
+      - G101 # Look for hard coded credentials
+      - G401 # Detect the usage of DES, RC4, MD5 or SHA1
+      - G402 # Look for bad TLS connection settings
+      - G403 # Ensure minimum RSA key length of 2048 bits
+      - G404 # Insecure random number source (rand)
+      - G504 # Import blocklist: net/http/cgi
+  misspell:
+    locale: US
   revive:
     rules:
       - name: exported

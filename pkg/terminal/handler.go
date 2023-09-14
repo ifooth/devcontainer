@@ -43,7 +43,7 @@ func wrapPreview(s []byte) ([]byte, error) {
 // PreviewHandler ..
 func PreviewHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
-	slog.Info("perview file", slog.String("name", name))
+	slog.Info("preview file", slog.String("name", name))
 
 	if !strings.HasSuffix(name, ".diff") {
 		http.NotFound(w, r)
@@ -88,7 +88,7 @@ func PreviewMiddleware(next http.Handler) http.Handler {
 			return
 		}
 
-		slog.Info("perview file", slog.String("path", r.URL.Path))
+		slog.Info("preview file", slog.String("path", r.URL.Path))
 		respBody, err := wrapPreview(terminal.Render(buf))
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadGateway)

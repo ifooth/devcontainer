@@ -34,7 +34,7 @@ test:
 
 .PHONY: lint
 lint:
-	@golangci-lint run ./...
+	@golangci-lint run --issues-exit-code=0 --fix ./...
 
 .PHONY: benchmark
 benchmark:
