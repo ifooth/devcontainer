@@ -19,7 +19,6 @@ linters:
     - unused
 
     # custom
-    - gci
     - goconst
     - gocyclo
     - gofmt
@@ -47,11 +46,6 @@ linters-settings:
     min-complexity: 30
   goimports:
     local-prefixes: github.com/ifooth/devcontainer
-  gci:
-    sections:
-      - standard
-      - default
-      - prefix(github.com/ifooth/devcontainer)
   gosec:
     includes:
       - G201 # SQL query construction using format string
