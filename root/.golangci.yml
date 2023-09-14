@@ -19,7 +19,7 @@ linters:
     - unused
 
     # custom
-    - gci
+    # - gci
     - goconst
     - gocyclo
     - gofmt
@@ -45,13 +45,13 @@ linters-settings:
     check-shadowing: true
   gocyclo:
     min-complexity: 30
-  goimports:
-    local-prefixes: github.com/ifooth/devcontainer
-  gci:
-    sections:
-      - standard
-      - default
-      - prefix(github.com/ifooth/devcontainer)
+  # goimports:
+  #   local-prefixes: github.com/ifooth/devcontainer
+  # gci:
+  #   sections:
+  #     - standard
+  #     - default
+  #     - prefix(github.com/ifooth/devcontainer)
   gosec:
     includes:
       - G201 # SQL query construction using format string
@@ -64,6 +64,7 @@ linters-settings:
       - G504 # Import blocklist: net/http/cgi
   misspell:
     locale: US
+
   revive:
     rules:
       - name: exported
