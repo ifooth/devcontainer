@@ -5,9 +5,6 @@
         "GOBIN": "/opt/go/bin"
     },
     "go.lintTool": "golangci-lint",
-    "go.lintFlags": [
-        "--fast"
-    ],
     "clang-format.style": "{IndentWidth: 4, BasedOnStyle: google, AlignConsecutiveAssignments: true, ColumnLimit: 0}",
     "python.linting.flake8Path": "/usr/local/bin/flake8",
     "python.linting.flake8Args": [
