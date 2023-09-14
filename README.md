@@ -2,8 +2,8 @@
 Full stack remote development environment
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/TencentBlueKing/bscp-go?cache=v1)](https://goreportcard.com/report/github.com/TencentBlueKing/bscp-go)
-[![lint](github.com/ifooth/devcontainer/actions/workflows/lint.yml/badge.svg?branch=main)](github.com/ifooth/devcontainer/actions/workflows/lint.yml)
-[![build](github.com/ifooth/devcontainer/actions/workflows/build.yml/badge.svg?branch=main)](github.com/ifooth/devcontainer/actions/workflows/build.yml)
+[![lint](https://github.com/ifooth/devcontainer/actions/workflows/lint.yml/badge.svg?branch=main)](http://github.com/ifooth/devcontainer/actions/workflows/lint.yml)
+[![build](https://github.com/ifooth/devcontainer/actions/workflows/build.yml/badge.svg?branch=main)](http://github.com/ifooth/devcontainer/actions/workflows/build.yml)
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg)](https://hub.docker.com/r/ifooth/devcontainer/)
 
