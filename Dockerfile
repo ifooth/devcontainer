@@ -11,6 +11,7 @@ COPY install-*.sh /usr/local/bin/
 
 # 配置文件
 COPY root /opt/root
+COPY ./.golangci.yml /opt/root/.golangci.yml
 
 # 安装依赖包
 RUN /usr/local/bin/install-pkg.sh
@@ -23,6 +24,5 @@ ADD ./settings /opt/vscode/settings
 ADD ./dev-init.sh /usr/local/bin/
 ADD ./docker-entrypoint.sh /usr/local/bin/
 ADD ./supervisord.conf /etc/supervisord.conf
-ADD ./.golangci.yml /opt/root/.golangci.yml
 
 CMD ["docker-entrypoint.sh"]
