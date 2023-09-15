@@ -1,3 +1,4 @@
+// dev-init is a program ...
 package main
 
 import (

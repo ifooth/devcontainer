@@ -1,3 +1,4 @@
+// Package filebrowser ...
 package filebrowser
 
 import (

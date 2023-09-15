@@ -1,3 +1,4 @@
+// Package terminal ...
 package terminal
 
 //go:generate go run ./gen/main.go
