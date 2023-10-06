@@ -30,7 +30,7 @@ tidy:
 
 .PHONY: test
 test:
-	@go test ./... -coverprofile=./cover.out -covermode=atomic
+	@go test -coverprofile=./cover.out -covermode=atomic ./...
 
 .PHONY: lint
 lint:
