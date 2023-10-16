@@ -12,7 +12,7 @@ apt-get install -y vim direnv tmux git-lfs cloc clang-format apache2-utils graph
 apt-get install -y flex bc libelf-dev libssl-dev bison
 
 # Install build
-apt-get install -y ccache distcc
+apt-get install -y ccache distcc clang llvm
 
 # Install android tools adb
 apt-get install -y adb
