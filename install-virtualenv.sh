@@ -6,7 +6,7 @@ export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_15=go1.15.15
-export GO1_20=go1.20.9 # 当前版本
+export GO1_20=go1.20.10 # 当前版本
 export GO1_21=go1.21.3
 
 go install golang.org/dl/$GO1_15@latest
@@ -45,9 +45,9 @@ go install github.com/fatih/gomodifytags@latest
 go install github.com/josharian/impl@latest
 go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.1
 # https://github.com/golang/tools
-go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/gopls@v0.14.0
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
