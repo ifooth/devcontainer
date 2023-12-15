@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+export DEBIAN_FRONTEND=noninteractive
+
 # remote go env
 unset GOLANG_VERSION
 unset GOROOT

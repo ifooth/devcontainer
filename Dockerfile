@@ -2,11 +2,6 @@ FROM mcr.microsoft.com/devcontainers/go:1.21
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# remote go env
-RUN unset GOLANG_VERSION && \
-    unset GOROOT && \
-    unset GOPATH
-
 WORKDIR /root
 
 # 配置文件, 代码/数据目录
@@ -18,10 +13,13 @@ COPY install-*.sh /usr/local/bin/
 COPY root /opt/root
 
 # 安装依赖包
-# RUN /usr/local/bin/install-pkg.sh
+RUN /usr/local/bin/install-pkg.sh
 
 # 安装开发环境
-RUN /usr/local/bin/install-virtualenv.sh
+RUN unset GOLANG_VERSION && \
+    unset GOROOT && \
+    unset GOPATH && \
+    /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
 ADD ./settings /opt/vscode/settings

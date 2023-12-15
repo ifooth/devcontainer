@@ -1,31 +1,33 @@
 #!/bin/bash
 set -ex
 
+export DEBIAN_FRONTEND=noninteractive
+
 # Install pkgs
 # graphviz use for golang pprof
-apt-get update
-apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
-apt-get install -y ascii xxd
-apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
+apt update
+apt install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
+apt install -y ascii xxd
+apt install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
 
 # client utils
-apt-get install -y redis-tools mariadb-client etcd-client
+apt install -y redis-tools mariadb-client etcd-client
 
 # Install kernel build tools
-apt-get install -y flex bc libelf-dev libssl-dev bison
+apt install -y flex bc libelf-dev libssl-dev bison
 
 # Install build
-apt-get install -y ccache distcc clang llvm
+apt install -y ccache distcc clang llvm
 
 # Install android tools adb
-apt-get install -y adb
+apt install -y adb
 
 # sshd
-apt-get install -y openssh-server
+apt install -y openssh-server
 echo "AcceptEnv SHELL_OS LC_*" > /etc/ssh/sshd_config.d/devcontainer.conf
 
 # zsh utils 命令行终端
-apt-get install -y autojump fzf
+apt install -y autojump fzf
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /usr/local/bin/zsh-install.sh && chmod a+x /usr/local/bin/zsh-install.sh
 export ZSH="/opt/oh-my-zsh" && export CHSH=no && zsh-install.sh
 export ZSH_CUSTOM=${ZSH}/custom/plugins
@@ -37,7 +39,7 @@ cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # vscode python tools & utils
-apt-get install -y python3-venv
+apt install -y python3-venv
 python3 -m venv /opt/py
 export PATH=/opt/py/bin:$PATH
 pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
@@ -48,7 +50,7 @@ pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
-apt-get update && apt-get install -y docker-ce-cli
+apt update && apt install -y docker-ce-cli
 
 cd /tmp
 # Install skopeo
@@ -94,12 +96,6 @@ chmod a+x kubectl && mv kubectl /usr/local/bin/
 mkdir -p ${ZSH_CUSTOM}/kubectl-autocomplete
 kubectl completion zsh > ${ZSH_CUSTOM}/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 
-# Install grpcurl
-GPRCCURL_VERSION=1.8.7
-wget -q https://github.com/fullstorydev/grpcurl/releases/download/v${GPRCCURL_VERSION}/grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
-tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
-mv grpcurl /usr/local/bin/
-
 # Install protoc
 export PROTOC_VERSION=25.1
 wget -q https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
@@ -108,10 +104,16 @@ mkdir -p /opt/go/bin
 mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
+# Install grpcurl
+GPRCCURL_VERSION=1.8.7
+wget -q https://github.com/fullstorydev/grpcurl/releases/download/v${GPRCCURL_VERSION}/grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
+tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
+mv grpcurl /opt/go/bin/
+
 # Clean up
 mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord
 
-apt-get -y autoremove
-apt-get -y clean
+apt -y autoremove
+apt -y clean
 rm -rf /var/lib/apt/lists/*
 rm -rf /tmp/*
