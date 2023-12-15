@@ -79,7 +79,7 @@ curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-install
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
 export PATH=${PYENV_ROOT}/bin:$PATH
 
-apt update && apt install -y libreadline-dev libsqlite3-dev libbz2-dev liblzma-dev libffi-dev
+apt-get update && apt-get install -y libreadline-dev libsqlite3-dev libbz2-dev liblzma-dev libffi-dev
 export PY3_12=3.12.1
 
 pyenv install $PY3_12

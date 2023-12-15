@@ -5,29 +5,29 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Install pkgs
 # graphviz use for golang pprof
-apt update
-apt install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
-apt install -y ascii xxd
-apt install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
+apt-get update
+apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
+apt-get install -y ascii xxd
+apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
 
 # client utils
-apt install -y redis-tools mariadb-client etcd-client
+apt-get install -y redis-tools mariadb-client etcd-client
 
 # Install kernel build tools
-apt install -y flex bc libelf-dev libssl-dev bison
+apt-get install -y flex bc libelf-dev libssl-dev bison
 
 # Install build
-apt install -y ccache distcc clang llvm
+apt-get install -y ccache distcc clang llvm
 
 # Install android tools adb
-apt install -y adb
+apt-get install -y adb
 
 # sshd
-apt install -y openssh-server
+apt-get install -y openssh-server
 echo "AcceptEnv SHELL_OS LC_*" > /etc/ssh/sshd_config.d/devcontainer.conf
 
 # zsh utils 命令行终端
-apt install -y autojump fzf
+apt-get install -y autojump fzf
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /usr/local/bin/zsh-install.sh && chmod a+x /usr/local/bin/zsh-install.sh
 export ZSH="/opt/oh-my-zsh" && export CHSH=no && zsh-install.sh
 export ZSH_CUSTOM=${ZSH}/custom/plugins
@@ -39,7 +39,7 @@ cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # vscode python tools & utils
-apt install -y python3-venv
+apt-get install -y python3-venv
 python3 -m venv /opt/py
 export PATH=/opt/py/bin:$PATH
 pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
@@ -50,7 +50,7 @@ pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython 
 # Install Docker
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
-apt update && apt install -y docker-ce-cli
+apt-get update && apt-get install -y docker-ce-cli
 
 cd /tmp
 # Install skopeo
@@ -113,7 +113,7 @@ mv grpcurl /opt/go/bin/
 # Clean up
 mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord
 
-apt -y autoremove
-apt -y clean
+apt-get -y autoremove
+apt-get -y clean
 rm -rf /var/lib/apt/lists/*
 rm -rf /tmp/*
