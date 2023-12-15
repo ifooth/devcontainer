@@ -102,7 +102,7 @@ tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
 mv grpcurl /usr/local/bin/
 
 # Install protoc
-export PROTOC_VERSION=24.1
+export PROTOC_VERSION=25.1
 wget -q https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
 unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip
 mkdir -p /opt/go/bin

@@ -5,16 +5,13 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_15=go1.15.15
-export GO1_20=go1.20.10 # 当前版本
-export GO1_21=go1.21.3
+export GO1_20=go1.20.12 # 当前版本
+export GO1_21=go1.21.5
 
-go install golang.org/dl/$GO1_15@latest
 go install golang.org/dl/$GO1_20@latest
 go install golang.org/dl/$GO1_21@latest
 
 export HOME=/opt/go
-$GOPATH/bin/$GO1_15 download && rm -rf $GOPATH/sdk/$GO1_15/$GO1_15.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_20 download && rm -rf $GOPATH/sdk/$GO1_20/$GO1_20.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_21 download && rm -rf $GOPATH/sdk/$GO1_21/$GO1_21.linux-amd64.tar.gz
 
@@ -25,7 +22,6 @@ rm -rf $GOPATH/bin/$GO1_21
 
 # 软链大版本 方便升级
 cd /opt/go/bin
-ln -sf /opt/go/sdk/$GO1_15/bin/go go1.15
 ln -sf /opt/go/sdk/$GO1_20/bin/go go1.20
 ln -sf /opt/go/sdk/$GO1_21/bin/go go1.21
 ln -sf /opt/go/sdk/$GO1_21/bin/go go
@@ -48,15 +44,18 @@ go install github.com/go-delve/delve/cmd/dlv@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.1
 go install github.com/boyter/scc/v3@latest
 # https://github.com/golang/tools
-go install golang.org/x/tools/gopls@v0.14.0
+go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/cmd/godoc@latest
+go install golang.org/x/text/cmd/gotext@latest
+go install golang.org/x/perf/cmd/benchstat@latest
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
 go install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
 # https://github.com/grpc/grpc-go
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
-go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.18.1
+go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.18.1
 
 # golang小工具
 go install golang.org/x/tools/cmd/stringer@latest
@@ -73,13 +72,8 @@ export PYENV_ROOT=/opt/pyenv
 curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
 export PATH=${PYENV_ROOT}/bin:$PATH
-# change python version if upgrade
-export PY2_7=2.7.18
-export PY3_6=3.6.15
 export PY3_10=3.10.11
 
-pyenv install $PY2_7
-pyenv install $PY3_6
 pyenv install $PY3_10
 
 # 软链大版本 方便升级
