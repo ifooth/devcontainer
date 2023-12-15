@@ -1,6 +1,11 @@
-FROM mcr.microsoft.com/vscode/devcontainers/python:3.12
+FROM mcr.microsoft.com/devcontainers/go:1.21
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+# remote go env
+RUN unset GOLANG_VERSION && \
+    unset GOROOT && \
+    unset GOPATH
 
 WORKDIR /root
 
@@ -13,7 +18,7 @@ COPY install-*.sh /usr/local/bin/
 COPY root /opt/root
 
 # 安装依赖包
-RUN /usr/local/bin/install-pkg.sh
+# RUN /usr/local/bin/install-pkg.sh
 
 # 安装开发环境
 RUN /usr/local/bin/install-virtualenv.sh

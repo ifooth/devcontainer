@@ -117,7 +117,7 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/py/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
 
 # zsh plugins
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
@@ -135,7 +135,7 @@ export VIM_ROOT=/opt/vim
 
 # pyenv
 export PYENV_ROOT=/opt/pyenv
-PYENV_PKG=versions/3.10/lib/python3.10/site-packages
+PYENV_PKG=versions/3.12/lib/python3.12/site-packages
 if [ ! -d "${HOME}/.pyenv/${PYENV_PKG}" ];then
     mkdir -p ${HOME}/.pyenv
     tar -xvf ${PYENV_ROOT}/versions.tar.gz -C ${HOME}/.pyenv
@@ -150,7 +150,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
     pyenv virtualenvwrapper
 fi
-export PYENV_VERSION=3.10
+export PYENV_VERSION=3.12
 
 # virtualenvwrapper
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
