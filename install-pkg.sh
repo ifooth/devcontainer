@@ -42,7 +42,7 @@ grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{p
 apt-get install -y python3-venv
 python3 -m venv /opt/py
 export PATH=/opt/py/bin:$PATH
-pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
+pip install supervisor s3cmd mycli ipython ipdb requests
 
 # RUN echo "dash dash/sh boolean false" | debconf-set-selections
 # RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
