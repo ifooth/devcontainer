@@ -8,7 +8,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
 apt-get install -y ascii xxd
-apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
+apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz python3 python3-venv
 
 # client utils
 apt-get install -y redis-tools mariadb-client etcd-client
@@ -17,10 +17,10 @@ apt-get install -y redis-tools mariadb-client etcd-client
 apt-get install -y flex bc libelf-dev libssl-dev bison
 
 # Install build
-apt-get install -y ccache distcc clang llvm
+# apt-get install -y ccache distcc clang llvm
 
 # Install android tools adb
-apt-get install -y adb
+# apt-get install -y adb
 
 # sshd
 apt-get install -y openssh-server
@@ -39,7 +39,6 @@ cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # vscode python tools & utils
-apt-get install -y python3-venv
 python3 -m venv /opt/py
 export PATH=/opt/py/bin:$PATH
 pip install supervisor s3cmd mycli ipython ipdb requests

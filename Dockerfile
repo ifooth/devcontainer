@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/devcontainers/go:1.21
+FROM mcr.microsoft.com/devcontainers/base:bookworm
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -16,10 +16,7 @@ COPY root /opt/root
 RUN /usr/local/bin/install-pkg.sh
 
 # 安装开发环境
-RUN unset GOLANG_VERSION && \
-    unset GOROOT && \
-    unset GOPATH && \
-    /usr/local/bin/install-virtualenv.sh
+RUN /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
 ADD ./settings /opt/vscode/settings
