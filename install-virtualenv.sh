@@ -6,34 +6,34 @@ export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_15=go1.15.15
-export GO1_20=go1.20.10 # 当前版本
-export GO1_21=go1.21.3
+export GO1_20=go1.20.14 # 当前版本
+export GO1_22=go1.22.0
 
 go install golang.org/dl/$GO1_15@latest
 go install golang.org/dl/$GO1_20@latest
-go install golang.org/dl/$GO1_21@latest
+go install golang.org/dl/$GO1_22@latest
 
 export HOME=/opt/go
 $GOPATH/bin/$GO1_15 download && rm -rf $GOPATH/sdk/$GO1_15/$GO1_15.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_20 download && rm -rf $GOPATH/sdk/$GO1_20/$GO1_20.linux-amd64.tar.gz
-$GOPATH/bin/$GO1_21 download && rm -rf $GOPATH/sdk/$GO1_21/$GO1_21.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_22 download && rm -rf $GOPATH/sdk/$GO1_22/$GO1_22.linux-amd64.tar.gz
 
 # 清理下载器
 rm -rf $GOPATH/bin/$GO1_15
 rm -rf $GOPATH/bin/$GO1_20
-rm -rf $GOPATH/bin/$GO1_21
+rm -rf $GOPATH/bin/$GO1_22
 
 # 软链大版本 方便升级
 cd /opt/go/bin
 ln -sf /opt/go/sdk/$GO1_15/bin/go go1.15
 ln -sf /opt/go/sdk/$GO1_20/bin/go go1.20
-ln -sf /opt/go/sdk/$GO1_21/bin/go go1.21
-ln -sf /opt/go/sdk/$GO1_21/bin/go go
+ln -sf /opt/go/sdk/$GO1_22/bin/go go1.22
+ln -sf /opt/go/sdk/$GO1_22/bin/go go
 
 cd /opt/go/sdk
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_20 go1.20
-ln -sf $GO1_21 go1.21
+ln -sf $GO1_22 go1.22
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
@@ -47,7 +47,7 @@ go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/go-delve/delve/cmd/dlv@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.55.1
 # https://github.com/golang/tools
-go install golang.org/x/tools/gopls@v0.14.0
+go install golang.org/x/tools/gopls@latest
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
