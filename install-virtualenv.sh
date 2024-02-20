@@ -34,6 +34,7 @@ cd /opt/go/sdk
 ln -sf $GO1_15 go1.15
 ln -sf $GO1_20 go1.20
 ln -sf $GO1_22 go1.22
+ln -sf $GO1_22 go
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
