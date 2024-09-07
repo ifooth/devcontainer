@@ -87,7 +87,7 @@ uv pip install ipython ipdb jupyterlab arrow openpyxl
 cat <<\EOT >> /root/.bashrc
 
 # add go and python path
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/3/bin:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
 
 # ssh and vscode terminal use zsh
 if [[ -n "${SSH_TTY}" ]] || [[ -n "${VSCODE_GIT_IPC_HANDLE}" ]];then
