@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 source /opt/root/.zshrc
 
+export JUPYTER_PORT=${JUPYTER_PORT:-8088}
 export JUPYTER_TOKEN=${JUPYTER_TOKEN:-devcontainer}
 export JUPYTER_NOTEBOOK_DIR=${JUPYTER_NOTEBOOK_DIR:-/data/repos/jupyter-notebook}
 
