@@ -90,8 +90,8 @@ usage
 ```shell
 # install golang version
 export HOME=/opt/go
-go install golang.org/dl/go1.21.0@latest
-go1.21.0 download
+go install golang.org/dl/go1.23.1@latest
+go1.23.1 download
 ```
 
 version list in [golang/dl](https://github.com/golang/dl)
@@ -99,13 +99,13 @@ version list in [golang/dl](https://github.com/golang/dl)
 .envrc
 ```bash
 # switch golang version
-export PATH=/opt/go/sdk/go1.21/bin:$PATH
+export PATH=/opt/go/sdk/go1.23/bin:$PATH
 ```
 
 .vscode/settings.json
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.goroot": "/opt/go/sdk/go1.23",
     "go.gopath": "/root/.go"
 }
 ```
@@ -116,7 +116,7 @@ golang private mod settings
 
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.goroot": "/opt/go/sdk/go1.23",
     "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOPROXY": "https://athens-proxy.townsy.io,direct",
@@ -143,7 +143,7 @@ git clone https://github.com/golang/go
 cd go
 
 # checkout the version you are interested in
-git checkout release-branch.go1.21
+git checkout release-branch.go1.23
 
 # build go bin & pkg tools
 cd src && ./make.bash && cd ..
@@ -247,7 +247,7 @@ use the linked major version
 
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.21",
+    "go.goroot": "/opt/go/sdk/go1.23",
     "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"

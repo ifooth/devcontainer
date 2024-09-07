@@ -6,13 +6,13 @@ set -ex
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
 apt-get install -y ascii xxd
-apt-get install -y vim direnv tmux git-lfs cloc clang-format apache2-utils graphviz
+apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
 
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev bison
 
 # Install build
-apt-get install -y ccache distcc clang llvm
+# apt-get install -y ccache distcc clang llvm
 
 # Install android tools adb
 apt-get install -y adb

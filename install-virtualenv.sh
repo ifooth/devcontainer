@@ -5,36 +5,30 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_15=go1.15.15
 export GO1_20=go1.20.14 # 当前版本
-export GO1_22=go1.22.0
+export GO1_23=go1.23.1
 
-go install golang.org/dl/$GO1_15@latest
 go install golang.org/dl/$GO1_20@latest
-go install golang.org/dl/$GO1_22@latest
+go install golang.org/dl/$GO1_23@latest
 
 export HOME=/opt/go
-$GOPATH/bin/$GO1_15 download && rm -rf $GOPATH/sdk/$GO1_15/$GO1_15.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_20 download && rm -rf $GOPATH/sdk/$GO1_20/$GO1_20.linux-amd64.tar.gz
-$GOPATH/bin/$GO1_22 download && rm -rf $GOPATH/sdk/$GO1_22/$GO1_22.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_23 download && rm -rf $GOPATH/sdk/$GO1_23/$GO1_23.linux-amd64.tar.gz
 
 # 清理下载器
-rm -rf $GOPATH/bin/$GO1_15
 rm -rf $GOPATH/bin/$GO1_20
-rm -rf $GOPATH/bin/$GO1_22
+rm -rf $GOPATH/bin/$GO1_23
 
 # 软链大版本 方便升级
 cd /opt/go/bin
-ln -sf /opt/go/sdk/$GO1_15/bin/go go1.15
 ln -sf /opt/go/sdk/$GO1_20/bin/go go1.20
-ln -sf /opt/go/sdk/$GO1_22/bin/go go1.22
-ln -sf /opt/go/sdk/$GO1_22/bin/go go
+ln -sf /opt/go/sdk/$GO1_23/bin/go go1.23
+ln -sf /opt/go/sdk/$GO1_23/bin/go go
 
 cd /opt/go/sdk
-ln -sf $GO1_15 go1.15
 ln -sf $GO1_20 go1.20
-ln -sf $GO1_22 go1.22
-ln -sf $GO1_22 go
+ln -sf $GO1_23 go1.23
+ln -sf $GO1_23 go
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
