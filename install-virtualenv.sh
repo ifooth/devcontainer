@@ -77,6 +77,12 @@ ln -sf $PY3_12 3.12
 ln -sf $PY3_12 3
 ln -sf $PY3_12 3
 
+export UV_LINK_MODE=copy
+
+uv venv notebook
+source ./notebook/bin/activate
+uv pip install ipython ipdb jupyterlab arrow openpyxl
+
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
 
