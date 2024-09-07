@@ -7,7 +7,7 @@ Full stack remote development environment
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg)](https://hub.docker.com/r/ifooth/devcontainer/)
 
-Base on [devcontainers/base:bookworm](https://github.com/devcontainers/images/tree/main/src/base-debian) image
+Base on [devcontainers/base](https://github.com/devcontainers/images/tree/main) image
 
 ## Shell
 - [zsh](https://www.zsh.org/)
@@ -55,8 +55,10 @@ GIT_USER_SIGNINGKEY=""
 TZ=Asia/Shanghai
 ```
 
-## Python
-- [pyenv](https://github.com/pyenv/pyenv)
+## Python toolchain
+- [uv](https://github.com/astral-sh/uv) - An extremely fast Python package and project manager, written in Rust.
+- [ruff](https://github.com/astral-sh/ruff) - An extremely fast Python linter and code formatter, written in Rust.
+- [jupyterlab](https://github.com/jupyterlab/jupyterlab) - JupyterLab computational environment.
 
 usage
 ```shell
@@ -82,7 +84,7 @@ unset PS1
 }
 ```
 
-## Golang
+## Golang toolchain
 - [office manage-install](https://go.dev/doc/manage-install)
 
 usage

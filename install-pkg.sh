@@ -2,11 +2,10 @@
 set -ex
 
 # Install pkgs
-# graphviz use for golang pprof
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
 apt-get install -y ascii xxd
-apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils graphviz
+apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils
 
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev bison
@@ -18,11 +17,13 @@ apt-get install -y flex bc libelf-dev libssl-dev bison
 # apt-get install -y adb
 
 # system language
-apt-get install -y golang python3 python3-pip
+# graphviz use for golang pprof
+apt-get install -y golang graphviz
+
+apt-get install -y python3 supervisor
 
 # client utils
 apt-get install -y redis-tools mariadb-client etcd-client
-
 
 # sshd
 apt-get install -y openssh-server
@@ -39,9 +40,6 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/zsh-aut
 git clone https://github.com/VundleVim/Vundle.vim.git /opt/vim/bundle/Vundle.vim
 cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
-
-# vscode python tools & utils
-pip install --break-system-packages supervisor
 
 # RUN echo "dash dash/sh boolean false" | debconf-set-selections
 # RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
@@ -110,7 +108,7 @@ mkdir -p /opt/go/bin
 mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
-
+# Install python uv
 export UV_VERSION=0.4.7
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz

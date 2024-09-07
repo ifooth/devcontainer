@@ -80,7 +80,8 @@ ln -sf $PY3_12 3
 
 uv venv notebook
 source ./notebook/bin/activate
-uv pip install pip ipython ipdb jupyterlab arrow openpyxl
+# vscode python tools, notebook & utils
+uv pip install ruff pip ipython ipdb jupyterlab arrow openpyxl
 
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
