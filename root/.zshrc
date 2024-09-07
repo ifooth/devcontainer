@@ -119,6 +119,9 @@ export LANG=en_US.UTF-8
 
 export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
 
+# uv
+export UV_LINK_MODE=copy
+
 # zsh plugins
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#696969"
