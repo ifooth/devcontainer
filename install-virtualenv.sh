@@ -77,7 +77,7 @@ ln -sf /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu $PY3_12
 ln -sf $PY3_12 3.12
 ln -sf $PY3_12 3
 
-uv venv notebook
+uv venv notebook -p /opt/python/3/bin/python
 source ./notebook/bin/activate
 # vscode python tools, notebook & utils
 uv pip install pip ruff ipython ipdb jupyterlab arrow openpyxl
