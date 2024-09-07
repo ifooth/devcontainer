@@ -1,6 +1,9 @@
 #!/usr/bin/zsh
 source /opt/root/.zshrc
 
+export JUPYTER_TOKEN=${JUPYTER_TOKEN:-devcontainer}
+export JUPYTER_NOTEBOOK_DIR=${JUPYTER_NOTEBOOK_DIR:-/data/repos/jupyter-notebook}
+
 if [ -n "$PRE_SCRIPT_FILE" ];then
     echo "run pre_script $PRE_SCRIPT_FILE"
     bash $PRE_SCRIPT_FILE
