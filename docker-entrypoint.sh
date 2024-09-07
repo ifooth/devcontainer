@@ -46,4 +46,4 @@ if [ -n "$POST_SCRIPT_FILE" ];then
     bash $POST_SCRIPT_FILE
 fi
 
-/usr/local/bin/supervisord -c /etc/supervisord.conf -n
+/usr/bin/supervisord -c /etc/supervisord.conf -n
