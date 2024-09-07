@@ -76,7 +76,6 @@ cd /opt/python
 ln -sf /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu $PY3_12
 ln -sf $PY3_12 3.12
 ln -sf $PY3_12 3
-ln -sf $PY3_12 3
 
 uv venv notebook
 source ./notebook/bin/activate
