@@ -63,24 +63,20 @@ TZ=Asia/Shanghai
 usage
 ```shell
 # switch python version
-pyenv versions
-export PYENV_VERSION=3.10
-
-# use virtualenv, use the linked major version
-mkvirtualenv -p /opt/pyenv/versions/3.10/bin/python hello-world
-workon hello-world
+uv venv /root/.venv/hello-world
+source /root/.venv/hello-world/bin/activate
 ```
 
 .envrc
 ```bash
-layout virtualenvwrapper hello-world
-unset PS1
+export VIRTUAL_ENV="/root/.venv/hello-world"
+layout python
 ```
 
 .vscode/settings.json
 ```json
 {
-    "python.defaultInterpreterPath": "~/.virtualenvs/hello-world/bin/python"
+    "python.defaultInterpreterPath": "/root/.venv/hello-world/bin/python"
 }
 ```
 

@@ -63,8 +63,8 @@ rm -rf /opt/go/pkg
 rm -rf /opt/go/.cache
 
 # pyenv python 多版本环境
-export UV_LINK_MODE=copy
 export UV_PYTHON_INSTALL_DIR=/opt/python/versions
+export UV_LINK_MODE=copy
 
 # change python version if upgrade
 export PY3_12=3.12.5
@@ -81,7 +81,7 @@ ln -sf $PY3_12 3
 uv venv notebook
 source ./notebook/bin/activate
 # vscode python tools, notebook & utils
-uv pip install ruff pip ipython ipdb jupyterlab arrow openpyxl
+uv pip install pip ruff ipython ipdb jupyterlab arrow openpyxl
 
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
@@ -90,6 +90,7 @@ cat <<\EOT >> /root/.bashrc
 export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
 
 # uv
+export UV_PYTHON_INSTALL_DIR=/opt/python/versions
 export UV_LINK_MODE=copy
 
 # ssh and vscode terminal use zsh
