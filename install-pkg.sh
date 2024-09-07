@@ -5,7 +5,7 @@ set -ex
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg2 lsb-release iputils-ping dnsutils lrzsz
 apt-get install -y ascii xxd
-apt-get install -y vim direnv tmux git-lfs clang-format apache2-utils
+apt-get install -y vim tmux git-lfs clang-format apache2-utils
 
 # Install kernel build tools
 apt-get install -y flex bc libelf-dev libssl-dev bison
@@ -51,8 +51,13 @@ apt-get update && apt-get install -y docker-ce-cli
 rm -rf /etc/apt/sources.list.d/docker.list
 
 cd /tmp
+# Install direnv
+DIRENV_VERSION=v2.34.0
+wget -q https://github.com/direnv/direnv/releases/download/${DIRENV_VERSION}/direnv.linux-amd64
+mv direnv.linux-amd64 /usr/local/bin/direnv && chmod a+x /usr/local/bin/direnv && direnv --version
+
 # Install skopeo
-SKOPEO_VERSION="v1.13.2"
+SKOPEO_VERSION=v1.13.2
 wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSION}/skopeo-linux-amd64
 mv skopeo-linux-amd64 /usr/local/bin/skopeo && chmod a+x /usr/local/bin/skopeo && skopeo --version
 
