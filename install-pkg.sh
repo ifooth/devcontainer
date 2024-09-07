@@ -15,10 +15,10 @@ apt-get install -y flex bc libelf-dev libssl-dev bison
 # apt-get install -y ccache distcc clang llvm
 
 # Install android tools adb
-apt-get install -y adb
+# apt-get install -y adb
 
 # system language
-apt-get install -y golang
+apt-get install -y golang python3 python3-pip
 
 # client utils
 apt-get install -y redis-tools mariadb-client etcd-client
@@ -41,7 +41,7 @@ cd /opt/vim/bundle
 grep Plugin /opt/root/.vimrc.bundles|grep -v '"'|grep -v "Vundle"|awk -F "'" '{print $2}'|xargs -L1 git clone
 
 # vscode python tools & utils
-pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython ipdb requests
+pip install --break-system-packages supervisor
 
 # RUN echo "dash dash/sh boolean false" | debconf-set-selections
 # RUN DEBIAN_FRONTEND=noninteractive dpkg-reconfigure dash
@@ -50,6 +50,7 @@ pip install virtualenvwrapper supervisor flake8 black isort s3cmd mycli ipython 
 curl -fsSL https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/gpg | apt-key add - 2>/dev/null
 echo "deb [arch=$(dpkg --print-architecture)] https://download.docker.com/linux/$(lsb_release -is | tr '[:upper:]' '[:lower:]') $(lsb_release -cs) stable" | tee /etc/apt/sources.list.d/docker.list
 apt-get update && apt-get install -y docker-ce-cli
+rm -rf /etc/apt/sources.list.d/docker.list
 
 cd /tmp
 # Install skopeo
@@ -108,6 +109,12 @@ unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip
 mkdir -p /opt/go/bin
 mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
+
+
+export UV_VERSION=0.4.7
+wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
+tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
+mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin
 
 # Clean up
 mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord

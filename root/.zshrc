@@ -117,7 +117,7 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/3/bin:/root/.npm-packages/bin:$PATH
 
 # zsh plugins
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=2"
@@ -132,29 +132,6 @@ fi
 
 # vim
 export VIM_ROOT=/opt/vim
-
-# pyenv
-export PYENV_ROOT=/opt/pyenv
-PYENV_PKG=versions/3.10/lib/python3.10/site-packages
-if [ ! -d "${HOME}/.pyenv/${PYENV_PKG}" ];then
-    mkdir -p ${HOME}/.pyenv
-    tar -xvf ${PYENV_ROOT}/versions.tar.gz -C ${HOME}/.pyenv
-fi
-
-if not_valid_link ${PYENV_ROOT}/${PYENV_PKG};then
-    rm -rf ${PYENV_ROOT}/${PYENV_PKG}
-    ln -sf ${HOME}/.pyenv/${PYENV_PKG} ${PYENV_ROOT}/${PYENV_PKG}
-fi
-
-if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    pyenv virtualenvwrapper
-fi
-export PYENV_VERSION=3.10
-
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-source /usr/local/bin/virtualenvwrapper.sh
 
 # 添加显示 hostname
 PS1=$'%{\e[0;32m%}%m%{\e[0m%}'$PS1

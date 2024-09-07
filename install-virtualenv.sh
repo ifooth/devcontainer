@@ -63,32 +63,25 @@ rm -rf /opt/go/pkg
 rm -rf /opt/go/.cache
 
 # pyenv python 多版本环境
-export PYENV_ROOT=/opt/pyenv
-curl -fsSL https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git ${PYENV_ROOT}/plugins/pyenv-virtualenvwrapper
-export PATH=${PYENV_ROOT}/bin:$PATH
-# change python version if upgrade
-export PY2_7=2.7.18
-export PY3_6=3.6.15
-export PY3_10=3.10.11
+export UV_PYTHON_INSTALL_DIR=/opt/python/versions
 
-pyenv install $PY2_7
-pyenv install $PY3_6
-pyenv install $PY3_10
+# change python version if upgrade
+export PY3_12=3.12.5
+
+uv python install $PY3_12
 
 # 软链大版本 方便升级
-cd /opt/pyenv/versions
-ln -sf $PY2_7 2.7
-ln -sf $PY3_6 3.6
-ln -sf $PY3_10 3.10
-
-cd /opt/pyenv && tar -zcf versions.tar.gz versions/3.10/lib/python3.10/site-packages
+cd /opt/python
+ln -sf /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu $PY3_12
+ln -sf $PY3_12 3.12
+ln -sf $PY3_12 3
+ln -sf $PY3_12 3
 
 # 添加环境变量
 cat <<\EOT >> /root/.bashrc
 
 # add go and python path
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/pyenv/bin:/opt/pyenv/shims:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/3/bin:/root/.npm-packages/bin:$PATH
 
 # ssh and vscode terminal use zsh
 if [[ -n "${SSH_TTY}" ]] || [[ -n "${VSCODE_GIT_IPC_HANDLE}" ]];then

@@ -7,7 +7,7 @@ Full stack remote development environment
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/ifooth/devcontainer.svg)](https://hub.docker.com/r/ifooth/devcontainer/)
 
-Base on [vscode-dev-containers](https://github.com/devcontainers/images) image
+Base on [devcontainers/base:bookworm](https://github.com/devcontainers/images/tree/main/src/base-debian) image
 
 ## Shell
 - [zsh](https://www.zsh.org/)
