@@ -56,7 +56,7 @@ func PreviewHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	respBody, err := wrapPreview(terminal.Render(body))
+	respBody, err := wrapPreview([]byte(terminal.Render(body)))
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusNotFound)
 		return
@@ -90,7 +90,7 @@ func PreviewMiddleware(next http.Handler) http.Handler {
 		}
 
 		slog.Info("preview file", slog.String("path", r.URL.Path))
-		respBody, err := wrapPreview(terminal.Render(buf))
+		respBody, err := wrapPreview([]byte(terminal.Render(buf)))
 		if err != nil {
 			http.Error(w, err.Error(), http.StatusBadGateway)
 			return
