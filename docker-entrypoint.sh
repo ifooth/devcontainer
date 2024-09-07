@@ -10,7 +10,7 @@ if [ -n "$PRE_SCRIPT_FILE" ];then
     bash $PRE_SCRIPT_FILE
 fi
 
-mkdir -p /data/repos /data/pub /data/logs
+mkdir -p /data/repos /data/pub /data/logs $JUPYTER_NOTEBOOK_DIR
 
 # start sshd
 mkdir -p /run/sshd
