@@ -83,21 +83,9 @@ source ./notebook/bin/activate
 # vscode python tools, notebook & utils
 uv pip install pip ruff ipython ipdb jupyterlab arrow openpyxl
 
-# 添加环境变量
-cat <<\EOT >> /root/.bashrc
-
-# add go and python path
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
-
-# uv
-export UV_PYTHON_INSTALL_DIR=/opt/python/versions
-export UV_LINK_MODE=copy
-
-# ssh and vscode terminal use zsh
-if [[ -n "${SSH_TTY}" ]] || [[ -n "${VSCODE_GIT_IPC_HANDLE}" ]];then
-    exec zsh
-fi
-EOT
+# 添加环境变量等
+echo "" >> /root/.bashrc
+cat /opt/root/.bashrc_append.sh >> /root/.bashrc
 
 # Clean up & Package root dir
 rm -rf /tmp/*
