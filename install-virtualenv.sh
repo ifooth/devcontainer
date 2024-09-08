@@ -71,13 +71,13 @@ export PY3_12=3.12.5
 
 uv python install $PY3_12
 
-# 软链大版本 方便升级
+# 硬链接大版本 方便升级
 cd /opt/python
-ln -sf /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu $PY3_12
-ln -sf $PY3_12 3.12
-ln -sf $PY3_12 3
+cp -lr /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu py${PY3_12}
+cp -lr py${PY3_12} py3.12
+cp -lr py${PY3_12} py3
 
-uv venv notebook -p /opt/python/3/bin/python
+uv venv notebook -p /opt/python/py3.12/bin/python
 source ./notebook/bin/activate
 # vscode python tools, notebook & utils
 uv pip install pip ruff ipython ipdb jupyterlab arrow openpyxl pandas
