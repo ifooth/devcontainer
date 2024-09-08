@@ -63,7 +63,7 @@ TZ=Asia/Shanghai
 usage
 ```shell
 # switch python version
-uv venv /root/.venv/hello-world
+uv venv /root/.venv/hello-world -p /opt/python/py3/bin/python
 source /root/.venv/hello-world/bin/activate
 ```
 
