@@ -30,7 +30,7 @@ Plugin
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
 ## tools
-- [cloc](https://github.com/AlDanial/cloc) - counts blank lines, comment lines, and physical lines of source code in many programming languages
+- [scc](https://github.com/boyter/scc) - scc is a very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go
 - [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
 - [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
 - [protoc](https://github.com/protocolbuffers/protobuf) - Protocol Buffers - Google's data interchange format
