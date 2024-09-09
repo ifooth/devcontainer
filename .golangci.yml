@@ -42,7 +42,9 @@ linters-settings:
       - io.Copy
       - os.RemoveAll
   govet:
-    check-shadowing: true
+    enable:
+      - nilness
+      - shadow
   gocyclo:
     min-complexity: 30
   goimports:
