@@ -62,7 +62,7 @@ wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSI
 mv skopeo-linux-amd64 /usr/local/bin/skopeo && chmod a+x /usr/local/bin/skopeo && skopeo --version
 
 # Install NodeJS
-NODEJS_VERSION=v14.21.3
+NODEJS_VERSION=v20.17.0
 wget -q https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}-linux-x64.tar.xz
 tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
 mv node-${NODEJS_VERSION}-linux-x64 /opt/node
