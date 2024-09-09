@@ -19,6 +19,8 @@ apt-get install -y flex bc libelf-dev libssl-dev bison
 # system language
 # graphviz use for golang pprof
 apt-get install -y golang graphviz
+# remove golang precompiled .a files
+rm -rf `/usr/bin/go env GOROOT`/pkg/linux_amd64
 
 apt-get install -y python3 supervisor
 
