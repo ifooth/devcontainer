@@ -24,6 +24,7 @@ services:
     environment:
       SSHD_PORT: 36023 # custom sshd port
       DEV_SERVER_PORT: 8023 # custom dev server port
+      JUPYTER_PORT: 8089 # custom jupyter lab port
       PRE_SCRIPT_FILE: /usr/local/bin/pre-script.sh
       POST_SCRIPT_FILE: /usr/local/bin/post-script.sh
     volumes:
