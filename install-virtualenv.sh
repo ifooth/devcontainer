@@ -65,6 +65,7 @@ rm -rf /opt/go/.cache
 # pyenv python 多版本环境
 export UV_PYTHON_INSTALL_DIR=/opt/python/versions
 export UV_LINK_MODE=copy
+export UV_NO_CACHE="1"
 
 # change python version if upgrade
 export PY3_12=3.12.5
