@@ -81,7 +81,7 @@ cp -lr py${PY3_12} py3
 uv venv notebook -p /opt/python/py3.12/bin/python
 source ./notebook/bin/activate
 # vscode python tools, notebook & utils
-uv pip install pip ruff ipython ipdb jupyterlab arrow openpyxl pandas
+uv pip install pip ruff ipython ipdb jupyterlab jupyterlab-lsp matplotlib sympy arrow openpyxl pandas requests
 
 # 添加环境变量等
 echo "" >> /root/.bashrc
