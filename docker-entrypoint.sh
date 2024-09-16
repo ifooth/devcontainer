@@ -30,10 +30,6 @@ else
     cp -rf $SSHD_CONF_DIR/* /etc/ssh/
 fi
 
-# set vscode settings
-mkdir -p ~/.vscode-server/data/Machine
-cp -rf /opt/vscode/settings/remote-ssh.json ~/.vscode-server/data/Machine/settings.json
-
 # 覆盖固定配置文件 .zshrc .bashrc .profile
 echo "set root profile"
 tar -xvf /root.tar.gz -C /

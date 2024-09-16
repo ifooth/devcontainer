@@ -6,23 +6,9 @@
     },
     "go.lintTool": "golangci-lint",
     "clang-format.style": "{IndentWidth: 4, BasedOnStyle: google, AlignConsecutiveAssignments: true, ColumnLimit: 0}",
-    "python.linting.flake8Path": "/usr/local/bin/flake8",
-    "python.linting.flake8Args": [
-        "--max-line-length=119"
-    ],
-    "python.formatting.blackPath": "/usr/local/bin/black",
-    "python.formatting.blackArgs": [
-        "--line-length=119"
-    ],
-    "isort.path": [
-        "/usr/local/bin/isort"
-    ],
-    "isort.args": [
-        "--line-length=119"
-    ],
     "python.terminal.activateEnvironment": false,
     "git.ignoredRepositories": [
-        "/opt/pyenv"
+        "/opt"
     ],
     "projectManager.groupList": true,
     "projectManager.git.maxDepthRecursion": 4,
