@@ -1,4 +1,5 @@
 # DevContainer
+
 Full stack remote development environment
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/ifooth/devcontainer?cache=v1)](https://goreportcard.com/report/github.com/ifooth/devcontainer)
@@ -10,6 +11,7 @@ Full stack remote development environment
 Base on [devcontainers/base](https://github.com/devcontainers/images/tree/main) image
 
 ## Shell
+
 - [zsh](https://www.zsh.org/)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [git](http://git-scm.com/) - A distributed version control system
@@ -19,7 +21,9 @@ Base on [devcontainers/base](https://github.com/devcontainers/images/tree/main) 
 - [direnv](https://github.com/direnv/direnv) - unclutter your .profile, set env by dir automate
 
 ## Vim
+
 Plugin
+
 - [nerdtree](https://github.com/scrooloose/nerdtree.git)
 - [ctrlp.vim](https://github.com/kien/ctrlp.vim.git)
 - [vim-easymotion](https://github.com/easymotion/vim-easymotion.git)
@@ -30,6 +34,7 @@ Plugin
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
 
 ## tools
+
 - [scc](https://github.com/boyter/scc) - scc is a very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go
 - [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
 - [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
@@ -37,6 +42,7 @@ Plugin
 - [grpcurl](https://github.com/fullstorydev/grpcurl) - AboutLike cURL, but for gRPC: Command-line tool for interacting with gRPC servers
 
 ## Dev.env
+
 - set pre / post script
 - set git config
 - set tz and so on
@@ -56,11 +62,13 @@ TZ=Asia/Shanghai
 ```
 
 ## Python toolchain
+
 - [uv](https://github.com/astral-sh/uv) - An extremely fast Python package and project manager, written in Rust.
 - [ruff](https://github.com/astral-sh/ruff) - An extremely fast Python linter and code formatter, written in Rust.
 - [jupyterlab](https://github.com/jupyterlab/jupyterlab) - JupyterLab computational environment.
 
 usage
+
 ```shell
 # switch python version
 uv venv /root/.venv/hello-world -p /opt/python/py3/bin/python
@@ -68,12 +76,14 @@ source /root/.venv/hello-world/bin/activate
 ```
 
 .envrc
+
 ```bash
 export VIRTUAL_ENV="/root/.venv/hello-world"
 layout python
 ```
 
 .vscode/settings.json
+
 ```json
 {
     "python.defaultInterpreterPath": "/root/.venv/hello-world/bin/python"
@@ -81,6 +91,7 @@ layout python
 ```
 
 ## Golang toolchain
+
 - [office manage-install](https://go.dev/doc/manage-install)
 
 usage
@@ -95,12 +106,14 @@ go1.23.1 download
 version list in [golang/dl](https://github.com/golang/dl)
 
 .envrc
+
 ```bash
 # switch golang version
 export PATH=/opt/go/sdk/go1.23/bin:$PATH
 ```
 
 .vscode/settings.json
+
 ```json
 {
     "go.goroot": "/opt/go/sdk/go1.23",
@@ -131,7 +144,7 @@ golang private mod settings
 
 ## Develop golang
 
-You can refer to the official guidelines https://go.dev/doc/contribute
+You can refer to the official guidelines <https://go.dev/doc/contribute>
 
 here is use vscode learn golang src
 
@@ -157,13 +170,14 @@ mkdir .vscode && vim .vscode/settings.json
 ```
 
 add custom `go.goroot` settings
+
 ```json
 {
     "go.goroot": "/data/repos/golang/go"
 }
 ```
-all Go language server work perfect
 
+all Go language server work perfect
 
 ## Build linux kernel
 
@@ -178,8 +192,8 @@ make menuconfig # change config
 make -j 10
 ```
 
-
 ## Settings
+
 auto install-extension
 
 open the user settings editor from the Command Palette (Ctrl+Shift+P) with Preferences: Open User Settings(JSON).
@@ -197,21 +211,25 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
         ]
     },
     "remote.SSH.defaultExtensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-python.flake8",
-        "ms-python.isort",
-        "ms-python.black-formatter",
         "golang.go",
+        "ms-python.python",
+        "charliermarsh.ruff",
         "geddski.macros",
         "alefragnani.project-manager",
-        "zxh404.vscode-proto3",
-        "xaver.clang-format"
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.makefile-tools",
+        "quillaja.goasm",
+        "davidanson.vscode-markdownlint",
+        "redhat.vscode-yaml",
+        "redhat.vscode-xml",
+        "xaver.clang-format",
+        "zxh404.vscode-proto3"
     ]
 }
 ```
 
 list-extensions
+
 ```bash
 code --list-extensions --show-version
 ```
@@ -287,17 +305,18 @@ use the linked major version
 }
 ```
 
-
 ## Tips and Tricks
 
 ### windows remote ssh cann't connection with zsh
 
 error log:
+
 ```bash
 zsh: bad math expression: operand expected at `*100000 + ...'
 ```
 
 solution: enable useLocalServer
+
 ```json
 {
     "remote.SSH.useLocalServer": true

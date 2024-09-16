@@ -5,8 +5,29 @@
         "GOBIN": "/opt/go/bin"
     },
     "go.lintTool": "golangci-lint",
-    "clang-format.style": "{IndentWidth: 4, BasedOnStyle: google, AlignConsecutiveAssignments: true, ColumnLimit: 0}",
+    "ruff.nativeServer": "on",
+    "ruff.lineLength": 119,
+    "ruff.lint.select": [
+        "C",
+        "E",
+        "F",
+        "W"
+    ],
+    "notebook.formatOnSave.enabled": true,
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit",
+        "notebook.source.organizeImports": "explicit"
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
     "python.terminal.activateEnvironment": false,
+    "clang-format.style": "{IndentWidth: 4, BasedOnStyle: google, AlignConsecutiveAssignments: true, ColumnLimit: 0}",
     "git.ignoredRepositories": [
         "/opt"
     ],
