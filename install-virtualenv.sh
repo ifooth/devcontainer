@@ -83,7 +83,7 @@ source ./notebook/bin/activate
 
 # vscode python tools, notebook & utils
 uv pip install pip ruff ipython ipdb arrow openpyxl pandas requests \
-    jupyterlab jupyterlab-lsp jupyterlab-widgets jupyterlab-git jupyterlab_code_formatter matplotlib sympy
+    jupyterlab jupyterlab-lsp jupyterlab-widgets jupyterlab-git jupyterlab_code_formatter python-lsp-ruff matplotlib sympy
 
 # 添加环境变量等
 echo "" >> /root/.bashrc
