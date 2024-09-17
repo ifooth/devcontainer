@@ -53,8 +53,8 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
 
 # my dev
-go build -trimpath -o $GOPATH/bin/dev ./cmd/dev
-go build -trimpath -o $GOPATH/bin/gen-lint ./cmd/gen-lint
+go install github.com/ifooth/devcontainer/cmd/dev@latest
+go install github.com/ifooth/devcontainer/cmd/gen-lint@latest
 
 # clean cache
 rm -rf /opt/go/pkg
