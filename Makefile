@@ -53,3 +53,4 @@ docs:
 build:
 	@echo ">> rebuilding binaries"
 	${GOBUILD} -o ./bin/dev ./cmd/dev
+	${GOBUILD} -o ./bin/gen-lint ./cmd/gen-lint

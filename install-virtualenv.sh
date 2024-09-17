@@ -33,16 +33,16 @@ ln -sf $GO1_23 go
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
 export PATH=$GOPATH/bin:$PATH
+
 # vscode dev
-go install github.com/ramya-rao-a/go-outline@latest
-go install github.com/cweill/gotests/gotests@latest
+go install golang.org/x/tools/gopls@latest
+go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/golang/vscode-go/vscgo@latest
+go install github.com/haya14busa/goplay/cmd/goplay@latest
 go install github.com/fatih/gomodifytags@latest
 go install github.com/josharian/impl@latest
-go install github.com/haya14busa/goplay/cmd/goplay@latest
-go install github.com/go-delve/delve/cmd/dlv@latest
+go install github.com/cweill/gotests/gotests@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.60.3
-# https://github.com/golang/tools
-go install golang.org/x/tools/gopls@latest
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
@@ -52,11 +52,9 @@ go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
 
-# golang小工具
-go install golang.org/x/tools/cmd/stringer@latest
-
 # my dev
-go install github.com/ifooth/devcontainer/cmd/dev@latest
+go build -trimpath -o $GOPATH/bin/dev ./cmd/dev
+go build -trimpath -o $GOPATH/bin/gen-lint ./cmd/gen-lint
 
 # clean cache
 rm -rf /opt/go/pkg

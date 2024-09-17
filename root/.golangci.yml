@@ -21,7 +21,6 @@ linters:
     # custom
     # - gci
     - goconst
-    - gocyclo
     - gofmt
     - goheader
     - goimports
@@ -41,10 +40,6 @@ linters-settings:
       - (net/http.ResponseWriter).Write
       - io.Copy
       - os.RemoveAll
-  govet:
-    check-shadowing: true
-  gocyclo:
-    min-complexity: 30
   # goimports:
   #   local-prefixes: github.com/ifooth/devcontainer
   # gci:
@@ -64,15 +59,17 @@ linters-settings:
       - G504 # Import blocklist: net/http/cgi
   misspell:
     locale: US
-
   revive:
     rules:
+      - name: line-length-limit
+        arguments:
+          - 120
+      - name: cyclomatic
+        arguments:
+          - 30
+      - name: use-any
       - name: exported
-        severity: warning
-        disabled: false
         arguments:
           - checkPrivateReceivers
           - sayRepetitiveInsteadOfStutters
       - name: package-comments
-        severity: warning
-        disabled: false
