@@ -40,6 +40,9 @@ linters-settings:
       - (net/http.ResponseWriter).Write
       - io.Copy
       - os.RemoveAll
+  govet:
+    enable:
+      - shadow
   # goimports:
   #   local-prefixes: github.com/ifooth/devcontainer
   # gci:
@@ -64,10 +67,15 @@ linters-settings:
       - name: line-length-limit
         arguments:
           - 120
+      - name: function-length
+        arguments:
+          - 80 # statements
+          - 120 # lines
       - name: cyclomatic
         arguments:
           - 30
       - name: use-any
+      - name: early-return
       - name: exported
         arguments:
           - checkPrivateReceivers
