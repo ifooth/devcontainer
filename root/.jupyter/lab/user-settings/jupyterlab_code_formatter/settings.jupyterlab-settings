@@ -10,7 +10,7 @@
         }
     },
     "black": {
-        "line_length": 88,
+        "line_length": 119,
         "string_normalization": true
     },
     "yapf": {
@@ -23,7 +23,7 @@
         "force_grid_wrap": 0,
         "use_parentheses": true,
         "ensure_newline_before_comments": true,
-        "line_length": 88
+        "line_length": 119
     },
     "formatR": {
         "indent": 2,
@@ -39,7 +39,8 @@
     },
     "ruff": {
         "args": [
-            "--select=I001"
+            "--select=I001",
+            "--line-length=119"
         ]
     },
     "ruffformat": {
