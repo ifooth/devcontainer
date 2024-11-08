@@ -116,7 +116,7 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Install python uv
-export UV_VERSION=0.4.28
+export UV_VERSION=0.4.30
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin

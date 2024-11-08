@@ -53,6 +53,7 @@ go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.
 go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
 
 # my dev
+go install golang.org/x/perf/cmd/benchstat@latest
 go install github.com/ifooth/devcontainer/cmd/dev@v0.0.1
 go install github.com/ifooth/devcontainer/cmd/gen-lint@v0.0.1
 
