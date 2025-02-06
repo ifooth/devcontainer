@@ -6,7 +6,7 @@ export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_20=go1.20.14 # 当前版本
-export GO1_23=go1.23.2
+export GO1_23=go1.23.6
 
 go install golang.org/dl/$GO1_20@latest
 go install golang.org/dl/$GO1_23@latest
