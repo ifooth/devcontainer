@@ -32,7 +32,7 @@ apt-get install -y openssh-server
 echo "AcceptEnv SHELL_OS LC_*" > /etc/ssh/sshd_config.d/devcontainer.conf
 
 # zsh utils 命令行终端
-apt-get install -y autojump fzf
+apt-get install -y fzf
 curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -o /usr/local/bin/zsh-install.sh && chmod a+x /usr/local/bin/zsh-install.sh
 export ZSH="/opt/oh-my-zsh" && export CHSH=no && zsh-install.sh
 export ZSH_CUSTOM=${ZSH}/custom/plugins
@@ -120,6 +120,11 @@ export UV_VERSION=0.5.29
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin
+
+# Install zoxide(autojump alternative)
+export ZOXIDE_VERSION=0.9.7
+wget -q https://github.com/ajeetdsouza/zoxide/releases/download/v${ZOXIDE_VERSION}/zoxide_${ZOXIDE_VERSION}-1_amd64.deb
+dpkg -i ./zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 
 # Clean up
 mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord
