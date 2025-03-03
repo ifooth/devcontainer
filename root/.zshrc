@@ -70,6 +70,8 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+export ZOXIDE_CMD_OVERRIDE="j"
+
 plugins=(git zoxide fzf extract zsh-autosuggestions kubectl-autocomplete helm-autocomplete)
 
 source $ZSH/oh-my-zsh.sh
