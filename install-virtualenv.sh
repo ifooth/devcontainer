@@ -7,27 +7,33 @@ export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_20=go1.20.14 # 当前版本
 export GO1_23=go1.23.6
+export GO1_24=go1.24.0
 
 go install golang.org/dl/$GO1_20@latest
 go install golang.org/dl/$GO1_23@latest
+go install golang.org/dl/$GO1_24@latest
 
 export HOME=/opt/go
 $GOPATH/bin/$GO1_20 download && rm -rf $GOPATH/sdk/$GO1_20/$GO1_20.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_23 download && rm -rf $GOPATH/sdk/$GO1_23/$GO1_23.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_24 download && rm -rf $GOPATH/sdk/$GO1_24/$GO1_24.linux-amd64.tar.gz
 
 # 清理下载器
 rm -rf $GOPATH/bin/$GO1_20
 rm -rf $GOPATH/bin/$GO1_23
+rm -rf $GOPATH/bin/$GO1_24
 
 # 软链大版本 方便升级
 cd /opt/go/bin
 ln -sf /opt/go/sdk/$GO1_20/bin/go go1.20
 ln -sf /opt/go/sdk/$GO1_23/bin/go go1.23
+ln -sf /opt/go/sdk/$GO1_24/bin/go go1.24
 ln -sf /opt/go/sdk/$GO1_23/bin/go go
 
 cd /opt/go/sdk
 ln -sf $GO1_20 go1.20
 ln -sf $GO1_23 go1.23
+ln -sf $GO1_24 go1.24
 ln -sf $GO1_23 go
 
 # vscode golang tools, build with latest golang
@@ -67,7 +73,7 @@ export UV_LINK_MODE=copy
 export UV_NO_CACHE="1"
 
 # change python version if upgrade
-export PY3_12=3.12.7
+export PY3_12=3.12.9
 
 uv python install $PY3_12
 
