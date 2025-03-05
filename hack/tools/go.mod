@@ -1,4 +1,4 @@
-module github.com/ifooth/devcontainer/scripts/tool
+module github.com/ifooth/devcontainer/hack/tools
 
 go 1.24
 
