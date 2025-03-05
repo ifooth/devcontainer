@@ -40,6 +40,8 @@ ln -sf $GO1_23 go
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
 export PATH=$GOPATH/bin:$PATH
 
+# cd hack/tools && go1.24 install tool
+
 # vscode dev
 go install golang.org/x/tools/gopls@latest
 go install github.com/go-delve/delve/cmd/dlv@latest

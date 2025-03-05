@@ -1,3 +1,4 @@
 .codecc
 bin
 cover.out
+.venv
