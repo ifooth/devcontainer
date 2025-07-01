@@ -116,13 +116,13 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Install python uv
-export UV_VERSION=0.6.3
+export UV_VERSION=0.7.17
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin
 
 # Install zoxide(autojump alternative)
-export ZOXIDE_VERSION=0.9.7
+export ZOXIDE_VERSION=0.9.8
 wget -q https://github.com/ajeetdsouza/zoxide/releases/download/v${ZOXIDE_VERSION}/zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 dpkg -i ./zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 
