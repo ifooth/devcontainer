@@ -168,12 +168,5 @@
         "tabnine.tabnine-vscode"
     ],
     "editor.rulers": [],
-    "editor.inlineSuggest.enabled": true,
-    "[toml]": {
-        "editor.defaultFormatter": "tamasfe.even-better-toml",
-        "editor.formatOnSave": true
-    },
-    "evenBetterToml.formatter.indentString": "  ",
-    "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.formatter.indentEntries": true
+    "editor.inlineSuggest.enabled": true
 }

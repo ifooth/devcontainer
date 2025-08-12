@@ -48,5 +48,6 @@
     },
     "evenBetterToml.formatter.indentString": "  ",
     "evenBetterToml.formatter.indentTables": true,
-    "evenBetterToml.formatter.indentEntries": true
+    "evenBetterToml.formatter.indentEntries": true,
+    "evenBetterToml.formatter.columnWidth": 119
 }
