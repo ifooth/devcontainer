@@ -151,7 +151,8 @@
         "redhat.vscode-xml",
         "redhat.vscode-yaml",
         "xaver.clang-format",
-        "zxh404.vscode-proto3"
+        "zxh404.vscode-proto3",
+        "tamasfe.even-better-toml"
     ],
     "vsicons.dontShowNewVersionMessage": true,
     "diffEditor.ignoreTrimWhitespace": false,
@@ -167,5 +168,12 @@
         "tabnine.tabnine-vscode"
     ],
     "editor.rulers": [],
-    "editor.inlineSuggest.enabled": true
+    "editor.inlineSuggest.enabled": true,
+    "[toml]": {
+        "editor.defaultFormatter": "tamasfe.even-better-toml",
+        "editor.formatOnSave": true
+    },
+    "evenBetterToml.formatter.indentString": "  ",
+    "evenBetterToml.formatter.indentTables": true,
+    "evenBetterToml.formatter.indentEntries": true
 }
