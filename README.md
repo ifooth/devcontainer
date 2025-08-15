@@ -109,14 +109,14 @@ version list in [golang/dl](https://github.com/golang/dl)
 
 ```bash
 # switch golang version
-export PATH=/opt/go/sdk/go1.23/bin:$PATH
+export PATH=/opt/go/sdk/go1/bin:$PATH
 ```
 
 .vscode/settings.json
 
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.23",
+    "go.goroot": "/opt/go/sdk/go1",
     "go.gopath": "/root/.go"
 }
 ```
@@ -127,7 +127,7 @@ golang private mod settings
 
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.23",
+    "go.goroot": "/opt/go/sdk/go1",
     "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOPROXY": "https://athens-proxy.townsy.io,direct",
@@ -263,7 +263,7 @@ use the linked major version
 
 ```json
 {
-    "go.goroot": "/opt/go/sdk/go1.23",
+    "go.goroot": "/opt/go/sdk/go1",
     "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"

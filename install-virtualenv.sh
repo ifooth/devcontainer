@@ -21,43 +21,48 @@ rm -rf $GOPATH/bin/$GO1_25
 
 # 软链大版本 方便升级
 cd /opt/go/bin
+# 项目稳定版本, 默认
 ln -sf /opt/go/sdk/$GO1_23/bin/go go1.23
-ln -sf /opt/go/sdk/$GO1_25/bin/go go1.25
 ln -sf /opt/go/sdk/$GO1_23/bin/go go
+# golang最新稳定版
+ln -sf /opt/go/sdk/$GO1_25/bin/go go1.25
+ln -sf /opt/go/sdk/$GO1_25/bin/go go1
 
 cd /opt/go/sdk
 ln -sf $GO1_23 go1.23
-ln -sf $GO1_25 go1.25
 ln -sf $GO1_23 go
+
+ln -sf $GO1_25 go1.25
+ln -sf $GO1_25 go1
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
 export PATH=$GOPATH/bin:$PATH
 
-# cd hack/tools && go1.25 install tool
+# cd hack/tools && go1 install tool
 
 # vscode dev
-go1.25 install golang.org/x/tools/gopls@latest
-go1.25 install github.com/go-delve/delve/cmd/dlv@latest
-go1.25 install github.com/golang/vscode-go/vscgo@latest
-go1.25 install github.com/haya14busa/goplay/cmd/goplay@latest
-go1.25 install github.com/fatih/gomodifytags@latest
-go1.25 install github.com/josharian/impl@latest
-go1.25 install github.com/cweill/gotests/gotests@latest
-go1.25 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.4.0
+go1 install golang.org/x/tools/gopls@latest
+go1 install github.com/go-delve/delve/cmd/dlv@latest
+go1 install github.com/golang/vscode-go/vscgo@latest
+go1 install github.com/haya14busa/goplay/cmd/goplay@latest
+go1 install github.com/fatih/gomodifytags@latest
+go1 install github.com/josharian/impl@latest
+go1 install github.com/cweill/gotests/gotests@latest
+go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.4.0
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
-go1.25 install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+go1 install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
 # https://github.com/grpc/grpc-go
-go1.25 install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
-go1.25 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
-go1.25 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
+go1 install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
+go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
+go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
 
 # my dev
-go1.25 install golang.org/x/perf/cmd/benchstat@latest
-go1.25 install github.com/ifooth/devcontainer/cmd/dev@v0.0.1
-go1.25 install github.com/ifooth/devcontainer/cmd/gen-lint@v0.0.1
+go1 install golang.org/x/perf/cmd/benchstat@latest
+go1 install github.com/ifooth/devcontainer/cmd/dev@v0.0.1
+go1 install github.com/ifooth/devcontainer/cmd/gen-lint@v0.0.1
 
 # clean cache
 rm -rf /opt/go/pkg
