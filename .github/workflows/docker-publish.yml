@@ -56,7 +56,7 @@ jobs:
         run: make test
 
       - name: Lint
-        uses: golangci/golangci-lint-action@v6
+        uses: golangci/golangci-lint-action@v8
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
