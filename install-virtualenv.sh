@@ -44,7 +44,7 @@ go1.25 install github.com/haya14busa/goplay/cmd/goplay@latest
 go1.25 install github.com/fatih/gomodifytags@latest
 go1.25 install github.com/josharian/impl@latest
 go1.25 install github.com/cweill/gotests/gotests@latest
-go1.25 install github.com/golangci/golangci-lint/cmd/golangci-lint@v2.4.0
+go1.25 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.4.0
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
