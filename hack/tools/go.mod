@@ -1,6 +1,6 @@
 module github.com/ifooth/devcontainer/hack/tools
 
-go 1.24
+go 1.25
 
 // vscode dev
 tool (
