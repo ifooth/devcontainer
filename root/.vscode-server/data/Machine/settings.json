@@ -49,5 +49,9 @@
     "evenBetterToml.formatter.indentString": "  ",
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.formatter.indentEntries": true,
-    "evenBetterToml.formatter.columnWidth": 119
+    "evenBetterToml.formatter.columnWidth": 119,
+    "codingcopilot.enableInlineChat": true,
+    "codingcopilot.enableCodelens": false,
+    "codingcopilot.commitMessageLanguage": "en",
+    "codingcopilot.enableInlineChatShortcutsTip": false
 }

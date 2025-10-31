@@ -223,7 +223,8 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
         "redhat.vscode-yaml",
         "redhat.vscode-xml",
         "xaver.clang-format",
-        "zxh404.vscode-proto3"
+        "zxh404.vscode-proto3",
+        "tencent-cloud.coding-copilot"
     ]
 }
 ```
