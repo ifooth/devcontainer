@@ -113,7 +113,7 @@ tar -xf grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz
 mv grpcurl /usr/local/bin/
 
 # Install protoc
-export PROTOC_VERSION=24.1
+export PROTOC_VERSION=32.1
 wget -q https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOC_VERSION}/protoc-${PROTOC_VERSION}-linux-x86_64.zip
 unzip -o protoc-${PROTOC_VERSION}-linux-x86_64.zip
 mkdir -p /opt/go/bin
@@ -121,7 +121,7 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Install python uv
-export UV_VERSION=0.8.11
+export UV_VERSION=0.9.11
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin

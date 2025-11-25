@@ -6,7 +6,7 @@ export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
 export GO1_23=go1.23.12
-export GO1_25=go1.25.3
+export GO1_25=go1.25.4
 
 go install golang.org/dl/$GO1_23@latest
 go install golang.org/dl/$GO1_25@latest
@@ -49,15 +49,15 @@ go1 install github.com/haya14busa/goplay/cmd/goplay@latest
 go1 install github.com/fatih/gomodifytags@latest
 go1 install github.com/josharian/impl@latest
 go1 install github.com/cweill/gotests/gotests@latest
-go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.4.0
+go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.6.1
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
-go1 install google.golang.org/protobuf/cmd/protoc-gen-go@v1.31.0
+go1 install google.golang.org/protobuf/cmd/protoc-gen-go@v1.36.10
 # https://github.com/grpc/grpc-go
-go1 install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.3.0
-go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.16.2
-go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.16.2
+go1 install google.golang.org/grpc/cmd/protoc-gen-go-grpc@v1.5.1
+go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway@v2.27.3
+go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.27.3
 
 # my dev
 go1 install golang.org/x/perf/cmd/benchstat@latest
