@@ -54,7 +54,7 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-apt-get update && apt-get install -y docker-ce-cli
+apt-get update && apt-get install -y docker-ce-cli=5:28.5.2-1~debian.13~trixie
 rm -rf /etc/apt/sources.list.d/docker.list
 
 cd /tmp
