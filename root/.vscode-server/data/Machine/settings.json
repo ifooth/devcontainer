@@ -1,5 +1,5 @@
 {
-    "go.goroot": "/opt/go/sdk/go",
+    "go.goroot": "/opt/go/sdk/go1",
     "go.gopath": "/root/.go",
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
