@@ -1,0 +1,20 @@
+{
+    "workbench.colorTheme": "Monokai",
+    "editor.fontFamily": "DejaVu Sans Mono",
+    "editor.fontSize": 14,
+    "editor.formatOnSave": true,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.autoClosingBrackets": "always",
+    "editor.tokenColorCustomizations": {
+        "[Monokai]": {
+            "textMateRules": [
+                {
+                    "scope": "entity.name.type, entity.name.class, entity.name.namespace, entity.name.scope-resolution",
+                    "settings": {
+                        "fontStyle": ""
+                    }
+                }
+            ]
+        }
+    },
+}
