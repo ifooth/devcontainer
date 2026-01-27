@@ -119,7 +119,7 @@ compinit
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-export PATH=/data/bin:/root/.go/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
+export PATH=/data/bin:/root/.go/bin:/opt/bin:/opt/go/bin:/opt/python/notebook/bin:/root/.npm-packages/bin:$PATH
 
 # uv
 export UV_PYTHON_INSTALL_DIR=/opt/python/versions
