@@ -70,23 +70,25 @@ wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSI
 mv skopeo-linux-amd64 /usr/local/bin/skopeo && chmod a+x /usr/local/bin/skopeo && skopeo --version
 
 # Install NodeJS
-NODEJS_VERSION=v20.17.0
+NODEJS_VERSION=v24.13.0
 wget -q https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}-linux-x64.tar.xz
 tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
 mv node-${NODEJS_VERSION}-linux-x64 /opt/node
 ln -sf /opt/node/bin/node /usr/local/bin/
 ln -sf /opt/node/bin/npm /usr/local/bin/
+ln -sf /opt/node/bin/npx /usr/local/bin/
+
 # 全局配置
 echo "prefix=/root/.npm-packages" > /opt/node/lib/node_modules/npm/npmrc
 
 # https://github.com/restic/restic
-RESTIC_VERSION=0.16.0
+RESTIC_VERSION=0.18.1
 wget -q https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_amd64.bz2
 bunzip2 restic_${RESTIC_VERSION}_linux_amd64.bz2
 chmod a+x restic_${RESTIC_VERSION}_linux_amd64 && mv restic_${RESTIC_VERSION}_linux_amd64 /usr/local/bin/restic
 
 # https://github.com/rclone/rclone
-RCLONE_VERSION=v1.63.1
+RCLONE_VERSION=v1.72.1
 wget -q https://github.com/rclone/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.deb
 dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 
