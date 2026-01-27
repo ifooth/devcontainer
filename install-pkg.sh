@@ -78,9 +78,6 @@ ln -sf /opt/node/bin/node /usr/local/bin/
 ln -sf /opt/node/bin/npm /usr/local/bin/
 ln -sf /opt/node/bin/npx /usr/local/bin/
 
-# 全局配置
-echo "prefix=/root/.npm-packages" > /opt/node/lib/node_modules/npm/npmrc
-
 # https://github.com/restic/restic
 RESTIC_VERSION=0.18.1
 wget -q https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_amd64.bz2

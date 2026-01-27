@@ -15,6 +15,9 @@ COPY root /opt/root
 # 安装依赖包
 RUN /usr/local/bin/install-pkg.sh
 
+# 安装 AI Agent相关工具
+RUN /usr/local/bin/install-ai-agent.sh
+
 # 安装开发环境
 RUN /usr/local/bin/install-virtualenv.sh
 
