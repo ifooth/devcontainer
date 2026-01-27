@@ -8,9 +8,9 @@ npm install -g @fission-ai/openspec@latest
 export HOME=/opt/cursor
 curl https://cursor.com/install -fsS | bash
 
-mkdir /opt/bin
-cp -rf /opt/cursor/.local/bin/agent /opt/bin/agent
-cp -rf /opt/cursor/.local/bin/cursor-agent /opt/bin/cursor-agent
+mkdir -p /opt/bin
+cp -rf /opt/cursor/.local/bin/agent /opt/bin
+cp -rf /opt/cursor/.local/bin/cursor-agent /opt/bin
 
 # 全局配置
 echo "prefix=/root/.npm-packages" > /opt/node/lib/node_modules/npm/npmrc
