@@ -5,35 +5,35 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_23=go1.23.12
-export GO1_25=go1.25.5
+export GO1_25=go1.25.7
+export GO1_26=go1.26.0
 
-go install golang.org/dl/$GO1_23@latest
 go install golang.org/dl/$GO1_25@latest
+go install golang.org/dl/$GO1_26@latest
 
 export HOME=/opt/go
-$GOPATH/bin/$GO1_23 download && rm -rf $GOPATH/sdk/$GO1_23/$GO1_23.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_25 download && rm -rf $GOPATH/sdk/$GO1_25/$GO1_25.linux-amd64.tar.gz
+$GOPATH/bin/$GO1_26 download && rm -rf $GOPATH/sdk/$GO1_26/$GO1_26.linux-amd64.tar.gz
 
 # 清理下载器
-rm -rf $GOPATH/bin/$GO1_23
 rm -rf $GOPATH/bin/$GO1_25
+rm -rf $GOPATH/bin/$GO1_26
 
 # 软链大版本 方便升级
 cd /opt/go/bin
 # 项目稳定版本, 默认
-ln -sf /opt/go/sdk/$GO1_23/bin/go go1.23
-ln -sf /opt/go/sdk/$GO1_23/bin/go go
-# golang最新稳定版
 ln -sf /opt/go/sdk/$GO1_25/bin/go go1.25
-ln -sf /opt/go/sdk/$GO1_25/bin/go go1
+ln -sf /opt/go/sdk/$GO1_25/bin/go go
+# golang最新稳定版
+ln -sf /opt/go/sdk/$GO1_26/bin/go go1.26
+ln -sf /opt/go/sdk/$GO1_26/bin/go go1
 
 cd /opt/go/sdk
-ln -sf $GO1_23 go1.23
-ln -sf $GO1_23 go
-
 ln -sf $GO1_25 go1.25
-ln -sf $GO1_25 go1
+ln -sf $GO1_25 go
+
+ln -sf $GO1_26 go1.26
+ln -sf $GO1_26 go1
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
@@ -49,7 +49,7 @@ go1 install github.com/haya14busa/goplay/cmd/goplay@latest
 go1 install github.com/fatih/gomodifytags@latest
 go1 install github.com/josharian/impl@latest
 go1 install github.com/cweill/gotests/gotests@latest
-go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.6.1
+go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.6.6
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go

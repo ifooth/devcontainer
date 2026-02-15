@@ -16,6 +16,9 @@ apt-get install -y flex bc libelf-dev libssl-dev bison
 # Install android tools adb
 # apt-get install -y adb
 
+# Install ai tools
+apt-get install -y ripgrep
+
 # system language
 # graphviz use for golang pprof
 apt-get install -y golang graphviz
