@@ -5,8 +5,8 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_25=go1.25.7
-export GO1_26=go1.26.0
+export GO1_25=go1.25.8
+export GO1_26=go1.26.1
 
 go install golang.org/dl/$GO1_25@latest
 go install golang.org/dl/$GO1_26@latest
