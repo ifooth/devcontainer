@@ -14,6 +14,9 @@
     },
     "python.venvPath": "~/.venv",
     "python.terminal.activateEnvironment": false,
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingModuleSource": "none"
+    },
     "ruff.lint.enable": true,
     "ruff.nativeServer": "on",
     "ruff.lineLength": 119,
