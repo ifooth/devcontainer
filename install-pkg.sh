@@ -63,7 +63,7 @@ rm -rf /etc/apt/sources.list.d/docker.list
 
 cd /tmp
 # Install direnv
-DIRENV_VERSION=v2.34.0
+DIRENV_VERSION=v2.37.1
 wget -q https://github.com/direnv/direnv/releases/download/${DIRENV_VERSION}/direnv.linux-amd64
 mv direnv.linux-amd64 /usr/local/bin/direnv && chmod a+x /usr/local/bin/direnv && direnv --version
 
@@ -124,13 +124,13 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Install python uv
-export UV_VERSION=0.9.21
+export UV_VERSION=0.10.10
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin
 
 # Install zoxide(autojump alternative)
-export ZOXIDE_VERSION=0.9.8
+export ZOXIDE_VERSION=0.9.9
 wget -q https://github.com/ajeetdsouza/zoxide/releases/download/v${ZOXIDE_VERSION}/zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 dpkg -i ./zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 
