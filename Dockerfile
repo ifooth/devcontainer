@@ -22,6 +22,7 @@ RUN /usr/local/bin/install-ai-agent.sh
 RUN /usr/local/bin/install-virtualenv.sh
 
 # 启动命令
+ADD ./scripts /opt/
 ADD ./settings /opt/vscode/settings
 ADD ./dev-init.sh /usr/local/bin/
 ADD ./docker-entrypoint.sh /usr/local/bin/
