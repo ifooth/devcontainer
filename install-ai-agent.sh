@@ -15,3 +15,8 @@ cp -rf /opt/cursor/.local/bin/cursor-agent /opt/npm/bin
 
 # 全局配置
 echo "prefix=/root/.npm-packages" > /opt/node/lib/node_modules/npm/npmrc
+
+# 可使用 vscode / cursor 快捷打开项目目录,
+# 注: code 会按当前所属编辑器打开
+ln -sf /opt/scripts/open-editor.sh /opt/bin/vscode
+ln -sf /opt/scripts/open-editor.sh /opt/bin/cursor
