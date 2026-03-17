@@ -55,6 +55,9 @@
     "evenBetterToml.formatter.indentTables": true,
     "evenBetterToml.formatter.indentEntries": true,
     "evenBetterToml.formatter.columnWidth": 119,
+    "editor.unicodeHighlight.allowedLocales": {
+        "zh-hans": true
+    },
     "codingcopilot.enableInlineChat": true,
     "codingcopilot.enableCodelens": false,
     "codingcopilot.commitMessageLanguage": "en",
