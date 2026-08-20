@@ -28,10 +28,7 @@ tool (
 )
 
 // my dev
-tool (
-	github.com/ifooth/devcontainer/cmd/dev
-	github.com/ifooth/devcontainer/cmd/gen-lint
-)
+tool github.com/ifooth/devcontainer/cmd/dev
 
 require (
 	4d63.com/gocheckcompilerdirectives v1.3.0 // indirect
@@ -57,7 +54,6 @@ require (
 	github.com/ashanbrown/forbidigo v1.6.0 // indirect
 	github.com/ashanbrown/makezero v1.2.0 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
-	github.com/bitfield/script v0.23.0 // indirect
 	github.com/bkielbasa/cyclop v1.2.3 // indirect
 	github.com/blizzy78/varnamelen v0.8.0 // indirect
 	github.com/bombsimon/wsl/v4 v4.5.0 // indirect
@@ -75,6 +71,7 @@ require (
 	github.com/ckaznocha/intrange v0.3.0 // indirect
 	github.com/cosiner/argv v0.1.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.6 // indirect
+	github.com/creack/pty v1.1.21 // indirect
 	github.com/curioswitch/go-reassign v0.3.0 // indirect
 	github.com/cweill/gotests v1.6.0 // indirect
 	github.com/daixiang0/gci v0.13.5 // indirect
@@ -138,8 +135,6 @@ require (
 	github.com/hexops/gotextdiff v1.0.3 // indirect
 	github.com/ifooth/devcontainer v0.0.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/itchyny/gojq v0.12.16 // indirect
-	github.com/itchyny/timefmt-go v0.1.6 // indirect
 	github.com/jgautheron/goconst v1.7.1 // indirect
 	github.com/jingyugao/rowserrcheck v1.1.1 // indirect
 	github.com/jjti/go-spancheck v0.6.4 // indirect
@@ -265,7 +260,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	honnef.co/go/tools v0.6.0 // indirect
 	mvdan.cc/gofumpt v0.7.0 // indirect
-	mvdan.cc/sh/v3 v3.9.0 // indirect
 	mvdan.cc/unparam v0.0.0-20240528143540-8a5130ca722f // indirect
 	mvdan.cc/xurls/v2 v2.5.0 // indirect
 )

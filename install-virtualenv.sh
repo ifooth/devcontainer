@@ -62,7 +62,6 @@ go1 install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.27
 # my dev
 go1 install golang.org/x/perf/cmd/benchstat@latest
 go1 install github.com/ifooth/devcontainer/cmd/dev@v0.0.1
-go1 install github.com/ifooth/devcontainer/cmd/gen-lint@v0.0.1
 
 # clean cache
 rm -rf /opt/go/pkg
