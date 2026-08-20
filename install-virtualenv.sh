@@ -74,7 +74,7 @@ export UV_LINK_MODE=copy
 export UV_NO_CACHE="1"
 
 # change python version if upgrade
-export PY3_12=3.12.16
+export PY3_12=3.12.14
 
 uv python install $PY3_12
 
