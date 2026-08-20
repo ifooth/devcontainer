@@ -21,7 +21,7 @@ formatters:
       sections:
         - standard
         - default
-        - prefix(github.com/ifooth/devcontainer)
+        - localmodule
 
 linters:
   enable:
