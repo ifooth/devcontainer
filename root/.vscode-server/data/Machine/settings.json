@@ -4,6 +4,7 @@
     "go.toolsEnvVars": {
         "GOBIN": "/opt/go/bin"
     },
+    "go.diagnostic.vulncheck": "Off",
     "go.lintTool": "golangci-lint",
     "[python]": {
         "editor.formatOnSave": true,

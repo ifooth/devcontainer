@@ -5,35 +5,29 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_25=go1.25.9
 export GO1_27=go1.27.0
 
-go install golang.org/dl/$GO1_25@latest
 go install golang.org/dl/$GO1_27@latest
 
 export HOME=/opt/go
-$GOPATH/bin/$GO1_25 download && rm -rf $GOPATH/sdk/$GO1_25/$GO1_25.linux-amd64.tar.gz
 $GOPATH/bin/$GO1_27 download && rm -rf $GOPATH/sdk/$GO1_27/$GO1_27.linux-amd64.tar.gz
 
 # 清理下载器
-rm -rf $GOPATH/bin/$GO1_25
 rm -rf $GOPATH/bin/$GO1_27
 
 # 软链大版本 方便升级
 cd /opt/go/bin
-# 项目稳定版本, 默认
-ln -sf /opt/go/sdk/$GO1_25/bin/go go1.25
-ln -sf /opt/go/sdk/$GO1_25/bin/go go
 # golang最新稳定版
 ln -sf /opt/go/sdk/$GO1_27/bin/go go1.27
 ln -sf /opt/go/sdk/$GO1_27/bin/go go1
 
-cd /opt/go/sdk
-ln -sf $GO1_25 go1.25
-ln -sf $GO1_25 go
+# 项目稳定版本, 默认
+ln -sf /opt/go/sdk/$GO1_27/bin/go go
 
+cd /opt/go/sdk
 ln -sf $GO1_27 go1.27
 ln -sf $GO1_27 go1
+ln -sf $GO1_27 go
 
 # vscode golang tools, build with latest golang
 # https://github.com/golang/vscode-go/blob/master/docs/tools.md
@@ -49,7 +43,7 @@ go1 install github.com/haya14busa/goplay/cmd/goplay@latest
 go1 install github.com/fatih/gomodifytags@latest
 go1 install github.com/josharian/impl@latest
 go1 install github.com/cweill/gotests/gotests@latest
-go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.13.0
+go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.13.2
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
