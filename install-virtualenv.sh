@@ -5,7 +5,7 @@ set -ex
 export GOPATH=/opt/go
 export CGO_ENABLED=0
 # change go version if upgrade
-export GO1_27=go1.27.0
+export GO1_27=go1.27.1
 
 go install golang.org/dl/$GO1_27@latest
 
@@ -44,6 +44,7 @@ go1 install github.com/fatih/gomodifytags@latest
 go1 install github.com/josharian/impl@latest
 go1 install github.com/cweill/gotests/gotests@latest
 go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.13.2
+go1 install github.com/evilmartians/lefthook/v2@v2.1.12
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
