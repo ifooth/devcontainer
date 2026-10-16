@@ -2,7 +2,6 @@
 
 Full stack remote development environment
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/ifooth/devcontainer?cache=v1)](https://goreportcard.com/report/github.com/ifooth/devcontainer)
 [![lint](https://github.com/ifooth/devcontainer/actions/workflows/lint.yml/badge.svg?branch=main)](http://github.com/ifooth/devcontainer/actions/workflows/lint.yml)
 [![build](https://github.com/ifooth/devcontainer/actions/workflows/build.yml/badge.svg?branch=main)](http://github.com/ifooth/devcontainer/actions/workflows/build.yml)
 [![Docker](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/ifooth/devcontainer/actions/workflows/docker-publish.yml)
