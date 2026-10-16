@@ -41,7 +41,6 @@ Plugin
 - [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
 - [protoc](https://github.com/protocolbuffers/protobuf) - Protocol Buffers - Google's data interchange format
 - [grpcurl](https://github.com/fullstorydev/grpcurl) - Like cURL, but for gRPC
-- [skopeo](https://github.com/containers/skopeo) - Work with remote container images
 - [nodejs](https://nodejs.org/) - JavaScript runtime
 - [docker cli](https://docs.docker.com/reference/cli/docker/) - Docker command line
 - [ripgrep](https://github.com/BurntSushi/ripgrep) - Recursively search directories for a regex pattern

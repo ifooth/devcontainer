@@ -1,5 +1,4 @@
-#!/usr/bin/zsh
-source /opt/root/.zshrc
+#!/bin/bash
 
 export JUPYTER_PORT=${JUPYTER_PORT:-8088}
 export JUPYTER_TOKEN=${JUPYTER_TOKEN:-devcontainer}

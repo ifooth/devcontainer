@@ -67,13 +67,8 @@ DIRENV_VERSION=v2.37.1
 wget -q https://github.com/direnv/direnv/releases/download/${DIRENV_VERSION}/direnv.linux-amd64
 mv direnv.linux-amd64 /usr/local/bin/direnv && chmod a+x /usr/local/bin/direnv && direnv --version
 
-# Install skopeo
-SKOPEO_VERSION=v1.13.2
-wget -q https://github.com/lework/skopeo-binary/releases/download/${SKOPEO_VERSION}/skopeo-linux-amd64
-mv skopeo-linux-amd64 /usr/local/bin/skopeo && chmod a+x /usr/local/bin/skopeo && skopeo --version
-
 # Install NodeJS
-NODEJS_VERSION=v24.13.0
+NODEJS_VERSION=v24.22.0
 wget -q https://nodejs.org/dist/${NODEJS_VERSION}/node-${NODEJS_VERSION}-linux-x64.tar.xz
 tar -xf node-${NODEJS_VERSION}-linux-x64.tar.xz
 mv node-${NODEJS_VERSION}-linux-x64 /opt/node
