@@ -81,33 +81,16 @@ ln -sf /opt/node/bin/node /usr/local/bin/
 ln -sf /opt/node/bin/npm /usr/local/bin/
 ln -sf /opt/node/bin/npx /usr/local/bin/
 
-# https://github.com/restic/restic
-RESTIC_VERSION=0.18.1
-wget -q https://github.com/restic/restic/releases/download/v${RESTIC_VERSION}/restic_${RESTIC_VERSION}_linux_amd64.bz2
-bunzip2 restic_${RESTIC_VERSION}_linux_amd64.bz2
-chmod a+x restic_${RESTIC_VERSION}_linux_amd64 && mv restic_${RESTIC_VERSION}_linux_amd64 /usr/local/bin/restic
+# https://github.com/kopia/kopia
+KOPIA_VERSION=0.23.1
+wget -q https://github.com/kopia/kopia/releases/download/v${KOPIA_VERSION}/kopia-${KOPIA_VERSION}-linux-x64.tar.gz
+tar -xf kopia-${KOPIA_VERSION}-linux-x64.tar.gz
+mv kopia-${KOPIA_VERSION}-linux-x64/kopia /usr/local/bin/kopia && chmod a+x /usr/local/bin/kopia
 
 # https://github.com/rclone/rclone
 RCLONE_VERSION=v1.72.1
 wget -q https://github.com/rclone/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.deb
 dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
-
-# Install Helm
-# https://github.com/helm/helm
-HELM_VERSION=v3.12.2
-wget -q https://get.helm.sh/helm-${HELM_VERSION}-linux-amd64.tar.gz
-tar -xf helm-${HELM_VERSION}-linux-amd64.tar.gz
-mv linux-amd64/helm /usr/local/bin/
-mkdir -p ${ZSH_CUSTOM}/helm-autocomplete
-helm completion zsh > ${ZSH_CUSTOM}/helm-autocomplete/helm-autocomplete.plugin.zsh
-
-# Install Kubectl
-# https://github.com/kubernetes/kubernetes
-KUBECTL_VERSION=v1.22.17
-wget -q https://dl.k8s.io/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
-chmod a+x kubectl && mv kubectl /usr/local/bin/
-mkdir -p ${ZSH_CUSTOM}/kubectl-autocomplete
-kubectl completion zsh > ${ZSH_CUSTOM}/kubectl-autocomplete/kubectl-autocomplete.plugin.zsh
 
 # Install grpcurl
 GPRCCURL_VERSION=1.8.7
@@ -124,7 +107,7 @@ mv bin/protoc /opt/go/bin/ && /opt/go/bin/protoc --version
 mv include /opt/go/
 
 # Install python uv
-export UV_VERSION=0.12.9
+export UV_VERSION=0.13.1
 wget -q https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/uv-x86_64-unknown-linux-gnu.tar.gz
 tar -xf uv-x86_64-unknown-linux-gnu.tar.gz
 mv uv-x86_64-unknown-linux-gnu/* /usr/local/bin

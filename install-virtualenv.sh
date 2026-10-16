@@ -44,7 +44,7 @@ go1 install github.com/fatih/gomodifytags@latest
 go1 install github.com/josharian/impl@latest
 go1 install github.com/cweill/gotests/gotests@latest
 go1 install github.com/golangci/golangci-lint/v2/cmd/golangci-lint@v2.13.2
-go1 install github.com/evilmartians/lefthook/v2@v2.1.12
+go1 install github.com/evilmartians/lefthook/v2@v2.2.2
 
 # protobuf
 # https://github.com/protocolbuffers/protobuf-go
@@ -68,17 +68,17 @@ export UV_LINK_MODE=copy
 export UV_NO_CACHE="1"
 
 # change python version if upgrade
-export PY3_12=3.12.14
+export PY3_14=3.14.8
 
-uv python install $PY3_12
+uv python install $PY3_14
 
 # 硬链接大版本 方便升级
 cd /opt/python
-cp -lr /opt/python/versions/cpython-${PY3_12}-linux-x86_64-gnu py${PY3_12}
-cp -lr py${PY3_12} py3.12
-cp -lr py${PY3_12} py3
+cp -lr /opt/python/versions/cpython-${PY3_14}-linux-x86_64-gnu py${PY3_14}
+cp -lr py${PY3_14} py3.14
+cp -lr py${PY3_14} py3
 
-uv venv notebook -p /opt/python/py3.12/bin/python
+uv venv notebook -p /opt/python/py3.14/bin/python
 source ./notebook/bin/activate
 
 # vscode python tools, notebook & utils

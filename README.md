@@ -32,19 +32,26 @@ Plugin
 - [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
 - [vim-colors-solarized.git](https://github.com/altercation/vim-colors-solarized.git)
 - [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+- [vim-monokai](https://github.com/sickill/vim-monokai)
+- [onedark.vim](https://github.com/joshdick/onedark.vim)
 
 ## tools
 
 - [scc](https://github.com/boyter/scc) - scc is a very fast accurate code counter with complexity calculations and COCOMO estimates written in pure Go
-- [restic](https://github.com/restic/restic) - Fast, secure, efficient backup program
+- [kopia](https://github.com/kopia/kopia) - Fast and secure open-source backup software
 - [rclone](https://github.com/rclone/rclone) - rsync for cloud storage
 - [protoc](https://github.com/protocolbuffers/protobuf) - Protocol Buffers - Google's data interchange format
-- [grpcurl](https://github.com/fullstorydev/grpcurl) - AboutLike cURL, but for gRPC: Command-line tool for interacting with gRPC servers
+- [grpcurl](https://github.com/fullstorydev/grpcurl) - Like cURL, but for gRPC
+- [skopeo](https://github.com/containers/skopeo) - Work with remote container images
+- [nodejs](https://nodejs.org/) - JavaScript runtime
+- [docker cli](https://docs.docker.com/reference/cli/docker/) - Docker command line
+- [ripgrep](https://github.com/BurntSushi/ripgrep) - Recursively search directories for a regex pattern
 
 ## Dev.env
 
 - set pre / post script
 - set git config
+- dev server / jupyter lab
 - set tz and so on
 
 ```bash
@@ -57,11 +64,27 @@ GIT_USER_NAME=""
 GIT_USER_EMAIL=""
 GIT_USER_SIGNINGKEY=""
 
+# dev server 配置
+DEV_SERVER_PORT="8022"
+
+# jupyter lab 配置
+JUPYTER_PORT="8088"
+JUPYTER_TOKEN="devcontainer"
+JUPYTER_NOTEBOOK_DIR="/data/repos/jupyter-notebook"
+
 # 时区配置
 TZ=Asia/Shanghai
 ```
 
+Container starts sshd, `dev server`, and JupyterLab via supervisord.
+
+- sshd: `SSHD_PORT`, default `36022`
+- dev server: `DEV_SERVER_PORT`, default `8022`. File browser at `/file/browser`, terminal preview at `/terminal/preview`
+- JupyterLab: notebook dir `JUPYTER_NOTEBOOK_DIR`, token `JUPYTER_TOKEN`. The image venv is `/opt/python/notebook`
+
 ## Python toolchain
+
+Image ships Python 3.14.8. `py3` and `py3.14` both point at `/opt/python/py3.14`. JupyterLab lives in `/opt/python/notebook`.
 
 - [uv](https://github.com/astral-sh/uv) - An extremely fast Python package and project manager, written in Rust.
 - [ruff](https://github.com/astral-sh/ruff) - An extremely fast Python linter and code formatter, written in Rust.
@@ -92,15 +115,17 @@ layout python
 
 ## Golang toolchain
 
+Image ships Go 1.27.1. `go`, `go1`, and `go1.27` all point at `/opt/go/sdk/go1.27.1`. User `GOPATH` is `/root/.go`.
+
 - [office manage-install](https://go.dev/doc/manage-install)
 
 usage
 
 ```shell
-# install golang version
+# install another golang version
 export HOME=/opt/go
-go install golang.org/dl/go1.23.1@latest
-go1.23.1 download
+go install golang.org/dl/go1.27.1@latest
+go1.27.1 download
 ```
 
 version list in [golang/dl](https://github.com/golang/dl)
@@ -154,7 +179,7 @@ git clone https://github.com/golang/go
 cd go
 
 # checkout the version you are interested in
-git checkout release-branch.go1.23
+git checkout release-branch.go1.27
 
 # build go bin & pkg tools
 cd src && ./make.bash && cd ..
@@ -162,7 +187,7 @@ cd src && ./make.bash && cd ..
 # add `go.work` for src workspace
 go work init
 # change if you need
-# go work edit -go=1.21
+# go work edit -go=1.27
 go work use src
 
 # modify according to the following configuration

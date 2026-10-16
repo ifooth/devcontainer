@@ -72,7 +72,7 @@ zstyle ':omz:update' mode disabled  # disable automatic updates
 # Add wisely, as too many plugins slow down shell startup.
 export ZOXIDE_CMD_OVERRIDE="j"
 
-plugins=(git zoxide fzf extract zsh-autosuggestions kubectl-autocomplete helm-autocomplete)
+plugins=(git zoxide fzf extract zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -160,7 +160,6 @@ eval "$(direnv hook zsh)"
 
 # Alias
 alias echo_path='tr ":" "\n" <<< "$PATH"'
-alias k="kubectl"
 
 [[ -s "${HOME}/.zsh_profile" ]] && source "${HOME}/.zsh_profile"
 
