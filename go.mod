@@ -1,6 +1,6 @@
 module github.com/ifooth/devcontainer
 
-go 1.27.0
+go 1.27
 
 require (
 	github.com/bitfield/script v0.23.0

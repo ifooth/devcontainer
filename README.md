@@ -113,7 +113,7 @@ layout python
 
 ## Golang toolchain
 
-Image ships Go 1.27.1. `go`, `go1`, and `go1.27` all point at `/opt/go/sdk/go1.27.1`. User `GOPATH` is `/root/.go`.
+Image ships Go 1.27.3. `go`, `go1`, and `go1.27` all point at `/opt/go/sdk/go1.27.1`. User `GOPATH` is `/root/.go`.
 
 - [office manage-install](https://go.dev/doc/manage-install)
 
@@ -122,8 +122,8 @@ usage
 ```shell
 # install another golang version
 export HOME=/opt/go
-go install golang.org/dl/go1.27.1@latest
-go1.27.1 download
+go install golang.org/dl/go1.27.3@latest
+go1.27.3 download
 ```
 
 version list in [golang/dl](https://github.com/golang/dl)
