@@ -16,9 +16,6 @@ apt-get install -y flex bc libelf-dev libssl-dev bison
 # Install android tools adb
 # apt-get install -y adb
 
-# Install ai tools
-apt-get install -y ripgrep
-
 # system language
 # graphviz use for golang pprof
 apt-get install -y golang graphviz
@@ -91,6 +88,11 @@ dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 GH_VERSION=2.103.0
 wget -q https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.deb
 dpkg -i gh_${GH_VERSION}_linux_amd64.deb
+
+# https://github.com/BurntSushi/ripgrep
+RIPGREP_VERSION=15.2.0
+wget -q https://github.com/BurntSushi/ripgrep/releases/download/${RIPGREP_VERSION}/ripgrep_${RIPGREP_VERSION}-1_amd64.deb
+dpkg -i ripgrep_${RIPGREP_VERSION}-1_amd64.deb
 
 # Install grpcurl
 GPRCCURL_VERSION=1.8.7
