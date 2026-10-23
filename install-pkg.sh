@@ -87,6 +87,11 @@ RCLONE_VERSION=v1.72.1
 wget -q https://github.com/rclone/rclone/releases/download/${RCLONE_VERSION}/rclone-${RCLONE_VERSION}-linux-amd64.deb
 dpkg -i rclone-${RCLONE_VERSION}-linux-amd64.deb
 
+# https://github.com/cli/cli
+GH_VERSION=2.103.0
+wget -q https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.deb
+dpkg -i gh_${GH_VERSION}_linux_amd64.deb
+
 # Install grpcurl
 GPRCCURL_VERSION=1.8.7
 wget -q https://github.com/fullstorydev/grpcurl/releases/download/v${GPRCCURL_VERSION}/grpcurl_${GPRCCURL_VERSION}_linux_x86_64.tar.gz

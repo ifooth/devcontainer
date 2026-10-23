@@ -14,6 +14,7 @@ Base on [devcontainers/base](https://github.com/devcontainers/images/tree/main) 
 - [zsh](https://www.zsh.org/)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 - [git](http://git-scm.com/) - A distributed version control system
+- [gh](https://github.com/cli/cli) - GitHub’s official command line tool
 - [fzf](https://github.com/junegunn/fzf) - A command-line fuzzy finder
 - [zoxide](https://github.com/ajeetdsouza/zoxide) - A smarter cd command. Supports all major shells.
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
