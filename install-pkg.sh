@@ -119,6 +119,20 @@ export ZOXIDE_VERSION=0.10.0
 wget -q https://github.com/ajeetdsouza/zoxide/releases/download/v${ZOXIDE_VERSION}/zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 dpkg -i ./zoxide_${ZOXIDE_VERSION}-1_amd64.deb
 
+# Install rustup only. The Rust toolchain is not downloaded here.
+# Defaults: $HOME/.rustup and $HOME/.cargo, persisted on the /root volume.
+# https://static.rust-lang.org/rustup/archive/
+export RUSTUP_VERSION=1.29.2
+wget -q https://static.rust-lang.org/rustup/archive/${RUSTUP_VERSION}/x86_64-unknown-linux-gnu/rustup-init
+chmod a+x rustup-init
+RUSTUP_INIT_SKIP_PATH_CHECK=yes ./rustup-init -y --no-modify-path --default-toolchain none
+rm -f rustup-init
+"$HOME/.cargo/bin/rustup" --version
+
+# rustup-init writes settings.toml here. It would be packed into root.tar.gz and
+# overwrite the user's default toolchain on every container start. rustup recreates it.
+rm -rf "$HOME/.rustup"
+
 # Clean up
 mkdir -p /data/repos /data/pub /data/logs /data/etc/supervisord
 

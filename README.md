@@ -166,6 +166,19 @@ golang private mod settings
 }
 ```
 
+## Rust toolchain
+
+`rustup` lives in `~/.cargo/bin`. Toolchains install into the default `~/.rustup`. Both directories are under `/root`, so they stay when the container is recreated.
+
+Install a toolchain yourself before building or before rust-analyzer can load a project:
+
+```shell
+rustup toolchain install stable
+rustup default stable
+```
+
+Until that finishes, `cargo build` fails with `no default is configured`. The VS Code extension `rust-lang.rust-analyzer` brings its own language server. It still shells out to `cargo`, so the toolchain has to be installed first. Compiling the default `x86_64-unknown-linux-gnu` target also needs a system linker, `cc`.
+
 ## Develop golang
 
 You can refer to the official guidelines <https://go.dev/doc/contribute>
@@ -236,6 +249,7 @@ open the user settings editor from the Command Palette (Ctrl+Shift+P) with Prefe
     },
     "remote.SSH.defaultExtensions": [
         "golang.go",
+        "rust-lang.rust-analyzer",
         "ms-python.python",
         "charliermarsh.ruff",
         "geddski.macros",

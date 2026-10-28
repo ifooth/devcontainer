@@ -1,7 +1,7 @@
 # by devcontainer
 
-# add go and python path
-export PATH=/data/bin:/root/.go/bin:/root/.npm-packages/bin:/root/.local/bin:/opt/go/bin:/opt/python/notebook/bin:/opt/bin:$PATH
+# add go, python and rustup path
+export PATH=/root/.cargo/bin:/data/bin:/root/.go/bin:/root/.npm-packages/bin:/root/.local/bin:/opt/go/bin:/opt/python/notebook/bin:/opt/bin:$PATH
 
 # uv
 export UV_PYTHON_INSTALL_DIR=/opt/python/versions
